@@ -2,14 +2,17 @@
 % Methods
 % Methods: The experimental approach, including descriptions of metrics, baseline models, etc. Details about hyperparameters, optimization choices, etc., are probably best given in appendices, unless they are central to the arguments.
 
-\section{Methodology}\label{sec:Methodology}
+\section{Methods} \label{sec:Methods}
 % ~1200 words ≈ ~9–10 paragraphs
-\textcolor{black!30}{Methods: The experimental approach, including descriptions of metrics, baseline models, etc. Details about hyperparameters, optimization choices, etc., are probably best given in appendices, unless they are central to the arguments.}
+\textcolor{black!30}{\lipsum[11-12]}
 
 \subsection{Data collection and preprocessing}
 % This section can describe text processing steps - how the human responses were selected and which posts were selected from the RedArcs dataset etc.
-All selected posts were manually reviewed to ensure that no sensitive or private information was included. 
-\textcolor{black!30}{\lipsum[30-33]}
+We built a corpus from two public subreddits—AITAH, and Anxiety. For each subreddit, we filtered the top ~1,000 most upvoted or most commented posts, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. For every retained post we extracted (i) the most upvoted human-written comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
+
+Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability. We treat each Reddit thread (the post and its comments) as a single analytic unit during sampling, manual checks, and statistic aggregation, so correlated texts don’t inflate results. This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons. 
+
+\smallskip Prompts (provided in the appendices) and model outputs are saved and logged by the codebase for reproducibility.
 
 \subsection{Experiments}
 \textcolor{black!30}{\lipsum[12-14]}
