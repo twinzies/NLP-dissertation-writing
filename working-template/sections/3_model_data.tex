@@ -27,6 +27,17 @@
 \textcolor{black!30}{\lipsum[9-10]}
 
 \subsection{Dataset}
-\textcolor{black!30}{Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.}
+%\textcolor{black!30}{Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.}
+\section{Data Collection}
 
-\textcolor{black!30}{The RedArcs - and reference the ethics section. Limitations of the dataset - how it is not representative of the entire population, but a subset of the population that is more likely to use LLMs for personal queries - WEIRD.}
+Two datasets were constructed for this project using the Pushshift Reddit Archives \cite{pushshift}, originally collected between 2006 and 2023 through the Pushshift API\footnote{\url{https://github.com/pushshift/api}}. Posts and comments were extracted from two subreddits: (1) \texttt{r/AITAH} and (2) \texttt{r/Anxiety}. For each post, three components were considered: the body the original post written by the author (OP), the most upvoted human-written comment, and the comment with which the OP engaged the most. Further details regarding data filtering and text preprocessing are provided in the \emph{Methods} section.  
+
+% Add some comments about why these subreddits were chosen.
+\subsection{Subreddit Selection}
+
+The \texttt{r/AITAH} subreddit (short for ``Am I The Asshole'') is a community where users seek judgment on personal dilemmas and social interactions. With over three million members, it covers a wide range of topics, including relationships, family dynamics, workplace conflicts, and ethical questions. Users typically describe their situations in detail and ask the community to determine whether they were in the wrong (the ``asshole'') or not. The nature of these posts makes \texttt{r/AITAH} a valuable source for examining behaviors and values expressed in digital discussions of personal matters.  
+
+The \texttt{r/Anxiety} subreddit is a community dedicated to individuals experiencing anxiety and related mental health challenges. Membership does not require a formal diagnosis or medical documentation, which enables broad analyses from psychosocial perspectives, particularly within the Rogerian PCT framework. Posts often center on personal struggles with anxiety, coping strategies, treatment options, and the impact on daily life.
+
+Demographic information at the subreddit level is not available. However, research indicates that Reddit users overall are predominantly American (49.9\%), male (67\%), and young (22\% aged 18--29 years; 14\% aged 30--49 years)~\cite{pew-reddit-research,statista-reddit}. While this dataset is not representative of the general population, it reflects a demographic more likely to engage with LLMs for personal queries. This demographic is broadly aligned with the WEIRD (Western, Educated, Industrialized, Rich, Democratic) population, and it must therefore be acknowledged that the results of this study are necessarily constrained to this population.
+

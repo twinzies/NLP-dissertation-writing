@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{13}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ando and Zhang(2005)}]{Ando2005}
@@ -15,6 +15,16 @@ Galen Andrew and Jianfeng Gao. 2007.
 Isabelle Augenstein, Tim Rockt{\"a}schel, Andreas Vlachos, and Kalina Bontcheva. 2016.
 \newblock \href {https://doi.org/10.18653/v1/D16-1084} {Stance detection with bidirectional conditional encoding}.
 \newblock In \emph{Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing}, pages 876--885, Austin, Texas. Association for Computational Linguistics.
+
+\bibitem[{Barthel et~al.(2016)Barthel, Stocking, Holcomb, and Mitchell}]{pew-reddit-research}
+Michael Barthel, Galen Stocking, Jesse Holcomb, and Amy Mitchell. 2016.
+\newblock \href {https://www.pewresearch.org/wp-content/uploads/sites/8/2016/02/PJ_2016.02.25_Reddit_FINAL.pdf} {Reddit news users more likely to be male, young and digital in their news preferences}.
+\newblock Pew Research Center Report.
+
+\bibitem[{Baumgartner et~al.(2020)Baumgartner, Zannettou, Keegan, Squire, and Blackburn}]{pushshift}
+Jason Baumgartner, Savvas Zannettou, Brian Keegan, Megan Squire, and Jeremy Blackburn. 2020.
+\newblock \href {https://arxiv.org/abs/2001.08435} {The pushshift reddit dataset}.
+\newblock \emph{arXiv preprint arXiv:2001.08435}.
 
 \bibitem[{Cheng et~al.(2025)Cheng, Yu, Lee, Khadpe, Ibrahim, and Jurafsky}]{cheng-etal-sycophancy}
 Myra Cheng, Sunny Yu, Cinoo Lee, Pranav Khadpe, Lujain Ibrahim, and Dan Jurafsky. 2025.
@@ -51,5 +61,11 @@ Mohammad~Sadegh Rasooli and Joel~R. Tetreault. 2015.
 Alexander Soffron and David Huang. 2024.
 \newblock \href {https://arxiv.org/abs/2401.00095} {Values in the wild: Discovering and analyzing values in real-world language model interactions}.
 \newblock \emph{arXiv preprint arXiv:2401.00095}.
+
+\bibitem[{{Statista}(2025)}]{statista-reddit}
+{Statista}. 2025.
+\newblock \href {https://www.statista.com/statistics/325144/reddit-global-active-user-distribution/} {Reddit global active user distribution}.
+\newblock Statista Statistics Portal.
+\newblock Accessed: 2025-08-24.
 
 \end{thebibliography}
