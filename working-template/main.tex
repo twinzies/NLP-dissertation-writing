@@ -1,0 +1,71 @@
+% Stuart Shieber on the Rational Reconstruction style of paper
+% The ideal style is the "rational reconstruction" style. In this style, you don't present the actual history that you went through, but rather an idealized history that perfectly motivates each step in the solution. "We consider the problem of XXX. The obvious thing to try is X. But such-and-such a pithy example shows that that fails miserably. Nonetheless, the example points the way naturally to solution Y. This works better, except for such-and-such an obscure case. We patch solution Y to handle this case, forming solution Z. Voila." 
+
+% Of course, the author doesn't tell you that he came up with solution Y before solution X, which only occurred to him after he came up with solution Z, and he skips solutions A, B, and C because, in retrospect, they are nowhere on the natural path to Z, even though at the time he was completely convinced they were on the right track. 
+
+% The goal in pursuing the rational reconstruction style is not to convince the reader that you are brilliant (or addle-headed for that matter) but that *your solution is trivial*. It takes a certain strength of character to take that as one's goal. But the advantage of the reader thinking your solution is trivial or obvious is that it necessarily comes along with the notion that *you are correct*.
+
+% "A good talk should never stray far from simple, honest communication."
+
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage[review]{ACL2023}
+\usepackage{xcolor} % To make the lipsum text grey.
+\usepackage{lipsum}
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+
+% Uncomment and adjust if title/author block needs more space
+% \setlength\titlebox{5cm}
+
+\title{“Sycophancy” or “Empathy”? \\
+DeepReflect – An LLM-based system designed to analyze and generate responses to personal queries 
+}
+
+\author{Tara K. Jain \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  \texttt{email@domain} \\\And
+  Diana Maynard \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  \texttt{email@domain} \\}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+% TODO: P5
+\textcolor{black!30}{This project introduces DeepReflect - a framework that uses Large Language Models (LLMs) to analyze and generate responses to personal queries through the lens of different psychosocial paradigms and value frameworks. The document itself conforms to its own specifications, and is, therefore, an example of what your manuscript should look like.
+These instructions should be used both for papers submitted for review and for final versions of accepted papers.}
+\end{abstract} 
+\input{./sections/1_intro.tex}
+\input{./sections/2_priorlit.tex}
+\input{./sections/3_model_data.tex}
+\input{./sections/4_methods.tex}
+\input{./sections/5_results.tex}
+\input{./sections/6_analysis.tex}
+\input{./sections/7_conclusion.tex}
+\input{./sections/8_limitations.tex}
+\input{./sections/9_ethics.tex}
+
+\section*{Acknowledgements}
+The authors would like to thank Santa Claus and Rudolph the red nose reindeer who had a very shiny nose. And if you ever saw it, you would even say it glows. All of the reindeer loved him, as they shouted out with glee, "Rudolph the red nose reindeer, you'll go down in history!"
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{anthology,custom}
+\bibliographystyle{acl_natbib}
+
+\appendix
+
+\section{Example Appendix}
+\label{sec:appendix}
+
+This is a section in the appendix.
+
+\end{document}

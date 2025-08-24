@@ -1,0 +1,55 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Ando and Zhang(2005)}]{Ando2005}
+Rie~Kubota Ando and Tong Zhang. 2005.
+\newblock \href {https://www.jmlr.org/papers/volume6/ando05a/ando05a.pdf} {A framework for learning predictive structures from multiple tasks and unlabeled data}.
+\newblock \emph{Journal of Machine Learning Research}, 6:1817--1853.
+
+\bibitem[{Andrew and Gao(2007)}]{andrew2007scalable}
+Galen Andrew and Jianfeng Gao. 2007.
+\newblock \href {https://dl.acm.org/doi/abs/10.1145/1273496.1273501} {Scalable training of {$L_1$}-regularized log-linear models}.
+\newblock In \emph{Proceedings of the 24th International Conference on Machine Learning}, pages 33--40.
+
+\bibitem[{Augenstein et~al.(2016)Augenstein, Rockt{\"a}schel, Vlachos, and Bontcheva}]{augenstein-etal-2016-stance}
+Isabelle Augenstein, Tim Rockt{\"a}schel, Andreas Vlachos, and Kalina Bontcheva. 2016.
+\newblock \href {https://doi.org/10.18653/v1/D16-1084} {Stance detection with bidirectional conditional encoding}.
+\newblock In \emph{Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing}, pages 876--885, Austin, Texas. Association for Computational Linguistics.
+
+\bibitem[{Cheng et~al.(2025)Cheng, Yu, Lee, Khadpe, Ibrahim, and Jurafsky}]{cheng-etal-sycophancy}
+Myra Cheng, Sunny Yu, Cinoo Lee, Pranav Khadpe, Lujain Ibrahim, and Dan Jurafsky. 2025.
+\newblock \href {https://arxiv.org/abs/2505.13995} {Social sycophancy: A broader understanding of llm sycophancy}.
+\newblock \emph{arXiv preprint arXiv:2505.13995}.
+
+\bibitem[{Fang et~al.(2025)Fang, Zhang, Liu, Wang, Li, and Zhang}]{fang-etal-psychoeffects}
+Yifan Fang, Yifan Zhang, Yang Liu, Xiaojun Wang, Xiang Li, and Jie Zhang. 2025.
+\newblock The psychological effects of llms on users.
+\newblock \emph{arXiv preprint arXiv:2505.13995}, 1(1).
+
+\bibitem[{Goodman et~al.(2016)Goodman, Vlachos, and Naradowsky}]{goodman-etal-2016-noise}
+James Goodman, Andreas Vlachos, and Jason Naradowsky. 2016.
+\newblock \href {https://doi.org/10.18653/v1/P16-1001} {Noise reduction and targeted exploration in imitation learning for {A}bstract {M}eaning {R}epresentation parsing}.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 1--11, Berlin, Germany. Association for Computational Linguistics.
+
+\bibitem[{Harper(2014)}]{harper-2014-learning}
+Mary Harper. 2014.
+\newblock \href {https://aclanthology.org/C14-1001} {Learning from 26 languages: Program management and science in the babel program}.
+\newblock In \emph{Proceedings of {COLING} 2014, the 25th International Conference on Computational Linguistics: Technical Papers}, page~1, Dublin, Ireland. Dublin City University and Association for Computational Linguistics.
+
+\bibitem[{Lee et~al.()Lee, Fang, Zhang, Liu, Wang, Li, and Zhang}]{Lee-etal-Empathic}
+Cinoo Lee, Yifan Fang, Yifan Zhang, Yang Liu, Xiaojun Wang, Xiang Li, and Jie Zhang.
+\newblock Empathic responses in llms: A study of user perceptions.
+\newblock \emph{arXiv preprint arXiv:2505.13995}, 1(1).
+
+\bibitem[{Rasooli and Tetreault(2015)}]{rasooli-tetrault-2015}
+Mohammad~Sadegh Rasooli and Joel~R. Tetreault. 2015.
+\newblock \href {http://arxiv.org/abs/1503.06733} {Yara parser: {A} fast and accurate dependency parser}.
+\newblock \emph{Computing Research Repository}, arXiv:1503.06733.
+\newblock Version 2.
+
+\bibitem[{Soffron and Huang(2024)}]{values-in-wild}
+Alexander Soffron and David Huang. 2024.
+\newblock \href {https://arxiv.org/abs/2401.00095} {Values in the wild: Discovering and analyzing values in real-world language model interactions}.
+\newblock \emph{arXiv preprint arXiv:2401.00095}.
+
+\end{thebibliography}
