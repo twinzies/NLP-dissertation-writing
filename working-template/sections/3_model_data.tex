@@ -10,21 +10,22 @@
 
 \subsection{System Design}\label{sec:deepreflect}
 % Design is precise, methodical and shows some flair.
-\textcolor{black!40}{Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section. Mention RQ1 from Section~\ref{sec:RQs} here.}
+\textcolor{black!40}{Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section. Mention RQ1 from Section~\ref{sec:RQs} and put a figure depicting the system architecture with the 2 potential users (researchers, consumers / participants) here.}
+% Perhaps mention here that the system is designed to analyze the extent to which the LLMs reflect the paradigm of the prompt in their responses.
 \subsubsection{Language Models}
-
+\textcolor{black!30}{\lipsum[8-8]}
 \subsubsection{Test Cases}
 \textcolor{black!40}{Default synethetic test cases developed for sanity checks.}
-\textcolor{black!40}{Ensure that it is evident to the reader that these are test cases for DeepReflect as a software system and that experiments conducted with the system design on the dataset are outlines in the methodology section.}
-\textcolor{black!30}{\lipsum[9-10]}
+\textcolor{black!40}{Ensure that it is evident to the reader that these are test cases for DeepReflect as a software system and that these are distinct from the experiments conducted with the system design on the dataset are outlined in the methodology section.}
+\textcolor{black!30}{\lipsum[9-9]}
 
 \subsubsection{Analyses}
 % Default synthetic test cases developed for sanity checks.
 % discuss extensibility here and ease of use / regenerability / models.
-\textcolor{black!30}{\lipsum[8-9]}
+\textcolor{black!30}{\lipsum[10-10]}
 
 \subsubsection{Generations}
-% Default synthetic test cases developed for sanity checks.
+% Mitigations with synthetic datasets developed for finetuning, and chain-of-thought prompting that incorporate patterns identified from the analyses (whether manually or automatically).
 
 \textcolor{black!60}{Response generations produced on the basis of analyses with one of two methods: 1. Supervised fine-tuning.
 2. Chain-of-thought prompting.}
@@ -34,7 +35,7 @@
 %\textcolor{black!30}{Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.}
 \section{Data Collection}
 
-Two datasets were constructed for this project using the Pushshift Reddit Archives \cite{pushshift}, originally collected between 2006 and 2023 through the Pushshift API\footnote{\url{https://github.com/pushshift/api}}. Posts and comments were extracted from two subreddits: (1) \texttt{r/AITAH} and (2) \texttt{r/Anxiety}. For each post, three components were considered: the body the original post written by the author (OP), the most upvoted human-written comment, and the comment with which the OP engaged the most. Further details regarding data filtering and text preprocessing are provided in the \emph{Methods} section.  
+Two datasets were constructed for this project using the Pushshift Reddit Archives \cite{pushshift}, originally collected between 2006 and 2023 through the Pushshift API\footnote{\url{https://github.com/pushshift/api}}. Posts and comments were extracted from two subreddits: (1) \texttt{r/AITAH} and (2) \texttt{r/Anxiety}. For each post, three components were considered: the body the original post written by the author (OP), the most upvoted human-written comment, and the comment with which the OP engaged the most. Further details regarding data filtering and text preprocessing are provided in Section~\ref{sec:Methods}.  
 
 % Add some comments about why these subreddits were chosen.
 \subsection{Subreddit Selection}

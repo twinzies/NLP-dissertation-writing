@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ando and Zhang(2005)}]{Ando2005}
@@ -67,5 +67,10 @@ Alexander Soffron and David Huang. 2024.
 \newblock \href {https://www.statista.com/statistics/325144/reddit-global-active-user-distribution/} {Reddit global active user distribution}.
 \newblock Statista Statistics Portal.
 \newblock Accessed: 2025-08-24.
+
+\bibitem[{Zheng et~al.(2023)Zheng, Wang, Liu, Zhang, Li, and Zhang}]{zheng-et-al}
+Lianwen Zheng, Yizhou Wang, Xiaoyang Liu, Haoran Zhang, Mingjie Li, and Jie Zhang. 2023.
+\newblock \href {https://dl.acm.org/doi/10.5555/3666122.3668142} {Judging llm-as-a-judge with mt-bench and chatbot arena}.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)}. Association for Computational Linguistics.
 
 \end{thebibliography}

@@ -10,45 +10,45 @@ Database file #1: anthology.bib
 Database file #2: custom.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty year in Lee-etal-Empathic
-You've used 13 entries,
+You've used 14 entries,
             3571 wiz_defined-function locations,
-            781 strings with 8766 characters,
-and the built_in function-call counts, 9419 in all, are:
-= -- 803
-> -- 473
+            787 strings with 9073 characters,
+and the built_in function-call counts, 10270 in all, are:
+= -- 867
+> -- 532
 < -- 10
-+ -- 154
-- -- 135
-* -- 628
-:= -- 1446
-add.period$ -- 56
-call.type$ -- 13
-change.case$ -- 120
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 620
-empty$ -- 674
-format.name$ -- 178
-if$ -- 2075
++ -- 173
+- -- 153
+* -- 691
+:= -- 1576
+add.period$ -- 61
+call.type$ -- 14
+change.case$ -- 133
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 677
+empty$ -- 731
+format.name$ -- 199
+if$ -- 2258
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 125
-newline$ -- 71
-num.names$ -- 52
-pop$ -- 267
+missing$ -- 138
+newline$ -- 76
+num.names$ -- 56
+pop$ -- 298
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 107
 quote$ -- 0
-skip$ -- 466
+skip$ -- 498
 stack$ -- 0
-substring$ -- 261
-swap$ -- 316
+substring$ -- 272
+swap$ -- 344
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 117
+type$ -- 126
 warning$ -- 1
-while$ -- 51
+while$ -- 54
 width$ -- 0
-write$ -- 176
+write$ -- 189
 (There was 1 warning)
