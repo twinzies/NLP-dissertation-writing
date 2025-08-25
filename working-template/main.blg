@@ -9,46 +9,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: anthology.bib
 Database file #2: custom.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty year in Lee-etal-Empathic
 You've used 14 entries,
             3571 wiz_defined-function locations,
-            787 strings with 9073 characters,
-and the built_in function-call counts, 10270 in all, are:
-= -- 867
-> -- 532
+            790 strings with 9341 characters,
+and the built_in function-call counts, 10370 in all, are:
+= -- 876
+> -- 540
 < -- 10
-+ -- 173
-- -- 153
-* -- 691
-:= -- 1576
-add.period$ -- 61
++ -- 174
+- -- 156
+* -- 697
+:= -- 1598
+add.period$ -- 62
 call.type$ -- 14
 change.case$ -- 133
 chr.to.int$ -- 14
-cite$ -- 15
-duplicate$ -- 677
-empty$ -- 731
-format.name$ -- 199
-if$ -- 2258
+cite$ -- 14
+duplicate$ -- 680
+empty$ -- 741
+format.name$ -- 201
+if$ -- 2289
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 138
+missing$ -- 139
 newline$ -- 76
 num.names$ -- 56
-pop$ -- 298
+pop$ -- 292
 preamble$ -- 1
 purify$ -- 107
 quote$ -- 0
-skip$ -- 498
+skip$ -- 507
 stack$ -- 0
-substring$ -- 272
-swap$ -- 344
+substring$ -- 270
+swap$ -- 347
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 126
-warning$ -- 1
+warning$ -- 0
 while$ -- 54
 width$ -- 0
-write$ -- 189
-(There was 1 warning)
+write$ -- 190

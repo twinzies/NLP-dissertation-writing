@@ -31,10 +31,10 @@ Myra Cheng, Sunny Yu, Cinoo Lee, Pranav Khadpe, Lujain Ibrahim, and Dan Jurafsky
 \newblock \href {https://arxiv.org/abs/2505.13995} {Social sycophancy: A broader understanding of llm sycophancy}.
 \newblock \emph{arXiv preprint arXiv:2505.13995}.
 
-\bibitem[{Fang et~al.(2025)Fang, Zhang, Liu, Wang, Li, and Zhang}]{fang-etal-psychoeffects}
-Yifan Fang, Yifan Zhang, Yang Liu, Xiaojun Wang, Xiang Li, and Jie Zhang. 2025.
-\newblock The psychological effects of llms on users.
-\newblock \emph{arXiv preprint arXiv:2505.13995}, 1(1).
+\bibitem[{Fang et~al.(2025)Fang, Liu, Valdemar, Lee, Chan, Pataranutaporn, and Maes}]{fang-etal-psychoeffects}
+Cathy~Mengying Fang, Auren~R. Liu, Danry Valdemar, Eunhae Lee, Samantha W.~T. Chan, Pat Pataranutaporn, and Pattie Maes. 2025.
+\newblock \href {https://arxiv.org/pdf/2503.17473} {How ai and human behaviors shape psychosocial effects of chatbot use: A longitudinal randomized controlled study}.
+\newblock \emph{arXiv preprint arXiv:2503.17473}, 1(1).
 
 \bibitem[{Goodman et~al.(2016)Goodman, Vlachos, and Naradowsky}]{goodman-etal-2016-noise}
 James Goodman, Andreas Vlachos, and Jason Naradowsky. 2016.
@@ -46,9 +46,14 @@ Mary Harper. 2014.
 \newblock \href {https://aclanthology.org/C14-1001} {Learning from 26 languages: Program management and science in the babel program}.
 \newblock In \emph{Proceedings of {COLING} 2014, the 25th International Conference on Computational Linguistics: Technical Papers}, page~1, Dublin, Ireland. Dublin City University and Association for Computational Linguistics.
 
-\bibitem[{Lee et~al.()Lee, Fang, Zhang, Liu, Wang, Li, and Zhang}]{Lee-etal-Empathic}
-Cinoo Lee, Yifan Fang, Yifan Zhang, Yang Liu, Xiaojun Wang, Xiang Li, and Jie Zhang.
-\newblock Empathic responses in llms: A study of user perceptions.
+\bibitem[{Huang et~al.(2024)}]{values-in-wild}
+McCain Huang, Durmus et~al. 2024.
+\newblock \href {https://assets.anthropic.com/m/18d20cca3cde3503/original/Values-in-the-Wild-Paper.pdf} {Values in the wild: Discovering and analyzing values in real-world language model interactions}.
+\newblock \emph{arXiv preprint arXiv:2401.00095}.
+
+\bibitem[{Lee et~al.(2024)Lee, Fang, Zhang, Liu, Wang, Li, and Zhang}]{Lee-etal-Empathic}
+Cinoo Lee, Yifan Fang, Yifan Zhang, Yang Liu, Xiaojun Wang, Xiang Li, and Jie Zhang. 2024.
+\newblock \href {https://arxiv.org/pdf/2403.18148v1} {Empathic responses in llms: A study of user perceptions}.
 \newblock \emph{arXiv preprint arXiv:2505.13995}, 1(1).
 
 \bibitem[{Rasooli and Tetreault(2015)}]{rasooli-tetrault-2015}
@@ -56,11 +61,6 @@ Mohammad~Sadegh Rasooli and Joel~R. Tetreault. 2015.
 \newblock \href {http://arxiv.org/abs/1503.06733} {Yara parser: {A} fast and accurate dependency parser}.
 \newblock \emph{Computing Research Repository}, arXiv:1503.06733.
 \newblock Version 2.
-
-\bibitem[{Soffron and Huang(2024)}]{values-in-wild}
-Alexander Soffron and David Huang. 2024.
-\newblock \href {https://arxiv.org/abs/2401.00095} {Values in the wild: Discovering and analyzing values in real-world language model interactions}.
-\newblock \emph{arXiv preprint arXiv:2401.00095}.
 
 \bibitem[{{Statista}(2025)}]{statista-reddit}
 {Statista}. 2025.

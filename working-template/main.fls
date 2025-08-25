@@ -180,7 +180,6 @@ INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/t
 INPUT ./sections/1_intro.tex
 INPUT ./sections/1_intro.tex
 INPUT ./sections/1_intro.tex
-INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map
@@ -193,11 +192,12 @@ INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/he
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
+INPUT ./sections/2_priorlit.tex
+INPUT ./sections/2_priorlit.tex
+INPUT ./sections/2_priorlit.tex
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT ./sections/2_priorlit.tex
-INPUT ./sections/2_priorlit.tex
-INPUT ./sections/2_priorlit.tex
 INPUT ./sections/3_model_data.tex
 INPUT ./sections/3_model_data.tex
 INPUT ./sections/3_model_data.tex
