@@ -2,13 +2,13 @@
 % Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section.
 % Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.
 
-\section{DeepReflect}
+\section{DeepReflect}\label{sec:deepreflect}
 % ~1440 words ≈ ~11–12 paragraphs
 % DeepReflect is designed to cater to two broad categories of users:
 % 1. Users who frequently interact with LLMs for personal queries. 
 % 2. Researchers interested in the large scale analysis and shift in psychosocial paradigms.
 
-\subsection{System Design}\label{sec:deepreflect}
+\subsection{System Design}
 % Design is precise, methodical and shows some flair.
 \textcolor{black!40}{Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section. Mention RQ1 from Section~\ref{sec:RQs} and put a figure depicting the system architecture with the 2 potential users (researchers, consumers / participants) here.}
 % Perhaps mention here that the system is designed to analyze the extent to which the LLMs reflect the paradigm of the prompt in their responses.
@@ -22,10 +22,11 @@
 \subsubsection{Analyses}
 % Default synthetic test cases developed for sanity checks.
 % discuss extensibility here and ease of use / regenerability / models.
+\textcolor{black!30}{AITAH judgments are used as a proxy for Empathy (Empathy, Active Listening, Non-judgmental Acceptance, and Unconditional Positive Regard, Emotional Safety) under the Rogerian paradigm and Sycophancy.}
 \textcolor{black!30}{\lipsum[10-10]}
 
 \subsubsection{Generations}
-% Mitigations with synthetic datasets developed for finetuning, and chain-of-thought prompting that incorporate patterns identified from the analyses (whether manually or automatically).
+% Control methods with synthetic datasets developed for finetuning, and chain-of-thought prompting that incorporate patterns identified from the analyses (whether manually or automatically).
 
 \textcolor{black!60}{Response generations produced on the basis of analyses with one of two methods: 1. Supervised fine-tuning.
 2. Chain-of-thought prompting.}
@@ -33,7 +34,7 @@
 
 \subsection{Dataset}
 %\textcolor{black!30}{Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.}
-\section{Data Collection}
+% \section{Data Collection}
 
 Two datasets were constructed for this project using the Pushshift Reddit Archives \cite{pushshift}, originally collected between 2006 and 2023 through the Pushshift API\footnote{\url{https://github.com/pushshift/api}}. Posts and comments were extracted from two subreddits: (1) \texttt{r/AITAH} and (2) \texttt{r/Anxiety}. For each post, three components were considered: the body the original post written by the author (OP), the most upvoted human-written comment, and the comment with which the OP engaged the most. Further details regarding data filtering and text preprocessing are provided in Section~\ref{sec:Methods}.  
 

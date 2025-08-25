@@ -17,39 +17,60 @@ Text was cleaned with minimal, semantics-preserving preprocessing: we removed no
 % This section should discuss the creation of proxies for empathy and sycophancy.
 For each selected post, we first prompt the target language model to generate an open-ended response to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataset therefore consists of the original post body, paired with both human and AI responses.
 
-\bigskip 
+\medskip 
 \textbf{Feature Extraction}
 
-\medskip Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that map onto psychosocial constructs. Specifically, we operationalize values and behaviors through four distinct paradigms: Rokeach’s Value Survey (RVS), Rogers’s person-centered therapy (PCT), Goffman’s theory of face (ToF), and Anthropic’s Value Tree.
+\smallskip Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that map onto psychosocial constructs. Specifically, we operationalize values and behaviors through four distinct paradigms: Rokeach’s Value Survey (RVS), Rogers’s person-centered therapy (PCT), Goffman’s theory of face (ToF), and Anthropic’s Value Tree.
 Next, we apply the LLM-as-a-judge paradigm \cite{zheng-et-al} to annotate features for both the post body and each response. Each text is evaluated for \textbf{a.} \textbf{values exhibited} by the author and \textbf{b.} \textbf{values incentivized} by the author. 
 
-\medskip One of the central research questions (RQ2) investigates how the choice of psychosocial framework shapes the interpretation of an LLM’s response. Specifically, the same feature may be perceived as sycophantic under Goffman’s theory of face, empathic under Rogerian PCT, or as reflecting a terminal or instrumental value under Rokeach’s value framework.
+
+One of the central research questions (RQ2) investigates how the choice of psychosocial framework shapes the interpretation of an LLM’s response. Specifically, the same feature may be perceived as sycophantic under Goffman’s theory of face, empathic under Rogerian PCT, or as reflecting a terminal or instrumental value under Rokeach’s value framework.
 
 To support this inquiry, the system constructs a structured analytical dataset that records: the original post, the set of extracted features for each of the 4 different types of responses (most-upvoted, most engaging, LLM 1, LLM 2) and the values or behaviors either exhibited or incentivized by each feature within any of the four applicable psychosocial paradigm(s).
 
 This analytical dataset forms the basis for the subsequent analyses (see Section \ref{sec:Analysis}), where we analyze the differences in distributions of values in the responses obtained from reddit compared to the language model produced responses, within and across paradigms, to address RQ3.
 
 \subsection{Experiments}
-\textcolor{black!30}{\lipsum[14-16]}
+We conduct a series of experiments to investigate how psychosocial frameworks shape the interpretation of human and model-generated responses to personal queries. Our experimental design spans two dimensions: (i) response type (two forms of human responses and three language model responses) and (ii) domain (two distinct subreddits).
+
+The AITAH dataset provides a natural proxy for “ground truth” in two paradigms: Empathy and Sycophancy. Here, crowd-sourced verdicts and their accompanying justifications offer a binary-valued reference point against which LLM behavior is evaluated.
+
+\textbf{Experiment 1} evaluates the distributions of values and behaviors across the four response categories (human top-voted, human most-engaged, and two LLMs). We compare both the explicit values expressed by the respondent and the implicit values incentivized by the response under the four psychosocial paradigms - Rogerian PCT, Goffman’s ToF, Anthropic’s Value Tree and RVS.
+
+
+The focus is on how these models differ in their coverage of values and behaviors relative to human responses. From the analyses obtained, we ascertain the occurrence and co-occurrences of values and behaviours in LLM and human responses to personal queries.
+
+
+In \textbf{Experiment 2}, we evaluate how variations in prompt design influence the breadth of values expressed by the LLM. Specifically, we incorporate prompts that explicitly instruct the model to (i) generate a response most likely to be upvoted, and (ii) generate a response most likely to engage the author.
 
 
 \subsubsection{Generations}
-\textcolor{black!40}{TODO: This section is critical for the reader so they can piece together where the analyses fit in with the rest of the paper - how they can be used for generation of synthetic data. A short section describing how the distribution of values is used to (i) generate responses that can then be used for SFT (supervised fine-tuning) and (ii) for mitigation by chain-of-thought prompting and for which of the language models.}
-Our analysis of feature distributions serves two key purposes for generation:
+A set of targeted experiments are run with DeepReflect’s analyses to investigate the efficacy of control mechanisms to to align the values in language model outputs more closely with those observed in human responses. The generation experiments are implemented using the following methods:
 
 \begin{enumerate}
-    \item \textbf{With supervised fine-tuning (SFT)}: We use the extracted distributions to generate synthetic responses that mirror human communication patterns, creating training data for supervised fine-tuning of language models on supportive communication.
-    
-    \item \textbf{Chain-of-thought prompting}: The identified patterns inform chain-of-thought prompting techniques for GPT-4 and Claude, guiding these models to produce responses with appropriate levels of empathy, advice-giving, and self-disclosure for each community context.
+    \item \textbf{With supervised fine-tuning (SFT)} [model: GPT-x, Paradigms: Empathy, Sycophancy]
+Experiments with Fine-tuning the language model on two synthetic datasets, generated to reflect (i) sycophantic and (ii) empathic behaviors.
+Additional experiments with temperature scaling for the Roger's PCT paradigm.
+
+    \item \textbf{Chain-of-thought prompting} [models: Claude; one of Qwen-3 or LLaMA-3.1; paradigms: Rogers PCT and RVS]
+Prompt augmentation experiments, where values with low frequency in LLM responses are explicitly introduced and emphasized (e.g., Rogers PCT: Unconditional positive regard, Psychological freedom; RVS: A comfortable life).
 \end{enumerate}
 
-\subsection{Construct Validity}
+% \begin{enumerate}
+%     \item \textbf{With supervised fine-tuning (SFT)}: We use the extracted distributions to generate synthetic responses that mirror human communication patterns, creating training data for supervised fine-tuning of language models on supportive communication.
+    
+%     \item \textbf{Chain-of-thought prompting}: The identified patterns inform chain-of-thought prompting techniques for GPT-4 and Claude, guiding these models to produce responses with appropriate levels of empathy, advice-giving, and self-disclosure for each community context.
+% \end{enumerate}
+
+\subsection{Construct Validity and Evaluation Metrics}
 To assess construct validity, one human annotator labeled 100 randomly sampled post–response pairs across all four paradigms for each response type. The PCT framework encompasses 15 behaviors, Goffman’s ToF 5, the RVS 36, and Anthropic’s Value Tree 18.
 
 Inter-rater reliability reached Cohen’s $\kappa$ above xx for all metrics, with an overall classification accuracy of yy. For the AITAH dataset, verdicts and accompanying statements in responses were used as proxies for Empathy and Sycophancy, each mapped onto five behaviors as defined by their respective theoretical traditions\footnote{This strategy is conceptually aligned with prior work on social sycophancy \cite{cheng-etal-sycophancy}}.
+
+
 For the RVS and Anthropic Value Tree frameworks, which yield categorical distributions rather than binary judgments, pairwise error rates such as False Negative Rate (FNR) and False Positive Rate (FPR) are not directly applicable.
-
-
+To identify significant associations between features annotated under more than one distinct paradigm we construct contingency tables and use chi-square analysis with further details provided in section~\ref{sec:Analysis}. 
+% TODO: Add some math here for the chi-square analysis.
 
 
 % Users of older versions of \LaTeX{} may encounter the following error during compilation: 
