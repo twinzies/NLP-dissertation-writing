@@ -48,11 +48,11 @@ In \textbf{Experiment 2}, we evaluate how variations in prompt design influence 
 A set of targeted experiments are run with DeepReflect’s analyses to investigate the efficacy of control mechanisms to align the values in language model outputs more closely with those observed in human responses. The generation experiments are implemented using the following methods:
 
 \begin{enumerate}
-    \item \textbf{With supervised fine-tuning (SFT)} [model: GPT-x, Paradigms: Empathy, Sycophancy]
-Experiments with Fine-tuning the language model on two synthetic datasets, generated to reflect (i) sycophantic and (ii) empathic behaviors.
-Additional experiments with temperature scaling for the Roger's PCT paradigm.
+%     \item \textbf{With supervised fine-tuning (SFT)} [model: GPT-x, Paradigms: Empathy, Sycophancy]
+% Experiments with Fine-tuning the language model on two synthetic datasets, generated to reflect (i) sycophantic and (ii) empathic behaviors.
+% Additional experiments with temperature scaling for the Roger's PCT paradigm.
 
-    \item \textbf{Chain-of-thought prompting} [models: Claude; one of Qwen-3 or LLaMA-3.1; paradigms: Rogers PCT and RVS]
+    \item \textbf{Chain-of-thought reasoning} [models: Claude; one of Qwen-3 or LLaMA-3.1; paradigms: Rogers PCT and RVS]
 Prompt augmentation experiments, where values with low frequency in LLM responses are explicitly introduced and emphasized (e.g., Rogers PCT: Unconditional positive regard, Psychological freedom; RVS: A comfortable life).
 \end{enumerate}
 
