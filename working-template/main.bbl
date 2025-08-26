@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{21}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ando and Zhang(2005)}]{Ando2005}
@@ -10,6 +10,12 @@ Rie~Kubota Ando and Tong Zhang. 2005.
 Galen Andrew and Jianfeng Gao. 2007.
 \newblock \href {https://dl.acm.org/doi/abs/10.1145/1273496.1273501} {Scalable training of {$L_1$}-regularized log-linear models}.
 \newblock In \emph{Proceedings of the 24th International Conference on Machine Learning}, pages 33--40.
+
+\bibitem[{{Anthropic}(2025)}]{anthropic2025}
+{Anthropic}. 2025.
+\newblock How people use {Claude} for support, advice, and companionship.
+\newblock \url{https://www.anthropic.com/news/how-people-use-claude-for-support-advice-and-companionship}.
+\newblock Accessed: 2025-08-25.
 
 \bibitem[{Augenstein et~al.(2016)Augenstein, Rockt{\"a}schel, Vlachos, and Bontcheva}]{augenstein-etal-2016-stance}
 Isabelle Augenstein, Tim Rockt{\"a}schel, Andreas Vlachos, and Kalina Bontcheva. 2016.
@@ -51,10 +57,22 @@ McCain Huang, Durmus et~al. 2024.
 \newblock \href {https://assets.anthropic.com/m/18d20cca3cde3503/original/Values-in-the-Wild-Paper.pdf} {Values in the wild: Discovering and analyzing values in real-world language model interactions}.
 \newblock \emph{arXiv preprint arXiv:2401.00095}.
 
+\bibitem[{Jin et~al.(2022)Jin, Levine, Gonzalez, Kamal, Sap, Sachan, Mihalcea, Tenenbaum, and Schölkopf}]{cot-morals}
+Zhijing Jin, Sydney Levine, Fernando~Adauto Gonzalez, Ojasv Kamal, Maarten Sap, Mrinmaya Sachan, Rada Mihalcea, Joshua~B. Tenenbaum, and Bernhard Schölkopf. 2022.
+\newblock When to make exceptions: Exploring language models as accounts of human moral judgment.
+\newblock In \emph{Advances in Neural Information Processing Systems 35 (NeurIPS 2022)}.
+\newblock NeurIPS 2022 conference paper; OpenReview version available at OpenReview.
+
 \bibitem[{Lee et~al.(2024)Lee, Fang, Zhang, Liu, Wang, Li, and Zhang}]{Lee-etal-Empathic}
 Cinoo Lee, Yifan Fang, Yifan Zhang, Yang Liu, Xiaojun Wang, Xiang Li, and Jie Zhang. 2024.
 \newblock \href {https://arxiv.org/pdf/2403.18148v1} {Empathic responses in llms: A study of user perceptions}.
 \newblock \emph{arXiv preprint arXiv:2505.13995}, 1(1).
+
+\bibitem[{Phang et~al.(2025)Phang, Lampe, Ahmad, Agarwal, Fang, Liu, Danry, Lee, Chan, Pataranutaporn, and Maes}]{phang-affective}
+Jason Phang, Michael Lampe, Lama Ahmad, Sandhini Agarwal, Cathy~Mengying Fang, Auren~R. Liu, Valdemar Danry, Eunhae Lee, Samantha~W.T. Chan, Pat Pataranutaporn, and Pattie Maes. 2025.
+\newblock \href {https://cdn.openai.com/papers/15987609-5f71-433c-9972-e91131f399a1/openai-affective-use-study.pdf} {Investigating affective use and emotional well-being on {ChatGPT}}.
+\newblock Technical report / preprint, OpenAI \& MIT Media Lab.
+\newblock Accessed: 2025-08-25.
 
 \bibitem[{Rasooli and Tetreault(2015)}]{rasooli-tetrault-2015}
 Mohammad~Sadegh Rasooli and Joel~R. Tetreault. 2015.
@@ -62,11 +80,33 @@ Mohammad~Sadegh Rasooli and Joel~R. Tetreault. 2015.
 \newblock \emph{Computing Research Repository}, arXiv:1503.06733.
 \newblock Version 2.
 
+\bibitem[{Sorin et~al.(2024)Sorin, Brin, Barash, Konen, Charney, Nadkarni, and Klang}]{sorin-etal-empathy}
+V.~Sorin, D.~Brin, Y.~Barash, E.~Konen, A.~Charney, G.~Nadkarni, and E.~Klang. 2024.
+\newblock \href {https://doi.org/10.2196/52597} {Large language models and empathy: Systematic review}.
+\newblock \emph{J Med Internet Res}, 26:e52597.
+
 \bibitem[{{Statista}(2025)}]{statista-reddit}
 {Statista}. 2025.
 \newblock \href {https://www.statista.com/statistics/325144/reddit-global-active-user-distribution/} {Reddit global active user distribution}.
 \newblock Statista Statistics Portal.
 \newblock Accessed: 2025-08-24.
+
+\bibitem[{Vijjini et~al.(2024)Vijjini, Menon, Fu, Srivastava, and Chaturvedi}]{socialgaze}
+Anvesh~Rao Vijjini, Rakesh~R. Menon, Jiayi Fu, Shashank Srivastava, and Snigdha Chaturvedi. 2024.
+\newblock Socialgaze: Improving the integration of human social norms in large language models.
+\newblock arXiv preprint arXiv:2410.08698.
+\newblock Submitted October 11, 2024.
+
+\bibitem[{Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le, and Zhou}]{cot}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed~Chi, Quoc Le, and Denny Zhou. 2022.
+\newblock \href {https://doi.org/10.48550/arXiv.2201.11903} {Chain-of-thought prompting elicits reasoning in large language models}.
+\newblock arXiv preprint arXiv:2201.11903.
+
+\bibitem[{Zhang et~al.(2025)Zhang, Zhao, Hancock, Kraut, and Yang}]{zhang-ai_companions}
+Yutong Zhang, Dora Zhao, Jeffrey~T. Hancock, Robert Kraut, and Diyi Yang. 2025.
+\newblock \href {https://doi.org/10.48550/arXiv.2506.12605} {The rise of ai companions: How human-chatbot relationships influence well-being}.
+\newblock \emph{arXiv preprint arXiv:2506.12605}.
+\newblock Version 2, submitted on June 14 and revised June 17, 2025.
 
 \bibitem[{Zheng et~al.(2023)Zheng, Wang, Liu, Zhang, Li, and Zhang}]{zheng-et-al}
 Lianwen Zheng, Yizhou Wang, Xiaoyang Liu, Haoran Zhang, Mingjie Li, and Jie Zhang. 2023.
