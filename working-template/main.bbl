@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ando and Zhang(2005)}]{Ando2005}
@@ -79,6 +79,12 @@ Mohammad~Sadegh Rasooli and Joel~R. Tetreault. 2015.
 \newblock \href {http://arxiv.org/abs/1503.06733} {Yara parser: {A} fast and accurate dependency parser}.
 \newblock \emph{Computing Research Repository}, arXiv:1503.06733.
 \newblock Version 2.
+
+\bibitem[{Rogers(1989)}]{rogersgloria}
+Carl Rogers. 1989.
+\newblock Session with gloria.
+\newblock In Howard Kirschenbaum and Valerie~Land Henderson, editors, \emph{The Carl Rogers Reader}, pages 198--215. Houghton Mifflin.
+\newblock Transcript of Carl Rogers's counseling session with Gloria, originally filmed in 1965.
 
 \bibitem[{Sorin et~al.(2024)Sorin, Brin, Barash, Konen, Charney, Nadkarni, and Klang}]{sorin-etal-empathy}
 V.~Sorin, D.~Brin, Y.~Barash, E.~Konen, A.~Charney, G.~Nadkarni, and E.~Klang. 2024.

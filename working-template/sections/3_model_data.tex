@@ -1,5 +1,6 @@
 % TODO: P2
 % Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section.
+
 % Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.
 
 \section{DeepReflect}\label{sec:deepreflect}
@@ -10,27 +11,89 @@
 
 \subsection{System Design}
 % Design is precise, methodical and shows some flair.
-\textcolor{black!40}{Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section. Mention RQ1 from Section~\ref{sec:RQs} and put a figure depicting the system architecture with the 2 potential users (researchers, consumers / participants) here.}
-% Perhaps mention here that the system is designed to analyze the extent to which the LLMs reflect the paradigm of the prompt in their responses.
-\subsubsection{Language Models}
-\textcolor{black!30}{\lipsum[8-8]}
-\subsubsection{Test Cases}
-\textcolor{black!40}{Default synethetic test cases developed for sanity checks.}
-\textcolor{black!40}{Ensure that it is evident to the reader that these are test cases for DeepReflect as a software system and that these are distinct from the experiments conducted with the system design on the dataset are outlined in the methodology section.}
-\textcolor{black!30}{\lipsum[9-9]}
 
-\subsubsection{Analyses}
-% Default synthetic test cases developed for sanity checks.
-% discuss extensibility here and ease of use / regenerability / models.
-\textcolor{black!30}{AITAH judgments are used as a proxy for Empathy (Empathy, Active Listening, Non-judgmental Acceptance, and Unconditional Positive Regard, Emotional Safety) under the Rogerian paradigm and Sycophancy.}
-\textcolor{black!30}{\lipsum[10-10]}
+
+\textcolor{black!40}{Introduce. Mention that it has two key components - the analysis and the generation. Your model: Flesh out your own approach, perhaps amplifying themes from the 'Prior lit' section. Mention RQ1 from Section~\ref{sec:RQs} and put a figure depicting the system architecture with the 2 potential users (researchers, consumers / participants) here.}
+
+% \textcolor{black!30}{AITAH judgments are used as a proxy for Empathy (Empathy, Active Listening, Non-judgmental Acceptance, and Unconditional Positive Regard, Emotional Safety) under the Rogerian paradigm and Sycophancy.}
+
+\subsection{Evaluation Framework}
+
+The evaluation framework consists of the following steps in a pipeline architecture (see Figure~\ref{fig:pipeline}):
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.98\columnwidth]{Diagrams/pipeline.jpg}
+    \caption{Pipeline architecture for DeepReflect.}
+    \label{fig:pipeline}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Extract Posts}: Posts are extracted from two subreddits: (1) \texttt{r/AITAH} and (2) \texttt{r/Anxiety}. For each post, three components are considered: the body the original post written by the author (OP), the most upvoted human-written comment, and the comment with which the OP engaged the most. Further details regarding data filtering and text preprocessing are provided in Section~\ref{sec:Methods}.
+    \item \textbf{Language Model Response Generation}: For each post and body, a baseline response is generated using a large language model (LLM) and appended to a table containing: (i) the model-generated responses, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataset therefore consists of the original post body, paired with both human and AI responses.
+    \item \textbf{Read psychosocial frameworks and corresponding set of values}: The following psychosocial frameworks are considered: (1) RVS, (2) Rogerian PCT, (3) Goffman’s ToF, and (4) Anthropic’s Value Tree. The frameworks are associated with distinct sets of values and behaviors as described in Section~\ref{sec:Litreview}. The frameworks are read into the system for annotations in the next step.
+    \item \textbf{Feature Extraction and Annotation}: The LLM-as-a-judge paradigm \cite{zheng-et-al} is employed to annotate features for both the post body and each response under the 4 selected psychosocial paradigms. In this step, human validation is performed to calculate Cohen's Kappa and accuracy metrics to gauge the quality of the annotations.
+    % Cohen's Kappa
+    \[
+    \kappa = \frac{p_o - p_e}{1 - p_e},
+    \]
+    \[
+    \begin{aligned}
+    p_o &= \text{observed agreement (accuracy)} \\
+    p_e &= \text{expected agreement by chance}
+    \end{aligned}
+    \]
+    See section~\ref{sec:Methods} for further details.
+    \item \textbf{Save outputs to dataset}: The annotated data is saved to a CSV file.
+    \item \textbf{Statistical Analysis}: The annotated dataset forms the basis for subsequent analyses (see Section~\ref{sec:Analysis}), where we analyze the differences in distributions of values in the responses obtained from Reddit compared to the language model produced responses, within and across paradigms, to address RQs 2 and 3.
+\end{enumerate}
+
+The standard softmax distribution over a vocabulary of size $V$ for transformer based LLMs is: 
+\begin{equation}
+p_i = \frac{e^{z_i}}{\sum_{j=1}^{V} e^{z_j}}.
+\label{eq:softmax}
+\end{equation}
+
+Introducing a temperature parameter $T > 0$ rescales the logits before normalization:  
+\begin{equation}
+p_i^{(T)} = \frac{e^{z_i / T}}{\sum_{j=1}^{V} e^{z_j / T}}.
+\label{eq:temp-softmax}
+\end{equation}
+
+Lower $T$ ($T<1$) sharpens the distribution, making the model more deterministic, while higher $T$ ($T>1$) flattens it, encouraging diversity. For evaluation purposes, $T$ is tested first with 0 which corresponds to greedy decoding, ensuring fully reproducible results and then with 0.7 to see how responses vary in realistic, stochastic conditions.
 
 \subsubsection{Generations}
-% Control methods with synthetic datasets developed for finetuning, and chain-of-thought prompting that incorporate patterns identified from the analyses (whether manually or automatically).
+In this stage of the framework, responses to the post are produced through a chain-of-thought (CoT) reasoning mechanism. Instead of relying on standard language model outputs, the framework generates responses which are explicitly guided by reasoning chains derived from expert human dialog transcripts.
+For this project, we focus on the Rogerian Person-Centered Therapy (PCT) paradigm~\ref{sec:Litreview}, using Carl Rogers’ in-session work with Gloria \cite{rogersgloria} as a guiding structure. 
 
-\textcolor{black!60}{Response generations produced on the basis of analyses with one of two methods: 1. Supervised fine-tuning.
-2. Chain-of-thought prompting.}
-\textcolor{black!30}{\lipsum[9-10]}
+\subsection*{Chain-of-Thought Reasoning}
+
+We formalize the generation process as follows:
+
+\[
+p_\theta(y \mid x) = \sum_{z} p_\theta(y \mid x, z) \, p_\theta(z \mid x)
+\]
+
+where $x$ is the Reddit query (e.g., a post body), $z$ is the expert-informed reasoning chain derived from expert human dialogs, $y$ is the generated response and $\theta$ denotes the parameters of the language model. Here, $p_\theta(z \mid x)$ denotes the probability distribution over reasoning chains given the query, while $p_\theta(y \mid x, z)$ denotes the probability of generating a response conditioned on both the query and reasoning trajectory. The marginalization over $z$ separates reasoning from surface realization, allowing responses to be shaped by expert-informed CoT patterns rather than unconstrained next-token prediction.
+
+
+The CoT thus captures patterns inherent in the dialog, which are then integrated into the response space. See Figure~\ref{fig:rogers_diagram}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.98\columnwidth]{Diagrams/Rogers.png}
+    \caption{CoT Generation with personal queries embedded in reasoning dialogs retrieved from expert human transcripts.}
+    \label{fig:rogers_diagram}
+\end{figure}
+
+Generated outputs can be subsequently passed through the Evaluation Pipeline, where we test whether PCT-informed CoT reasoning shifts verdict distributions (e.g., NTA vs. YTA) and whether responses exhibit statistically significant shifts in values or principles under the selected paradigm.
+
+As in the previous section, for evaluation purposes, $T$ is set to both 0 and 0.7 for the CoT generations as well (see Equation~\ref{eq:temp-softmax}).
+
+% GPT 4o vocab size is 199k tokens.
+
+
+% \textcolor{black!60}{Response generations produced on the basis of analyses with Supervised fine-tuning.
 
 \subsection{Dataset}
 %\textcolor{black!30}{Data: Likely to be very detailed if the datasets are new or unfamiliar to the community, or if familiar datasets are being used in new ways.}
