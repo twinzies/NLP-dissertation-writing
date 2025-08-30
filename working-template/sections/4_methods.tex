@@ -1,32 +1,30 @@
-% TODO: P3
 % Methods
 % Methods: The experimental approach, including descriptions of metrics, baseline models, etc. Details about hyperparameters, optimization choices, etc., are probably best given in appendices, unless they are central to the arguments.
-
+% Mention The epistemic limits of interpreting LLM (or human) behavior through psychosocial theories here or in the discussion section.
 \section{Methods} \label{sec:Methods}
 % ~1200 words ≈ ~9–10 paragraphs
 
 \subsection{Data collection and preprocessing}
 % This section can describe text processing steps - how the human responses were selected and which posts were selected from the RedArcs dataset etc.
-We built a corpus from two public subreddits—AITAH, and Anxiety. For each subreddit, we filtered the top ~1,000 most upvoted or most commented posts, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. For every retained post we extracted (i) the most upvoted human-written comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
+A dataset was built from the RedditArchives for two public subreddits—AITAH, and Anxiety. For each subreddit, the top 1,000 most upvoted posts were selected, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. For every retained post we extracted (i) the most upvoted comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
 
 Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability. We treat each Reddit thread (the post and its comments) as a single analytic unit during sampling, manual checks, and statistic aggregation, so correlated texts don’t inflate results. This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons.
 
-\smallskip Prompts (provided in the appendices) and model outputs are saved and logged by the codebase for reproducibility.
+\smallskip Prompts for each step in the pipeline are provided in the appendices \ref{sec:prompts}
 
 \subsection{Procedures}
 % This section should discuss the creation of proxies for empathy and sycophancy.
-For each selected post, we first prompt the target language model to generate an open-ended response to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataset therefore consists of the original post body, paired with both human and AI responses.
+For each selected post, we first prompt the target language model to generate an open-ended response to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
 
 \medskip 
 \textbf{Feature Extraction}
 
-\smallskip Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that map onto psychosocial constructs. Specifically, we operationalize values and behaviors through four distinct paradigms: Rokeach’s Value Survey (RVS), Rogers’s person-centered therapy (PCT), Goffman’s theory of face (ToF), and Anthropic’s Value Tree.
-Next, we apply the LLM-as-a-judge paradigm \cite{zheng-et-al} to annotate features for both the post body and each response. Each text is evaluated for \textbf{a.} \textbf{values exhibited} by the author and \textbf{b.} \textbf{values incentivized} by the author. 
+\smallskip Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that are annotated in accordance with steps 3 and 4 of the Evaluation Framework \ref{pipeline_steps}. Note that each feature is evaluated for \textbf{a.} \textbf{values exhibited} by the author and \textbf{b.} \textbf{values incentivized} by the author of the response. 
 
 
 One of the central research questions (RQ2) investigates how the choice of psychosocial framework shapes the interpretation of an LLM’s response. Specifically, the same feature may be perceived as sycophantic under Goffman’s theory of face, empathic under Rogerian PCT, or as reflecting a terminal or instrumental value under Rokeach’s value framework.
 
-To support this inquiry, the system constructs a structured analytical dataset that records: the original post, the set of extracted features for each of the 4 different types of responses (most-upvoted, most engaging, LLM 1, LLM 2) and the values or behaviors either exhibited or incentivized by each feature within any of the four applicable psychosocial paradigm(s).
+To support this inquiry, the system constructs a dataframe that records: the original post, the set of extracted features for each of the 4 different types of responses (most-upvoted, most engaging, LLM 1, LLM 2) and the values or behaviors either exhibited or incentivized by each feature within any of the four applicable psychosocial paradigm(s).
 
 This analytical dataset forms the basis for the subsequent analyses (see Section \ref{sec:Analysis}), where we analyze the differences in distributions of values in the responses obtained from reddit compared to the language model produced responses, within and across paradigms, to address RQ3.
 

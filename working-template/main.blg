@@ -9,44 +9,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: anthology.bib
 Database file #2: custom.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 22 entries,
+You've used 23 entries,
             3571 wiz_defined-function locations,
-            843 strings with 11784 characters,
-and the built_in function-call counts, 17097 in all, are:
-= -- 1405
-> -- 1018
+            848 strings with 12045 characters,
+and the built_in function-call counts, 17893 in all, are:
+= -- 1462
+> -- 1078
 < -- 13
-+ -- 330
-- -- 302
-* -- 1182
-:= -- 2644
-add.period$ -- 101
-call.type$ -- 22
-change.case$ -- 232
-chr.to.int$ -- 22
-cite$ -- 22
-duplicate$ -- 1108
-empty$ -- 1144
-format.name$ -- 368
-if$ -- 3708
++ -- 351
+- -- 320
+* -- 1243
+:= -- 2770
+add.period$ -- 105
+call.type$ -- 23
+change.case$ -- 243
+chr.to.int$ -- 23
+cite$ -- 23
+duplicate$ -- 1158
+empty$ -- 1192
+format.name$ -- 389
+if$ -- 3875
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 235
-newline$ -- 122
-num.names$ -- 90
-pop$ -- 494
+missing$ -- 246
+newline$ -- 127
+num.names$ -- 94
+pop$ -- 519
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 197
 quote$ -- 0
-skip$ -- 770
+skip$ -- 803
 stack$ -- 0
-substring$ -- 422
-swap$ -- 565
+substring$ -- 435
+swap$ -- 589
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 207
 warning$ -- 0
-while$ -- 83
+while$ -- 86
 width$ -- 0
-write$ -- 302
+write$ -- 314
