@@ -8,38 +8,50 @@
 % This section can describe text processing steps - how the human responses were selected and which posts were selected from the RedArcs dataset etc.
 A dataset was built from the RedditArchives for two public subreddits—AITAH, and Anxiety. For each subreddit, the top 1,000 most upvoted posts were selected, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. For every retained post we extracted (i) the most upvoted comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
 
-Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability. We treat each Reddit thread (the post and its comments) as a single analytic unit during sampling, manual checks, and statistic aggregation, so correlated texts don’t inflate results. This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons.
+Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links to personal sites), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability. 
 
-\smallskip Prompts for each step in the pipeline are provided in the appendices \ref{sec:prompts}
+We treat each Reddit thread (the post and its comments) as a single analytic unit during sampling, manual checks, and statistic aggregation. This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation. We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons.
+
+\smallskip Prompts for each step in the evaluation and generation subsystems are provided in the appendices \ref{sec:app_prompts}.
 
 \subsection{Procedures}
 % This section should discuss the creation of proxies for empathy and sycophancy.
-For each selected post, we first prompt the target language model to generate an open-ended response to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
+For each selected post, we prompt the target language model firstly, with the base prompt \ref{sec:app_prompts} to establish a \textbf{baseline open-ended response} to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
 
 \medskip 
 \textbf{Feature Extraction}
 
-\smallskip Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that are annotated in accordance with steps 3 and 4 of the Evaluation Framework \ref{pipeline_steps}. Note that each feature is evaluated for \textbf{a.} \textbf{values exhibited} by the author and \textbf{b.} \textbf{values incentivized} by the author of the response. 
+\smallskip 
+\begin{itemize}
+    \item Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that are annotated in accordance with steps 3 and 4 of the Evaluation Framework \ref{pipeline_steps}.
+    \item Note that each feature is annotated with:
+    \begin{itemize}
+        \item \textbf{a.} \textbf{Values exhibited} by the author.
+        \item \textbf{b.} \textbf{Values incentivized} by the author of the response.
+    \end{itemize}
+\end{itemize}
 
+While RQ2 concerns drawing inter- and intra-paradigm comparative insights across the four psychosocial frameworks, sub-research question RQ2a addresses the epistemic limits of interpreting LLM behavior through psychosocial theories. Specifically, the same feature may be perceived as 'sycophantic' under Goffman’s ToF, 'empathic' under Rogerian PCT.
 
-One of the central research questions (RQ2) investigates how the choice of psychosocial framework shapes the interpretation of an LLM’s response. Specifically, the same feature may be perceived as sycophantic under Goffman’s theory of face, empathic under Rogerian PCT, or as reflecting a terminal or instrumental value under Rokeach’s value framework.
+To support these inquiries, the file saved by the evaluation pipeline in step 5 consists of a dataframe that records: the original post, the set of extracted features for each of the 2 different types of responses (human response, language models) and the values either exhibited or incentivized by each feature within any of the four applicable psychosocial paradigm(s).
 
-To support this inquiry, the system constructs a dataframe that records: the original post, the set of extracted features for each of the 4 different types of responses (most-upvoted, most engaging, LLM 1, LLM 2) and the values or behaviors either exhibited or incentivized by each feature within any of the four applicable psychosocial paradigm(s).
-
-This analytical dataset forms the basis for the subsequent analyses (see Section \ref{sec:Analysis}), where we analyze the differences in distributions of values in the responses obtained from reddit compared to the language model produced responses, within and across paradigms, to address RQ3.
+This analytical dataset forms the basis for the subsequent analyses necessary to address RQ3, where we analyze the differences in distributions of values in the responses obtained from reddit authored by humans compared to the language model produced responses to personal queries.
 
 \subsection{Experiments}
-We conduct a series of experiments to investigate how psychosocial frameworks shape the interpretation of human and model-generated responses to personal queries. Our experimental design spans two dimensions: (i) response type (two forms of human responses and three language model responses) and (ii) domain (two distinct subreddits).
+The experimental design spans two major dimensions: (i) response type (two forms of human responses and three language model responses) and (ii) domains (two distinct subreddits of interest in personal queries - social with r/aitah and psychosocial r/anxiety).
 
-The AITAH dataset provides a natural proxy for “ground truth” in two paradigms: Empathy and Sycophancy. Here, crowd-sourced verdicts and their accompanying justifications offer a binary-valued reference point against which LLM behavior is evaluated.
+\textbf{Experiment 1} is designed to compare the distributions of values across two different response categories i. human authored, and ii. LLM authored responses. 
 
-\textbf{Experiment 1} evaluates the distributions of values and behaviors across the four response categories (human top-voted, human most-engaged, and two LLMs). We compare both the explicit values expressed by the respondent and the implicit values incentivized by the response under the four psychosocial paradigms - Rogerian PCT, Goffman’s ToF, Anthropic’s Value Tree and RVS.
+An analysis of the comparison is done based on both the explicit values expressed by the respondent and the implicit values incentivized by the language of the response under each of the four psychosocial paradigms.
 
+Statistical Testing: The annotated dataset is then used to construct contingency tables and perform chi-square tests to assess independence between intra- and inter-paradigm values.
 
-The focus is on how these models differ in their coverage of values and behaviors relative to human responses. From the analyses obtained, we ascertain the occurrence and co-occurrences of values and behaviours in LLM and human responses to personal queries.
+The metrics thus obtained are used to inform the analysis on how the relationships between inter-paradigm values differ between human- and LLM-authored responses.
 
+In \textbf{Experiment 2}, the focus of the evaluation is to understand how variations in prompt design influence the breadth of values expressed by the LLM. Specifically,
+how the same statement is annotated differently under the selected suite of psychosocial paradigms.
 
-In \textbf{Experiment 2}, we evaluate how variations in prompt design influence the breadth of values expressed by the LLM. Specifically, we incorporate prompts that explicitly instruct the model to (i) generate a response most likely to be upvoted, and (ii) generate a response most likely to engage the author.
+we incorporate prompts that explicitly instruct the model to (i) generate a response most likely to be upvoted, and (ii) generate a response most likely to engage the author.
 
 
 \subsubsection{Generations}
