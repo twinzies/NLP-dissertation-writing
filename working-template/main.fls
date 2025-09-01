@@ -275,11 +275,11 @@ INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/psnfss/
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
-INPUT ./sections/5_results.tex
-INPUT ./sections/5_results.tex
-INPUT ./sections/5_results.tex
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT ./sections/5_results.tex
+INPUT ./sections/5_results.tex
+INPUT ./sections/5_results.tex
 INPUT ./sections/6_analysis.tex
 INPUT ./sections/6_analysis.tex
 INPUT ./sections/6_analysis.tex

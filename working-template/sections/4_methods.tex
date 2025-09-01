@@ -4,58 +4,70 @@
 \section{Methods} \label{sec:Methods}
 % ~1200 words ≈ ~9–10 paragraphs
 
-\subsection{Data collection and preprocessing}
+\subsection{Data preprocessing}
 % This section can describe text processing steps - how the human responses were selected and which posts were selected from the RedArcs dataset etc.
-A dataset was built from the RedditArchives for two public subreddits—AITAH, and Anxiety. For each subreddit, the top 1,000 most upvoted posts were selected, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. For every retained post we extracted (i) the most upvoted comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
+A dataset was built from the RedditArchives for two public subreddits—AITAH, and Anxiety. For each subreddit, the top 1,000 most upvoted posts were selected, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons.
 
-Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links to personal sites), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability. 
+For every retained post we extracted (i) the most upvoted comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
 
-We treat each Reddit thread (the post and its comments) as a single analytic unit during sampling, manual checks, and statistic aggregation. This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation. We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons.
+Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links to personal sites), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability.
 
-\smallskip Prompts for each step in the evaluation and generation subsystems are provided in the appendices \ref{sec:app_prompts}.
+We treat each set of post and human-authored responses in a Reddit thread as a single analytical unit during stratified sampling.
+and each feature within the set (the post body and its responses) as a single analytical unit during manual checks, and statistical aggregation.
+% This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.
 
 \subsection{Procedures}
 % This section should discuss the creation of proxies for empathy and sycophancy.
-For each selected post, we prompt the target language model firstly, with the base prompt \ref{sec:app_prompts} to establish a \textbf{baseline open-ended response} to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
+For each selected post, we prompt the target language model firstly, with the base prompt\footnote{\smallskip Prompts for this step are provided in the appendices \ref{sec:app_prompts}.} to establish a \textbf{baseline open-ended response} to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
 
 \medskip 
 \textbf{Feature Extraction}
 
 \smallskip 
 \begin{itemize}
-    \item Features are extracted at the sentence level, consisting of sentences from both the responses and post bodies that are annotated in accordance with steps 3 and 4 of the Evaluation Framework \ref{pipeline_steps}.
-    \item Note that each feature is annotated with:
+    \item In steps 3 and 4 of the Evaluation Framework (Figure~\ref{pipeline_steps}), features are annotated at the sentence level within each body–response pair. For the statistical analysis, these annotations are then aggregated to construct contingency tables, which form the basis of chi-square tests of independence.
+    \item Note that each feature can be annotated with:
     \begin{itemize}
-        \item \textbf{a.} \textbf{Values exhibited} by the author.
-        \item \textbf{b.} \textbf{Values incentivized} by the author of the response.
+        \item \textbf{Values exhibited} by the author.
+        \item \textbf{Values incentivized} by the author of the response. While incentivized values are reported for completeness, the analyses focus on exhibited values, as these provide direct evidence in the text and reduce ambiguity from overlapping interpretations.
     \end{itemize}
 \end{itemize}
 
-While RQ2 concerns drawing inter- and intra-paradigm comparative insights across the four psychosocial frameworks, sub-research question RQ2a addresses the epistemic limits of interpreting LLM behavior through psychosocial theories. Specifically, the same feature may be perceived as 'sycophantic' under Goffman’s ToF, 'empathic' under Rogerian PCT.
+RQ2 focuses on drawing inter- and intra-paradigm comparative insights across the four psychosocial frameworks while sub-research question RQ2a addresses the epistemic limits of interpreting LLM behavior through psychosocial theories in isolation. Specifically, the same feature may be perceived as 'sycophantic' under Goffman’s ToF, 'empathic' under Rogerian PCT.
 
-To support these inquiries, the file saved by the evaluation pipeline in step 5 consists of a dataframe that records: the original post, the set of extracted features for each of the 2 different types of responses (human response, language models) and the values either exhibited or incentivized by each feature within any of the four applicable psychosocial paradigm(s).
+To support these inquiries, the file saved by the evaluation pipeline in step 5 consists of: the annotated features of the original post, annotated features within the set of the 2 different types of responses (human response, language models) for values exhibited or incentivized under the relevant four psychosocial paradigm(s).
 
-This analytical dataset forms the basis for the subsequent analyses necessary to address RQ3, where we analyze the differences in distributions of values in the responses obtained from reddit authored by humans compared to the language model produced responses to personal queries.
+This annotated dataset forms the basis for the subsequent analyses necessary to also address RQ3, which studies the differences in the distributions of values between human-authored and language model–generated responses to personal queries.
 
 \subsection{Experiments}
-The experimental design spans two major dimensions: (i) response type (two forms of human responses and three language model responses) and (ii) domains (two distinct subreddits of interest in personal queries - social with r/aitah and psychosocial r/anxiety).
+% TODO: review wording below for clarity and grammar.
+The experimental design spans two major dimensions: (i) qualitative analysis of the sentence-level features (ii) quantification of the verdicts in the features by source type (two forms of human responses and three language model responses). While i. is conducted for each of the two datasets (r/aita and r/anxiety), under the four psychosocial paradigms, ii. is valid only for the r/aita dataset, where the responses may contain explicit judgments or not - forming 3 distinct classes (NTA, YTA, No judgment).
 
-\textbf{Experiment 1} is designed to compare the distributions of values across two different response categories i. human authored, and ii. LLM authored responses. 
+\subsubsection{Experiment 1}
+In \textbf{Experiment 1}, the primary objective is to compare the selected paradigms and analyze the distributions of values across them, with the aim of ultimately determining how paradigm choice can lead to divergent interpretations of the same LLM response.
 
-An analysis of the comparison is done based on both the explicit values expressed by the respondent and the implicit values incentivized by the language of the response under each of the four psychosocial paradigms.
+While values incentivized are also provided in the results, the analyses are focused on \textbf{values exhibited} under each paradigm by the two sources of response.
 
-Statistical Testing: The annotated dataset is then used to construct contingency tables and perform chi-square tests to assess independence between intra- and inter-paradigm values.
+\smallskip \textbf{Statistical Methods}
 
-The metrics thus obtained are used to inform the analysis on how the relationships between inter-paradigm values differ between human- and LLM-authored responses.
+The annotated dataset is used to construct contingency tables that shows how two categorical variables co-occur (with the values of a selected paradigm 1 represented across the columns and the values of the second paradigm represented across the rows). Chi-square tests are performed to assess independence between intra- and inter-paradigm values. The Benferroni correction is applied to control the family-wise error rate.
 
-In \textbf{Experiment 2}, the focus of the evaluation is to understand how variations in prompt design influence the breadth of values expressed by the LLM. Specifically,
-how the same statement is annotated differently under the selected suite of psychosocial paradigms.
+% Additional experiments: We incorporate prompts that explicitly instruct the model to (i) generate a response most likely to be upvoted, and (ii) generate a response most likely to engage the author.
 
-we incorporate prompts that explicitly instruct the model to (i) generate a response most likely to be upvoted, and (ii) generate a response most likely to engage the author.
+\subsubsection{Experiment 2}
+\textbf{Experiment 2} is designed to analyze the differences in judgments for the r/aita dataset across two different sources of responses: i. human-authored, and ii. LLM-authored responses for the two psychosocial paradigms - Rogerian PCT and Goffman's ToF.
 
+% Additionally, the accuracy, f1... for multi class classification is reported for 2 paradigms - Rogerian PCT and Goffman's ToF.
+
+Statistical Testing: Judgments are extracted from the annotated dataset under three class labels: (i) NTA, (ii) YTA, and (iii) No (explicit) judgment. These labels are used to construct a 3×3 confusion matrix, with the human-authored judgment as the ground truth and the LLM-authored judgment as the prediction. Per-Class performance metrics and pairwise error rates, including the False Negative Rate (FNR) and False Positive Rate (FPR), are reported for each class label in Section~\ref{sec:Results}.
+
+The measurements thus obtained are used to inform the analysis on how 'judgments' differ between human- and LLM-authored responses.
 
 \subsubsection{Generations}
-A set of targeted experiments are run with DeepReflect’s analyses to investigate the efficacy of control mechanisms to align the values in language model outputs more closely with those observed in human responses. The generation experiments are implemented using the following methods:
+%TODO review this section for clarity and grammar. Clarify to the reader that the evaluation pipeling is first run on the basic output without any control mechanisms and then run again on the controlled output to compare and evaluate the results.
+A set of targeted experiments are run with DeepReflect’s analyses to investigate the efficacy of control mechanisms to align the reasoning in language model outputs more closely with that of human experts. The output of the generation can then be used to evaluate the efficacy of the control mechanism by running the customized generations through the evaluation pipeline. 
+
+The generation experiments are implemented using the following methods:
 
 \begin{enumerate}
 %     \item \textbf{With supervised fine-tuning (SFT)} [model: GPT-x, Paradigms: Empathy, Sycophancy]
