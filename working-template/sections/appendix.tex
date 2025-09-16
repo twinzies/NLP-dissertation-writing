@@ -279,7 +279,7 @@ Genuineness x Indirect Language   & 0.545 & 1000 & 0.541 & 1000 & 0.287 & 1000 &
 %%%% Table for section 2.1 (r/anxiety) %%%%
 \subsubsection{Comparison to human social "sycophancy" and "empathy"}\label{sec:posterchild1.2}
 
-Tables 4 and 5 present the results of chi-square analyses for human responses on \textit{r/anxiety} and \textit{r/aitah}, which can be contrasted with the LLM results reported in Tables 2 and 3. The findings indicate that while human responses do exhibit associations between empathy-related traits (e.g., unconditional positive regard) and sycophancy-related traits (e.g., emotional validation), the strength of these associations is consistently lower than in LLM responses.
+Tables 4 and 5 present the results of chi-square analyses for human responses on \textit{r/anxiety} and \textit{r/aitah}, which can be contrasted with the LLM results reported in Tables 2 and 3. \textbf{The findings indicate that while human responses do exhibit associations between empathy-related traits (e.g., unconditional positive regard) and sycophancy-related traits (e.g., emotional validation), the strength of these associations is consistently lower than in LLM responses.}
 
 For \textit{r/anxiety} (Table 4), the pooled association between UPR and Emotional Validation is modest ($\phi = 0.304$), with stronger effects in OP-preferred comments ($\phi = 0.369$) compared to top comments ($\phi = 0.243$). This contrasts with LLM responses in Table 2, where pooled associations for the same measure exceeded $\phi = 0.935$. Similarly, in \textit{r/aitah} (Table 5), the pooled UPR $\times$ Emotional Validation association is $\phi = 0.528$, with slightly higher alignment in OP-preferred comments ($\phi = 0.544$) than in top comments ($\phi = 0.509$). Again, these values are notably lower than the LLM totals shown in Table 3, where pooled associations reached $\phi = 0.641$. Taken together, these results show that while human responses demonstrate overlap between empathic and sycophantic traits, the magnitude of association is reduced relative to LLM outputs.
 
@@ -288,6 +288,13 @@ A similar trend can be observed for UPR $\times$ Indirect Language and Genuinene
 Another noteworthy pattern emerges when comparing top comments with OP-preferred comments in the human datasets. Across both subreddits, associations are stronger in OP-preferred comments. For example, in \textit{r/anxiety} UPR $\times$ Emotional Validation increases from $\phi = 0.243$ in top comments to $\phi = 0.369$ in OP-preferred comments. Similarly, in \textit{r/aitah}, UPR $\times$ Emotional Validation rises from $\phi = 0.509$ in top comments to $\phi = 0.544$ in OP-preferred comments. This suggests that the comments selected by original posters for engagement are more likely to exhibit overlapping empathic and sycophantic features than those receiving the highest peer endorsement through upvotes.
 
 Overall, the evaluation of reddit comment responses confirms that associations between empathy- and sycophancy-related traits are present, but they occur at lower magnitudes than in LLM responses. The differentiation between top and OP-preferred comments adds analytical nuance, indicating how empathic and sycophantic traits may shape human engagement dynamics. 
+
+\subsection{OP engagement and preference dynamics}
+
+Across both \textit{r/anxiety} and \textit{r/aitah}, OP-preferred comments (i.e., those the OP engaged with) show higher $\phi$ associations for UPR $\times$ Emotional Validation than top comments. This suggests that OPs were more likely to interact with responses coded as ``empathic'' or ``sycophantic.'' It is worth noting, however, that OP-preferred sets are smaller ($N = 750$ vs.\ $N = 1000$ for top comments), which may limit statistical strength. 
+
+While these patterns are consistent with Cheng et al.'s observation that preference datasets underlie social ``sycophancy,'' the present analysis measures associations between annotated traits, whereas Cheng et al.\ examine dataset-level reinforcement learning preferences to determine the root cause of sycophancy\cite{cheng-etal-sycophancy}. The similarity in these findings is therefore suggestive of a shared underlying trend in preference in responses to personal questions, but it may not be deterministically conclusive. A deeper investigation of this potential connection between individual engagement patterns and large-scale reinforcement learning preference datasets lies beyond the scope of the project.
+
 
 \renewcommand{\arraystretch}{1.4}
 
