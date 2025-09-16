@@ -187,59 +187,29 @@ $\chi^2$
 % \vspace{0.5ex}\footnotesize Although more moderate than Table~\ref{tab:upr_ev_phi} overall, the spread by model is striking (e.g., GPT\mbox{-}4o $\Phi\!=\!.715$ vs.\ GPT\mbox{-}OSS $\Phi\!=\!.319$), making it an excellent example of model-specific tendencies.
 % \end{table}
 
-% % Table 4 — Accurate Understanding × Accept Framing × response_source
-% \begin{table}[ht]
-% \centering
-% \caption{Association between Accurate Understanding and Accept Framing by model (Phi)}
-% \label{tab:au_af_phi}
-% \begin{tabular}{lccc}
-% \hline
-% \textbf{Model} & \textbf{$\Phi$} & \textbf{Approx.\ Sig.} & \textbf{N} \\
-% \hline
-% Claude   & 0.248 & $<.001$ & 1000 \\
-% GPT-4o   & 0.702 & $<.001$ & 1000 \\
-% GPT-OSS  & 0.104 & .007    & 1000 \\
-% Llama    & 0.562 & $<.001$ & 1000 \\
-% \textbf{Total} & \textbf{0.413} & $<.001$ & 4000 \\
-% \hline
-% \end{tabular}
 
-% \vspace{0.5ex}\footnotesize Note the clear divergence: GPT\mbox{-}4o ($\Phi\!=\!.702$) vs.\ GPT\mbox{-}OSS ($\Phi\!=\!.104$), with the pooled effect in the moderate range—an ideal “another divergence” showcase alongside Table~\ref{tab:upr_af_phi}.
-% \end{table}
+\medskip
+
+\subsubsection{"Sycophancy" or "Empathy"}
+\textbf{Dual Coding of LLM responses as "Empathic" and socially "Sycophantic"}
 
 
-% \renewcommand{\arraystretch}{1.4}
+\textbf{The chi-square analyses indicate that the same LLM response may be categorized as both ``empathic'' and socially ``sycophantic,'' depending on the psychosocial paradigm applied.} For example, unconditional positive regard (UPR) is a key trait of therapeutic and empathic communication within the Rogerian PCT paradigm and serves as a marker of empathy. By contrast, emotional validation is operationalized as a metric within Goffman's ToF framework, where it functions as an indicator of social sycophancy. Table~\ref{tab:pc1} reports high associations between UPR and Emotional Validation across models ($\phi$ values exceeding .90---\textit{r/anxiety} and .64---\textit{r/aitah}), suggesting that \textbf{LLM responses which validate emotions are also strongly aligned with the empathic criteria of UPR}. In this way, the same response is likely to be annotated as emotionally validating and, simultaneously, as demonstrating unconditional positive regard---traits that appear to a high degree in LLM outputs. This large, near-deterministic association in LLM response annotations highlights the central issue raised in Section~\ref{sec:gaps}.
 
-% \begin{table}[h!]
-% \centering
-% \resizebox{0.8\textwidth}{!}{ % scales to 80% of text width
-% \begin{tabular}{l *{10}{c}}
-% \toprule
-% \multirow{3}{*}{\textbf{Individual LLM performance on PCT and ToF metrics}} 
-%  & \multicolumn{10}{c}{\textbf{r/anxiety}} \\
-% \cmidrule(lr){2-11}
-%  & \multicolumn{2}{c}{\textbf{GPT-oss response}} 
-%  & \multicolumn{2}{c}{\textbf{GPT-4o response}} 
-%  & \multicolumn{2}{c}{\textbf{Llama response}} 
-%  & \multicolumn{2}{c}{\textbf{Claude response}} 
-%  & \multicolumn{2}{c}{\textbf{Totals}} \\
-% \cmidrule(lr){2-11}
-%  & \textbf{phi} & \textbf{N} 
-%  & \textbf{phi} & \textbf{N} 
-%  & \textbf{phi} & \textbf{N} 
-%  & \textbf{phi} & \textbf{N} 
-%  & \textbf{phi} & \textbf{N} \\
-% \midrule
-% \textbf{UPR x Emotional Validation} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-% UPR x Indirect Language    & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-% Genuineness x Indirect Language & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-% \bottomrule
-% \end{tabular}
-% }
-% \end{table}
-%%%% Table for section 1.1 (r/anxiety) %%%%
+\medskip
 
-UPR × Emotional Validation  Association between Unconditional Positive Regard and Emotional Validation by model. This is an exceptionally large, near-deterministic association across models and in the pooled analysis; higlighting the headline issue of the project.
+\noindent
+Further examination of the tables highlights variation across models and measures. In \textit{r/anxiety}, GPT-oss, GPT-4o, and Llama responses show $\phi$ values above .90 for UPR~$\times$~Emotional Validation, with Claude slightly lower at .925. In \textit{r/aitah}, GPT-4o records the strongest association (.939), while Claude again shows the lowest value (.445), indicating variability in how large language model design. The results point to differing design choices or safety layers across models.
+
+\medskip
+
+\noindent
+While comparatively weaker associations are observed for UPR~$\times$~Indirect Language and Genuineness~$\times$~Indirect Language, they are statistically significant. For \textit{r/anxiety}, pooled $\phi$ values are .539 and .413, respectively, while for \textit{r/aitah} the corresponding totals are .317 and .296. These findings suggest that not all empathic cues demonstrate the same level of overlap with sycophantic features highlighting areas for closer analysis.
+
+\medskip
+
+\noindent
+Overall, the results demonstrate that LLM responses consistently show a significant association between empathic and sycophantic features, with particularly high associations for UPR~$\times$~Emotional Validation traits and more modest but significant associations for indirect language and genuineness. Analyses exploring the implications of these patterns are presented in the following section.
 
 \renewcommand{\arraystretch}{1.4}
 
@@ -263,13 +233,14 @@ UPR × Emotional Validation  Association between Unconditional Positive Regard a
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} \\
 \midrule
-\textbf{UPR x Emotional Validation}        & 0.910 & 1000 & 0.939 & 1000 & \textbf{0.968} & 1000 & \textbf{0.925} & 1000 & 0.935 & 4000 \\
+\textbf{UPR x Emotional Validation}        & 0.910 & 1000 & 0.939 & 1000 & \textbf{0.968} & 1000 & \textbf{0.925} & 1000 & 0.\textbf{935} & 4000 \\
 UPR x Indirect Language           & 0.882 & 1000 & 0.700 & 1000 & 0.528 & 1000 & 0.362 & 1000 & 0.539 & 4000 \\
 Genuineness x Indirect Language   & 0.555 & 1000 & 0.543 & 1000 & 0.443 & 1000 & 0.384 & 1000 & 0.413 & 4000 \\
 \bottomrule
 \end{tabular}
 }
-\caption{\textbf{r/anxiety LLM performance on select \\ Empathy (PCT) and Sycophancy (ToF) metrics}}
+\caption{\textbf{r/anxiety LLM response evaluation on \\ Empathy (PCT) and Sycophancy (ToF) metrics}}
+\label{tab:pc1}
 \end{table}
 
 %%%% Table for section 1.2 (r/aitah) %%%%
@@ -296,7 +267,7 @@ Genuineness x Indirect Language   & 0.555 & 1000 & 0.543 & 1000 & 0.443 & 1000 &
  & \textbf{$\Phi$} & \textbf{N}
  & \textbf{$\Phi$} & \textbf{N} \\
 \midrule
-\textbf{UPR x Emotional Validation}        & 0.708 & 1000 & \textbf{0.939} & 1000 & 0.787 & 1000 & \textbf{0.445} & 1000 & 0.641 & 4000 \\
+\textbf{UPR x Emotional Validation}        & 0.708 & 1000 & \textbf{0.939} & 1000 & 0.787 & 1000 & \textbf{0.445} & 1000 & \textbf{0.641} & 4000 \\
 UPR x Indirect Language           & 0.461 & 1000 & \textbf{0.693} & 1000 & 0.260 & 1000 & \textbf{0.127} & 1000 & 0.317 & 4000 \\
 Genuineness x Indirect Language   & 0.545 & 1000 & 0.541 & 1000 & 0.287 & 1000 & 0.209 & 1000 & 0.296 & 4000 \\
 \bottomrule
@@ -306,6 +277,17 @@ Genuineness x Indirect Language   & 0.545 & 1000 & 0.541 & 1000 & 0.287 & 1000 &
 \end{table}
 
 %%%% Table for section 2.1 (r/anxiety) %%%%
+\subsubsection{Comparison to human social "sycophancy" and "empathy"}\label{sec:posterchild1.2}
+
+Tables 4 and 5 present the results of chi-square analyses for human responses on \textit{r/anxiety} and \textit{r/aitah}, which can be contrasted with the LLM results reported in Tables 2 and 3. The findings indicate that while human responses do exhibit associations between empathy-related traits (e.g., unconditional positive regard) and sycophancy-related traits (e.g., emotional validation), the strength of these associations is consistently lower than in LLM responses.
+
+For \textit{r/anxiety} (Table 4), the pooled association between UPR and Emotional Validation is modest ($\phi = 0.304$), with stronger effects in OP-preferred comments ($\phi = 0.369$) compared to top comments ($\phi = 0.243$). This contrasts with LLM responses in Table 2, where pooled associations for the same measure exceeded $\phi = 0.935$. Similarly, in \textit{r/aitah} (Table 5), the pooled UPR $\times$ Emotional Validation association is $\phi = 0.528$, with slightly higher alignment in OP-preferred comments ($\phi = 0.544$) than in top comments ($\phi = 0.509$). Again, these values are notably lower than the LLM totals shown in Table 3, where pooled associations reached $\phi = 0.641$. Taken together, these results show that while human responses demonstrate overlap between empathic and sycophantic traits, the magnitude of association is reduced relative to LLM outputs.
+
+A similar trend can be observed for UPR $\times$ Indirect Language and Genuineness $\times$ Indirect Language. In \textit{r/anxiety} human responses, pooled associations are $\phi = 0.221$ and $\phi = 0.043$, respectively. For \textit{r/aitah}, the corresponding values are $\phi = 0.258$ and $\phi = 0.076$. By comparison, LLM pooled totals in Tables 2 and 3 are consistently higher, with UPR $\times$ Indirect Language reaching $\phi = 0.539$ in \textit{r/anxiety} and $\phi = 0.317$ in \textit{r/aitah}, while Genuineness $\times$ Indirect Language reached $\phi = 0.413$ and $\phi = 0.296$. These results highlight that human expression of indirectness and genuineness aligns only weakly with sycophantic traits, whereas LLMs show stronger co-occurrence.
+
+Another noteworthy pattern emerges when comparing top comments with OP-preferred comments in the human datasets. Across both subreddits, associations are stronger in OP-preferred comments. For example, in \textit{r/anxiety} UPR $\times$ Emotional Validation increases from $\phi = 0.243$ in top comments to $\phi = 0.369$ in OP-preferred comments. Similarly, in \textit{r/aitah}, UPR $\times$ Emotional Validation rises from $\phi = 0.509$ in top comments to $\phi = 0.544$ in OP-preferred comments. This suggests that the comments selected by original posters for engagement are more likely to exhibit overlapping empathic and sycophantic features than those receiving the highest peer endorsement through upvotes.
+
+Overall, the evaluation of reddit comment responses confirms that associations between empathy- and sycophancy-related traits are present, but they occur at lower magnitudes than in LLM responses. The differentiation between top and OP-preferred comments adds analytical nuance, indicating how empathic and sycophantic traits may shape human engagement dynamics. 
 
 \renewcommand{\arraystretch}{1.4}
 
@@ -317,17 +299,17 @@ Genuineness x Indirect Language   & 0.545 & 1000 & 0.541 & 1000 & 0.287 & 1000 &
 \multirow{3}{*}{\textbf{}} 
  & \multicolumn{6}{c}{\textbf{r/anxiety}} \\
 \cmidrule(lr){2-7}
- & \multicolumn{2}{c}{\textbf{top-comment}} 
- & \multicolumn{2}{c}{\textbf{op-engaged}} 
+ & \multicolumn{2}{c}{\textbf{Top comment}} 
+ & \multicolumn{2}{c}{\textbf{OP-preferred}} 
  & \multicolumn{2}{c}{\textbf{Totals}} \\
 \cmidrule(lr){2-7}
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} \\
 \midrule
-\textbf{UPR x Emotional Validation}        & \textbf{0.243} & 935 & \textbf{0.369} & 752 & 0.304 & 1687 \\
-UPR x Indirect Language           & 0.200 & 935 & 0.248 & 752 & 0.221 & 1687 \\
-Genuineness x Indirect Language   & 0.022 & 935 & 0.069 & 752 & 0.043 & 1687 \\
+\textbf{UPR x Emotional Validation}        & \textbf{0.243} & 1000 & \textbf{0.369} & 750 & 0.304 & 1687 \\
+UPR x Indirect Language           & 0.200 & 1000 & 0.248 & 750 & 0.221 & 1687 \\
+Genuineness x Indirect Language   & 0.022 & 1000 & 0.069 & 750 & 0.043 & 1687 \\
 \bottomrule
 \end{tabular}
 }
@@ -347,17 +329,17 @@ Genuineness x Indirect Language   & 0.022 & 935 & 0.069 & 752 & 0.043 & 1687 \\
 \multirow{3}{*}{\textbf{}} 
  & \multicolumn{6}{c}{\textbf{r/aitah}} \\
 \cmidrule(lr){2-7}
- & \multicolumn{2}{c}{\textbf{top-comment}} 
- & \multicolumn{2}{c}{\textbf{op-engaged}} 
+ & \multicolumn{2}{c}{\textbf{Top comment}} 
+ & \multicolumn{2}{c}{\textbf{OP-preferred}} 
  & \multicolumn{2}{c}{\textbf{Totals}} \\
 \cmidrule(lr){2-7}
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} \\
 \midrule
-\textbf{UPR x Emotional Validation}        & 0.509 & 897  & \textbf{0.544} & 716  & 0.528 & 1613 \\
-UPR x Indirect Language           & 0.236 & 897  & \textbf{0.311} & 716  & 0.258 & 1613 \\
-Genuineness x Indirect Language   & 0.070 & 897  & 0.097 & 716  & 0.076 & 1613 \\
+\textbf{UPR x Emotional Validation}        & 0.509 & 1000  & \textbf{0.544} & 700  & 0.528 & 1613 \\
+UPR x Indirect Language           & 0.236 & 1000  & \textbf{0.311} & 700  & 0.258 & 1613 \\
+Genuineness x Indirect Language   & 0.070 & 1000  & 0.097 & 700  & 0.076 & 1613 \\
 \bottomrule
 \end{tabular}
 }
