@@ -353,12 +353,55 @@ Across both \textit{r/anxiety} and \textit{r/aitah}, OP-preferred comments (i.e.
 
 While these patterns are consistent with Cheng et al.'s observation that preference datasets underlie social ``sycophancy,'' the present analysis measures associations between annotated traits, whereas Cheng et al.\ examine dataset-level reinforcement learning preferences to determine the root cause of sycophancy\cite{cheng-etal-sycophancy}. The similarity in these findings is therefore suggestive of a shared underlying trend in preference in responses to personal questions, but it may not be deterministically conclusive. A deeper investigation of this potential connection between individual engagement patterns and large-scale reinforcement learning preference datasets lies beyond the scope of the project.
 
-\subsubsection{Baseline Social Verdict "Predictions"}
+\subsection{Social Verdict "Predictions"}
 % Add a table here.
 
+% Discuss r/aitah and verdict prediction task briefly in 3-4 lines.
+\subsubsection{Generations with COT}
 
-\subsection{Generations with COT}
+\subsubsection{Shift in LLM "judgments" with COT}\label{sec:posterchild2.2}
 
-\subsubsection{Shift in social verdicts with COT}\label{sec:posterchild2.2}
+CoT with dialog insertion was evaluated as a control mechanism, with results varying across models. For Claude, accuracy declined from 0.45 to 0.37 and macro-average F1 from 0.41 to 0.30 with CoT insertion (Table~\ref{tab:claude_cot_comparison}). At the class level, recall for \texttt{NO\_VERDICT} rose from 0.12 to 0.76, while recall for \texttt{YTA} fell from 0.48 to 0.08. These results show that CoT dialog insertion redistributed performance across classes rather than producing uniform changes. Full model performances are provided in the appendix.
+
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccc|cccc}
+\toprule
+\multirow{2}{*}{\textbf{Class}} 
+& \multicolumn{4}{c|}{\textbf{With CoT dialog insertion}} 
+& \multicolumn{4}{c}{\textbf{Without CoT dialog insertion}} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+ & Precision & Recall & F1-score & Support 
+ & Precision & Recall & F1-score & Support \\
+\midrule
+NO\_VERDICT & 0.30 & 0.76 & 0.43 & 50 & 0.60 & 0.12 & 0.21 & 50 \\
+NTA         & 0.48 & 0.62 & 0.55 & 50 & 0.38 & 0.96 & 0.55 & 50 \\
+REST        & 0.50 & 0.04 & 0.07 & 50 & 0.32 & 0.23 & 0.27 & 50 \\
+YTA         & 0.67 & 0.08 & 0.14 & 50 & 0.92 & 0.48 & 0.63 & 50 \\
+\midrule
+\textbf{Accuracy} & \multicolumn{4}{c|}{0.37 (200 comparisons)} & \multicolumn{4}{c}{0.45 (200 comparisons)} \\
+\textbf{Macro avg} & 0.49 & 0.38 & 0.30 & -- & 0.55 & 0.45 & 0.41 & -- \\
+\textbf{Weighted avg} & 0.49 & 0.37 & 0.29 & -- & 0.55 & 0.45 & 0.41 & -- \\
+\bottomrule
+\end{tabular}}
+\caption{Claude performance on social judgments with and without CoT dialog insertion.}
+\label{tab:claude_cot_comparison}
+\end{table}
+
+% Insert barchart 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Diagrams/verdicts.png}
+    \label{fig:social_verdicts}
+    \caption{\textit{r/aitah}---Overall performance scores (Accuracy, Precision, Recall, and F1 Score) for OP-preferred responses and model outputs (GPT-4o, Claude, LLaMA, GPT-oss), comparing model baseline response with CoT dialog insertion. Values represent aggregate scores across all four classes (NTA, YTA, No Verdict, Rest), not per-class results.}
+\end{figure}
+
+Across models, CoT dialog insertion did not consistently raise or lower overall metrics such as accuracy or F1. Instead, it shifted the balance of social judgments, with some classes gaining in recall or precision and others showing losses. While the results depicted may provide a useful starting point for investigation in this area, further study is necessary to determine how CoT dialog insertion affects model outputs in the context of personal queries.
+
+
+Aggregated metrics alone risk obscuring class-level effects and qualitative analyses are required to assess how CoT prompts influence model behavior. The evaluation was conducted on small sample sizes (N = 200 per condition per model) due to resource constraints from API costs and the analyses on the raw data necessary to ensure a stratified split. While trends are visible, they should be interpreted cautiously. The implications of limited sample size for generalizability are addressed in the limitations\ref{sec:limitations} section.
 
 % Add a table here.
