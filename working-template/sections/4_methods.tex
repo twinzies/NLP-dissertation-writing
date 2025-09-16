@@ -12,8 +12,9 @@ For every retained post we extracted (i) the most upvoted comment and (ii) the c
 
 Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links to personal sites), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability.
 
-We treat each set of post and human-authored responses in a Reddit thread as a single analytical unit during stratified sampling.
-and each feature within the set (the post body and its responses) as a single analytical unit during manual checks, and statistical aggregation.
+We treat each set of body of the responses and posts as a single analytical unit (feature) to ensure stratified sampling for the AITAH dataset. For the purposes of verdict analysis with this dataset, (discussed in Section~\ref{sec:posterchild2.1}), the dataset was stratified on verdicts (NTA, YTA, NO\_VERDICT, REST) to ensure balanced representation across the four classes.
+
+The same approach for 'features' are used for the Anxiety dataset for consistency and to ensure comparability. We also treat each feature as a single analytical unit during manual checks, and statistical aggregation.
 % This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.
 
 \subsection{Procedures}
@@ -25,7 +26,7 @@ For each selected post, we prompt the target language model firstly, with the ba
 
 \smallskip 
 \begin{itemize}
-    \item In steps 3 and 4 of the Evaluation Framework (Figure~\ref{pipeline_steps}), features\footnote{Note that in this context, 'feature' refers to the part of the text used for annotation from the responses and the body of the post.} are annotated at the sentence level within each body–response pair. For the statistical analysis, these annotations are then aggregated to construct contingency tables, which form the basis of chi-square tests of independence.
+    \item In steps 3 and 4 of the Evaluation Framework (Figure~\ref{pipeline_steps}), features\footnote{Note that in this context, 'feature' refers to the part of the text used for annotation from the responses and the body of the post.} are annotated at the full response level within each body–response pair. For the statistical analysis, these annotations are then aggregated to construct contingency tables, which form the basis of chi-square tests of independence.
     \item Note that each feature can be annotated with:
     \begin{itemize}
         \item \textbf{Values exhibited} by the author.
@@ -77,5 +78,5 @@ To assess construct validity, one human annotator labeled 100 randomly sampled p
 Inter-rater reliability reached Cohen’s $\kappa$ above xx for all metrics, with an overall classification accuracy of yy. For the AITAH dataset, verdicts and accompanying statements in responses were used as proxies for Empathy and Sycophancy, each mapped onto five behaviors as defined by their respective theoretical traditions\footnote{This strategy is conceptually aligned with prior work on social sycophancy \cite{cheng-etal-sycophancy}}.
 
 For the RVS and AVT paradigms, which yield categorical distributions rather than binary judgments ('Sycophancy' or 'Empathy' for ToF and PCT respectively), pairwise error rates such as False Negative Rate (FNR) and False Positive Rate (FPR) are not directly applicable.
-To identify significant associations between features annotated under more than one distinct paradigm we construct frequency tables and use chi-square analysis with the Benferroni correction with further details provided in section~\ref{sec:Analysis}. 
+To identify significant associations between features annotated under more than one distinct paradigm we construct frequency tables and use chi-square analysis with further details provided in section~\ref{sec:Analysis}. 
 % TODO: Add some math here for the chi-square analysis and p-value calculations or put it in the appendix and reference here.

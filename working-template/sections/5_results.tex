@@ -3,20 +3,63 @@
 % A no-nonsense report of what happened.
 \section{Results}\label{sec:Results}
 % ~1600 words ≈ ~12–13 paragraphs
-\textcolor{black!40}{A no-nonsense report of what happened.}
-\subsection{Subsection}
-This subsection presents the main results.
+In this section the results of the experiments are presented and described. Each subsection is structured around the research questions (RQs) introduced in Section~\ref{sec:RQs}.
 
-\textcolor{black!30}{\lipsum[40-44]}
+\subsection{"Sycophancy" vs "Empathy": Intra-paradigm Findings}\label{sec:posterchild1.1}
+% Are LLMs sycophants or empaths ??
 
 
-\subsection{Subsection}
-This subsection presents additional results and analysis.
+\renewcommand{\arraystretch}{1.4}
 
-\textcolor{black!30}{\lipsum[45-48]}
+\begin{table}[h!]
+\centering
+\resizebox{0.8\textwidth}{!}{ % scales to 80% of text width
+\begin{tabular}{l *{10}{c}}
+\toprule
+\multirow{3}{*}{\textbf{Individual LLM performance on PCT and ToF metrics}} 
+ & \multicolumn{10}{c}{\textbf{r/anxiety}} \\
+\cmidrule(lr){2-11}
+ & \multicolumn{2}{c}{\textbf{GPT-oss response}} 
+ & \multicolumn{2}{c}{\textbf{GPT-4o response}} 
+ & \multicolumn{2}{c}{\textbf{Llama response}} 
+ & \multicolumn{2}{c}{\textbf{Claude response}} 
+ & \multicolumn{2}{c}{\textbf{Totals}} \\
+\cmidrule(lr){2-11}
+ & \textbf{phi} & \textbf{N} 
+ & \textbf{phi} & \textbf{N} 
+ & \textbf{phi} & \textbf{N} 
+ & \textbf{phi} & \textbf{N} 
+ & \textbf{phi} & \textbf{N} \\
+\midrule
+UPR x Emotional Validation & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+UPR x Indirect Language    & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+Genuineness x Indirect Language & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
-\subsection{Comparative Findings}
-\textcolor{black!30}{\lipsum[49-52]}
+% Select EMP metrics (3) and insert tables
+
+\subsection{Inter paradigm Findings}
+This subsection presents the main results for RQ2a.
+
+\subsubsection{Comparison to human baselines}\label{sec:posterchild1.2}
+% Are humans (redditors) sycophants or empaths ??
+This subsection presents the main results for RQ3.
+\textcolor{black!30}{\lipsum[48-49]}
+
+\subsubsection{Social Verdict "Predictions"}\label{sec:posterchild2.1}
+% Mention that the social predictions are not a true prediction task and 
+% that the LLMs are not trained to predict social verdicts. Make a case for the usage of an LLM as a "person centered" tool over a "sycophant". One that can teach and support without social prejudice - Talk about discussion.
+
+
+\subsection{COT generations}
+\subsubsection{Shift in social verdicts with COT}\label{sec:posterchild2.2}
+\textcolor{black!30}{\lipsum[48-49]}
+
+\subsubsection{Shift in "traits" with COT}
+\textcolor{black!30}{\lipsum[48-49]}
 
 % We encourage you to use the natbib styles.
 % You can use the command \verb|\citet| (cite in text) to get ``author (year)'' citations, like this citation to a paper by \citet{Gusfield:97}.
