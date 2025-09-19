@@ -1,0 +1,90 @@
+\chapter{Introduction}
+
+Recent advancements in transformer-based large language models (LLMs) have made them increasingly human-like in affective conversation. As virtual assistants, LLMs are increasingly being employed to offer users not only information but also to respond to personal questions \cite{zhang-ai_companions, phang-affective, anthropic2025}. The growing use of LLMs in daily life has sparked important questions about their social implications. The news media have highlighted both the advantages\cite{guardian2025-chatgpt-conversation} and disadvantages\cite{nyt2024-characterai-lawsuit} of their use.
+
+It is this rise in usage that has led to investigations into the values LLMs convey through their responses to personal questions. As more people rely on these systems for personal support, researchers have begun exploring their long-term effects—particularly along social, psychological, and ethical dimensions \cite{cot-morals,sorin-etal-empathy,fang-etal-psychoeffects}.
+
+Human responses to another's personal question are often guided by personal experience and/or behavioral values—be courageous, be helpful, be empathic, and polite. Human exchange and deliberation reflect a broad range of socially shared norms and expectations. There may not be a clear consensus on which value was exhibited in such an interaction. What may seem “empathic” to one person may be a matter of subjective interpretation. As personal queries are increasingly directed to LLMs, we ask: what kinds of behavioral values or traits do these models reflect—and possibly reinforce—through their responses?
+
+It has been widely noted that LLMs and AI models tend to exhibit sycophantic traits~\cite{fanous-sycophancy}. That is, they often agree with users regardless of the accuracy or appropriateness of the statements made. This tendency has been observed in various contexts, including political discussions~\cite{sharma2023understanding}. However, "sycophancy" represents just one way of describing the emergent traits of LLMs. Just as humans' traits may be subjected to interpretational differences, so may be LLMs'. Other studies have also found that LLMs exhibit traits perceived to be more empathic than humans, responding in ways that seem supportive and understanding~\cite{Lee-etal-Empathic, sorin-etal-empathy}.
+
+\begin{tcolorbox}[title={Example of LLM and human responses to a personal query from r/AITAH - where AITAH is shorthand for ``Am I The Asshole''},
+    colback=white, 
+    colframe=black, 
+    boxrule=0.6pt,
+    sharp corners, 
+    left=6pt, 
+    right=6pt, 
+    top=6pt, 
+    bottom=6pt]
+\textbf{Personal Query (Reddit post):} AITAH for being very mad? I am really mad that my friend is buying me gifts I did not want or need. Even after I told them repeatedly how I feel about this holiday and that I hate gifts?
+
+\vspace{1em}
+
+\textbf{LLM Response (LLM GPT-4o):} Hey there, I totally get why you're upset. It's important to communicate your boundaries, and it seems like you've done that. Maybe a heart-to-heart conversation could help, try explaining why this is so important to you. Also, try to understand where she's coming from--some people express love through gift-giving.
+
+\vspace{1em}
+
+\textbf{Human Response (Reddit Comment):} She should listen to you. You deserve to be listened to. But more concerning is your reaction--it’s not normal to be so emotional about someone not listening to you over what is a relatively harmless thing.
+\end{tcolorbox}
+
+
+\bigskip What may be perceived as ‘empathic’ under one paradigm could be critiqued as an instance of ‘social sycophancy’ under another. In the absence of clear normative answers, the same response may be annotated as offering emotional ‘validation’ or as showcasing empathic ’understanding’. At best it is only a matter of subjective interpretation, however at worst strategies to address LLM social sycophancy may erase constructive and desirable traits of LLM empathy. 
+
+
+Therefore, to examine the behavioral traits of LLMs under these different paradigms in their to personal questions and compare them with human authored ones, we present DeepReflect - a system designed to analyze and generate responses through the lens of two distinct psychosocial paradigms.
+
+
+\bigskip The system evaluates four language model-generated responses and compares them to two human-authored ones for the same personal query. The personal queries are sourced from the Reddit Archives dataset (\texttt{r/AITAH}, \texttt{r/Anxiety}). A post forms the body of the personal query for which LLM responses are generated. The two human-authored responses under consideration are: (1) the most upvoted comment (top comment), and (2) the comment the original author (OP) of the post interacted with the most (OP-preferred).
+
+
+The system is designed to annotate the responses with a binary value to indicate whether a value (i.e., socially exhibited trait) is present or absent. The behavioral values used for annotation are grouped according to three distinct psychosocial paradigms:
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\item Rokeach Value Survey (RVS),
+\item Carl Rogers' Person-Centered Therapy (PCT), and
+\item Goffman's Theory of Face (ToF).
+\end{enumerate}
+
+Annotations are created blind to the origin of the response. The project broadens the focus on comparing traits exhibited by LLMs with those observed in human-authored responses under the three distinct paradigms.
+
+In the recent study by cheng et al \cite{cheng-etal-sycophancy}, ToF was used to operationalize and quantify observances of LLM sycophancy. This project expands upon that work by examining how the selection of different psychosocial paradigms influences the perception of LLM behavior. It focuses on whether the same feature of these models leads to them being perceived as more empathic than humans or whether they really are more sycophantic. Further, it provides discussion on the implications of the divergent connotations associated with the annotating paradigm. The experimental design aims to provide measurements and definitive statistical insight into the values exhibited by the two distinct sources of response in personal conversation.
+
+\section{Aims and Objectives}
+
+The project has dual objectives: (1) to design a technical framework for analyzing and comparing human and LLM responses to personal queries. The system must accommodate multiple psychosocial paradigms, enabling cross-paradigm comparisons; and (2) to conduct a series of experiments investigating the traits of human-written and LLM-generated responses, and evaluating their differences and commonalities.
+
+\subsection{Research Questions}\label{sec:RQs}
+The context of inputs can substantially shape LLM outputs, influencing not only generations made to address personal questions posed by consumers but also analytical evaluations conducted by researchers. The effect is particularly noteworthy within the LLM-as-a-judge paradigm. As research increasingly highlights patterns and concerns regarding the impacts of LLMs in personal queries and social deliberation, there is a critical need for a framework that can analyze and compare responses across multiple value-based perspectives in social contexts without clear normative answers. The framework also needs to remain extensible for researchers to incorporate additional paradigms as the field and needs evolve. This motivates the following research questions: 
+
+\medskip\textbf{RQ1:} How can a technical framework that systematically evaluates and compares responses from humans against those generated by LLMs across various psychosocial paradigms be designed?  
+
+\medskip\textbf{RQ2:} What inter-paradigm insights can the framework yield across different psychosocial frameworks?
+\textbf{RQ2a:} Importantly, to what extent can identical features be annotated with divergent connotations across paradigms—"empathic" under Rogerian PCT versus "sycophantic" under Goffman’s ToF?
+
+\medskip\textbf{RQ3:} How do LLM-generated responses compare to human-authored responses in the context of personal questions, especially where there are not definitive normative answers?
+
+Finally, we examine how the results may come to influence consumer behavior and broader societal outcomes. We explore a potential control mechanism with Chain of Thought (CoT) reasoning. In this mechanism, we extract a dialog between an expert human and his patient to experimentally determine how such dialogue insertion may affect the LLM response. 
+
+Our work enables a systematic comparative analysis of potential benefits and risks, and presents a framework for analysis which can be used by researchers and consumers for leveraging the insights in the intentional design of response LLM generation.
+
+\section{Key Contributions}
+The key contributions of this work are: (1) the design and implementation of an extensible framework for analyzing and comparing responses to personal queries across three distinct psychosocial paradigms; (2) a comparative analysis under Rogerian PCT, Goffman’s ToF and the RVS framework, illustrating how the choice of paradigm can shape the perception of a response; and (3) insights into the relative strengths and weaknesses of LLM versus human responses, and how these insights can inform the generation of customized responses to personal queries.
+
+\section{Overview of the Report}
+
+The remainder of this report is organized as follows:
+
+\bigskip Chapter \textbf{2} provides an overview of \textbf{prior literature}—some of the studies introduced in the introduction-ending with a discussion on closing the gap in the divergent perceptions of LLM responses in affective conversation and their evaluation. This chapter also establishes some of the theoretical foundations for the chosen psychosocial paradigms as well as provides the methodological precedent for evaluating responses by operationalizing psychosocial paradigms with NLP.
+
+\bigskip Chapter \textbf{3} presents the detailed \textbf{system design and dataset} underlying the DeepReflect technical framework. It also provides an overview of the operationalization of "empathy" behavioral values and "sycophancy" traits under the two distinct psychosocial paradigms. The design of the system is in response to \textbf{RQ1} and enables the experiments and analyses necessary to investigate the subsequent RQs. It also showcases the design of the Chain of Thought (CoT) generation subsystem as a control mechanism. This chapter provides the necessary detail for full replication of the system. 
+
+\bigskip Chapter \textbf{4} describes the \textbf{experimental setup and methods}, including data preprocessing, and the filtering of comments and posts to create a pairing of human- and LLM-generated responses to personal queries which for the purposes of this project are in the form of Reddit posts. It outlines the CoT generations pipeline, the design of comparative experiments on exhibited values and verdicts (for the r/AITAH subreddit), and the use of statistical tests to assess inter- and intra-paradigm differences. The chapter also addresses the validity of the experimental construct.
+
+\bigskip Chapter \textbf{5} presents the \textbf{results of the experiments}, reporting the empirical findings according to the annotation criteria. The results determine cross-paradigm associations, with particular attention to cases where the associations in values of paradigms PCT and ToF produce the results needed to address \textbf{RQ2} and \textbf{RQ2a}.
+
+\bigskip Chapter \textbf{6} provides a detailed \textbf{analysis} comparing baseline LLM-generated responses to human-written comments with contingency tables to address \textbf{RQ3}. Additionally, the efficacy of expert informed CoT prompting as a lightweight intervention for steering AI behavior toward more desirable outcomes is analyzed. This chapter includes both quantitative and qualitative assessments of the differences in characteristics of responses.
+
+\bigskip Chapter \textbf{7} \textbf{concludes} the report with a \textbf{discussion} of the broader implications of the findings on the design of AI assistants and "safety mechanisms". This chapter also considers the extension of the technical framework to other theoretical paradigms and application domains. It discusses the epistemic limits of interpreting and evaluating responses in this manner and acknowledges other \textbf{limitations}, and directions for future research ending with a synthesis of the contributions and findings of the project.
+

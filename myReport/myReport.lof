@@ -1,0 +1,17 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline architecture for DeepReflect.}}{10}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces CoT Generation with personal queries embedded in reasoning dialogs retrieved from expert human transcripts. In this case, the dialogs are from Carl Roger's sessions with Gloria (patient) \cite {rogersgloria}. This dialog was selected because it reflects an implicit “NTA” judgment: Gloria expresses guilt about lying to her daughter, and Rogers facilitates exploration of these feelings by gently challenging her self-judgment..}}{12}{figure.3.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cross-tabulation of Genuineness and Indirect language for the r/aitah dataset. Notice the contrasts in the presence and absence of traits between LLM-generated and human-authored responses.}}{20}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Cross-tabulation of UPR and Emotional Validation for r/aitah dataset. The figure illustrates the stark contrasts in traits of LLM-generated and human-authored responses.}}{21}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \footnotesize {Cross-tabulation of UPR and Indirect language for responses to r/anxiety posts. The figure illustrates the consistent and divergent behavior of different language models.}}}{23}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \footnotesize {Cross-tabulation of Genuineness and Indirect language for r/anxiety. The figure illustrates the consistent and divergent traits of different language models.}}}{23}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \textit {r/aitah}---Overall performance scores (Accuracy, Precision, Recall, and F1 Score) for OP-preferred responses and model outputs (GPT-4o, Claude, LLaMA, GPT-oss), comparing model baseline response with CoT dialog insertion. Values represent aggregate scores across the four classes, not per-class results.}}{25}{figure.5.5}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

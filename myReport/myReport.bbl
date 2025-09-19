@@ -1,0 +1,104 @@
+\begin{thebibliography}{10}
+
+\bibitem{anthropic2025}
+{\sc {Anthropic}}.
+\newblock How people use {Claude} for support, advice, and companionship, June 2025.
+\newblock Accessed: 2025-08-25.
+
+\bibitem{pew-reddit-research}
+{\sc Barthel, M., Stocking, G., Holcomb, J., and Mitchell, A.}
+\newblock Reddit news users more likely to be male, young and digital in their news preferences.
+\newblock Pew Research Center Report, Feb. 2016.
+
+\bibitem{pushshift}
+{\sc Baumgartner, J., Zannettou, S., Keegan, B., Squire, M., and Blackburn, J.}
+\newblock The pushshift reddit dataset.
+\newblock {\em arXiv preprint arXiv:2001.08435\/} (2020).
+
+\bibitem{cheng-etal-sycophancy}
+{\sc Cheng, M., Yu, S., Lee, C., Khadpe, P., Ibrahim, L., and Jurafsky, D.}
+\newblock Social sycophancy: A broader understanding of llm sycophancy.
+\newblock {\em arXiv preprint arXiv:2505.13995\/} (2025).
+
+\bibitem{guardian2025-chatgpt-conversation}
+{\sc Editorial, G.}
+\newblock I asked chatgpt to listen to me talk about myself – and it actually helped, 2025.
+\newblock The Guardian, Aug 16.
+
+\bibitem{fang-etal-psychoeffects}
+{\sc Fang, C.~M., Liu, A.~R., Valdemar, D., Lee, E., Chan, S. W.~T., Pataranutaporn, P., and Maes, P.}
+\newblock How ai and human behaviors shape psychosocial effects of chatbot use: A longitudinal randomized controlled study.
+\newblock {\em arXiv preprint arXiv:2503.17473 1}, 1 (2025).
+
+\bibitem{values-in-wild}
+{\sc Huang, Durmus, M., et~al.}
+\newblock Values in the wild: Discovering and analyzing values in real-world language model interactions.
+\newblock {\em arXiv preprint arXiv:2401.00095\/} (2024).
+
+\bibitem{cot-morals}
+{\sc Jin, Z., Levine, S., Gonzalez, F.~A., Kamal, O., Sap, M., Sachan, M., Mihalcea, R., Tenenbaum, J.~B., and Schölkopf, B.}
+\newblock When to make exceptions: Exploring language models as accounts of human moral judgment.
+\newblock In {\em Advances in Neural Information Processing Systems 35 (NeurIPS 2022)\/} (2022).
+\newblock NeurIPS 2022 conference paper; OpenReview version available at OpenReview.
+
+\bibitem{Lee-etal-Empathic}
+{\sc Lee, C., Fang, Y., Zhang, Y., Liu, Y., Wang, X., Li, X., and Zhang, J.}
+\newblock Empathic responses in llms: A study of user perceptions.
+\newblock {\em arXiv preprint arXiv:2505.13995 1}, 1 (2024).
+
+\bibitem{liang2025widespread}
+{\sc Liang, W., Zhang, Y., Codreanu, M., Wang, J., Cao, H., and Zou, J.}
+\newblock The widespread adoption of large language model-assisted writing across society.
+\newblock {\em arXiv preprint arXiv:2502.09747\/} (2025).
+
+\bibitem{phang-affective}
+{\sc Phang, J., Lampe, M., Ahmad, L., Agarwal, S., Fang, C.~M., Liu, A.~R., Danry, V., Lee, E., Chan, S.~W., Pataranutaporn, P., and Maes, P.}
+\newblock Investigating affective use and emotional well-being on {ChatGPT}.
+\newblock Technical report / preprint, OpenAI \& MIT Media Lab, Mar. 2025.
+\newblock Accessed: 2025-08-25.
+
+\bibitem{rogersgloria}
+{\sc Rogers, C.}
+\newblock Session with gloria.
+\newblock In {\em The Carl Rogers Reader}, H.~Kirschenbaum and V.~L. Henderson, Eds. Houghton Mifflin, 1989, pp.~198--215.
+\newblock Transcript of Carl Rogers's counseling session with Gloria, originally filmed in 1965.
+
+\bibitem{nyt2024-characterai-lawsuit}
+{\sc Singer, N.}
+\newblock Teen’s death leads to lawsuit against chatbot company character.ai, 2024.
+\newblock The New York Times, Oct 23.
+
+\bibitem{sorin-etal-empathy}
+{\sc Sorin, V., Brin, D., Barash, Y., Konen, E., Charney, A., Nadkarni, G., and Klang, E.}
+\newblock Large language models and empathy: Systematic review.
+\newblock {\em J Med Internet Res 26\/} (2024), e52597.
+
+\bibitem{statista-reddit}
+{\sc {Statista}}.
+\newblock Reddit global active user distribution.
+\newblock Statista Statistics Portal, 2025.
+\newblock Accessed: 2025-08-24.
+
+\bibitem{socialgaze}
+{\sc Vijjini, A.~R., Menon, R.~R., Fu, J., Srivastava, S., and Chaturvedi, S.}
+\newblock Socialgaze: Improving the integration of human social norms in large language models.
+\newblock arXiv preprint arXiv:2410.08698, 2024.
+\newblock Submitted October 11, 2024.
+
+\bibitem{cot}
+{\sc Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q., and Zhou, D.}
+\newblock Chain-of-thought prompting elicits reasoning in large language models.
+\newblock arXiv preprint arXiv:2201.11903, 2022.
+
+\bibitem{zhang-ai_companions}
+{\sc Zhang, Y., Zhao, D., Hancock, J.~T., Kraut, R., and Yang, D.}
+\newblock The rise of ai companions: How human-chatbot relationships influence well-being.
+\newblock {\em arXiv preprint arXiv:2506.12605\/} (June~17 2025).
+\newblock Version 2, submitted on June 14 and revised June 17, 2025.
+
+\bibitem{zheng-et-al}
+{\sc Zheng, L., Wang, Y., Liu, X., Zhang, H., Li, M., and Zhang, J.}
+\newblock Judging llm-as-a-judge with mt-bench and chatbot arena.
+\newblock In {\em Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)\/} (2023), Association for Computational Linguistics.
+
+\end{thebibliography}

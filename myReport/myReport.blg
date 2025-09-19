@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2025/Homebrew)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: myReport.aux
+The style file: acm.bst
+Database file #1: mybibliography.bib
+Warning--entry type for "guardian2025-chatgpt-conversation" isn't style-file defined
+--line 1 of file mybibliography.bib
+Warning--entry type for "nyt2024-characterai-lawsuit" isn't style-file defined
+--line 9 of file mybibliography.bib
+Warning--I didn't find a database entry for "fanous-sycophancy"
+Warning--I didn't find a database entry for "sharma2023understanding"
+You've used 19 entries,
+            2253 wiz_defined-function locations,
+            627 strings with 8244 characters,
+and the built_in function-call counts, 6789 in all, are:
+= -- 582
+> -- 516
+< -- 0
++ -- 212
+- -- 190
+* -- 541
+:= -- 1195
+add.period$ -- 64
+call.type$ -- 19
+change.case$ -- 151
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 193
+empty$ -- 438
+format.name$ -- 190
+if$ -- 1334
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 11
+newline$ -- 104
+num.names$ -- 40
+pop$ -- 179
+preamble$ -- 1
+purify$ -- 131
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 148
+swap$ -- 45
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 0
+while$ -- 43
+width$ -- 21
+write$ -- 199
+(There were 4 warnings)
