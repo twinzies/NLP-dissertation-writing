@@ -4,49 +4,48 @@ The top-level auxiliary file: myReport.aux
 The style file: acm.bst
 Database file #1: mybibliography.bib
 Warning--entry type for "guardian2025-chatgpt-conversation" isn't style-file defined
---line 77 of file mybibliography.bib
+--line 105 of file mybibliography.bib
 Warning--entry type for "nyt2024-characterai-lawsuit" isn't style-file defined
---line 85 of file mybibliography.bib
-Warning--I didn't find a database entry for "fanous-sycophancy"
-You've used 32 entries,
+--line 113 of file mybibliography.bib
+You've used 37 entries,
             2253 wiz_defined-function locations,
-            701 strings with 10548 characters,
-and the built_in function-call counts, 11143 in all, are:
-= -- 995
-> -- 742
+            721 strings with 11769 characters,
+and the built_in function-call counts, 13332 in all, are:
+= -- 1171
+> -- 952
 < -- 0
-+ -- 309
-- -- 270
-* -- 870
-:= -- 1912
-add.period$ -- 109
-call.type$ -- 32
-change.case$ -- 228
++ -- 394
+- -- 350
+* -- 1071
+:= -- 2308
+add.period$ -- 127
+call.type$ -- 37
+change.case$ -- 283
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 358
-empty$ -- 768
-format.name$ -- 270
-if$ -- 2233
+cite$ -- 37
+duplicate$ -- 409
+empty$ -- 877
+format.name$ -- 350
+if$ -- 2643
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 27
-newline$ -- 175
-num.names$ -- 66
-pop$ -- 256
+int.to.str$ -- 37
+missing$ -- 31
+newline$ -- 203
+num.names$ -- 76
+pop$ -- 315
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 247
 quote$ -- 0
-skip$ -- 237
+skip$ -- 267
 stack$ -- 0
-substring$ -- 355
-swap$ -- 93
+substring$ -- 380
+swap$ -- 103
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 122
+type$ -- 142
 warning$ -- 0
-while$ -- 79
-width$ -- 34
-write$ -- 341
-(There were 3 warnings)
+while$ -- 89
+width$ -- 39
+write$ -- 393
+(There were 2 warnings)

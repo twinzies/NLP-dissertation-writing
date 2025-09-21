@@ -266,9 +266,9 @@ Genuineness x Indirect language   & 0.070 & 0.036  & 0.097 & 0.010  & 0.076 & 0.
 
 Since the verdict in the top comment from r/aitah can be used as a proxy for the ground truth social judgment of the situation presented by the user, the results showcase accuracy and precision scores comparing LLM judgments to human judgments. For the purposes of this project, the social verdicts were simplified into four categories: \texttt{YTA} (You are the asshole), \texttt{NTA} (Not the asshole), \texttt{REST} (Everyone sucks here or No assholes here), and \texttt{No verdict} (no clear judgment).
 
-\subsection{Generations with CoT}
+\section{Generations with CoT}
 
-\subsubsection{Shift in LLM "judgments" with CoT}\label{sec:posterchild2.2}
+\subsection{Shift in LLM "judgments" with CoT}\label{sec:posterchild2.2}
 
 CoT with dialog insertion was evaluated as a control mechanism, with results varying across models. For Claude, accuracy declined from 0.45 to 0.37 and macro-average F1 from 0.41 to 0.30 with CoT insertion (Table~\ref{tab:claude_cot_comparison}). At the class level, recall for \texttt{No verdict} rose from 0.12 to 0.76, while recall for \texttt{YTA} fell from 0.48 to 0.08. These results show that CoT dialog insertion redistributed performance across classes rather than producing uniform changes. Full model performances are provided in the appendix.
 
@@ -313,7 +313,8 @@ Across models, CoT dialog insertion did not consistently raise or lower overall 
 
 Aggregated metrics alone risk obscuring class-level effects and qualitative analyses are required to assess how CoT prompts influence model behavior. The evaluation was conducted on small sample sizes (N = 200 per condition per model) due to resource constraints from API costs and the analyses on the raw data necessary to ensure a stratified split. While trends are visible, they should be interpreted cautiously. The implications of limited sample size for generalizability are addressed in the limitations section \ref{sec:limitations}.
 
-\subsubsection{Deontic phrasing after CoT}\label{sec:deontic}
+\subsection{Deontic phrasing after CoT}\label{sec:deontic}
+\newpage
 
 \begin{table}[!h]
 \centering
@@ -325,38 +326,70 @@ Aggregated metrics alone risk obscuring class-level effects and qualitative anal
 \texttt{r/anxiety} & 21.7 & 20.3 & 58.0 & $+0.017$ \\
 \hline
 \end{tabular}
-\caption{Distribution of change types and mean $\Delta$ for each subreddit ($N = 300$ each).}
+\caption{Aggregate change in mean deontic rate $\Delta$ for each dataset ($N = 300$ each).}
 \label{tab:change-summary}
 \end{table}
 
 
 The mean deontic rate (per 100 words; should/must/need/shall/ought) generally goes down after the application of the CoT prompt with the effect more pronounced for r/aitah responses than r/anxiety responses.
 
-While the overall trend shows a decrease in deontic language (with average bias below zero across models), a closer look at individual posts reveals inconsistent effects across models. Specifically, for r/anxiety posts using Claude, chain-of-thought (CoT) prompting led to an increase in deontic expressions for a substantial number of responses. This suggests that although the reduction is consistent at the aggregate level, it does not hold uniformly across different models or subreddits. These findings highlight the need to further examine how input posts and dialog prompts influence CoT behavior. The differences across language models also warrant closer scrutiny.
+While the overall trend shows a decrease in deontic language (with average bias below zero across models), a closer look at individual posts reveals inconsistent effects across models (see Tables~\ref{tab:examples-cot-part1} and~\ref{tab:examples-cot}).
 
-\textbf{In sum, the control strategy explored here supports previous findings by \cite{socialgaze} and \cite{cheng-etal-sycophancy} that controlling the phenomenon of LLM "empathy" or "sycophancy" remains a challenging task.}
+\medskip Specifically, for r/anxiety posts using Claude, chain-of-thought (CoT) prompting led to an increase in deontic expressions for a substantial number of responses. This suggests that although the reduction is consistent at the aggregate level, change in deontic rate alone does not hold uniformly across different models or subreddits. These findings highlight the need to further examine how input posts and dialog prompts influence CoT behavior and how changes in model outputs can be quantitatively captured. The differences across language models also warrant closer scrutiny.
+
+% Excerpts here.
+
+\input{chapters/cot-tables-corrected}
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.9\linewidth]{Diagrams/aitah-deonticrate.png}
-  \caption{Deontic rate changes for r/aitah responses with CoT dialog insertion. The figure shows the difference in deontic expressions (per 100 words) between baseline and CoT responses across different language models.}
+  \caption{Deontic rate changes for r/aitah responses with CoT dialog insertion. The figure shows the difference in deontic expressions between baseline and CoT responses across different language models. Yellow lines mark the mean change for each response type.}
   \label{fig:aitah_deontic}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.9\linewidth]{Diagrams/anxiety-deonticrate.png}
-  \caption{Deontic rate changes for r/anxiety responses with CoT dialog insertion. The figure illustrates how chain-of-thought prompting affects the frequency of deontic language (should/must/need/shall/ought) across different models.}
+  \caption{Deontic rate changes for r/anxiety responses with CoT dialog insertion. Yellow lines mark the mean change for each response type.}
   \label{fig:anxiety_deontic}
 \end{figure}
 
+\textbf{In summary, the control strategy explored here supports previous findings by \cite{socialgaze} and \cite{cheng-etal-sycophancy} that controlling the phenomenon of LLM "empathy" or "sycophancy" remains a challenging task. However, a close examination of the baseline and CoT responses indicates that the challenge may be dual in nature - capturing the change in reasoning~\ref{tab:examples-cot} in text and distinguishing it from superficial changes in wording captured at the surface level by the deontic rate.}
 
-\subsection{Error analysis}\label{errors}
-% Show examples of Annotation error analysis for moral endorsement and perhaps sarcasm.
+\section{Framework Extensibility - RVS}
+A key strength of the framework developed in this project lies in its extensibility to other psychosocial paradigms. To illustrate this, the codebase was successfully adapted to incorporate the Rokeach Value Survey (RVS) paradigm.
 
-% Uncomment only time permitting: 
-% \subsection{CoT Response Generations analysis}\label{errors}
-% % Manual analysis of CoT responses and how they differ from baseline responses for the same posts - provide examples and excerpts.
+The adaptation of the technical framework to the RVS paradigm was successful howeever replicating the full process with manual annotation is currently limited by human resources available for the project. 
 
-\subsection{Extensibility of the framework}
-% Include RVS annotations and coccurrence networks here. The annotations are missing the reliability checks for the 36 associated traits within the RVS paradigm, which was included as a proof of concept to demonstrate the extensibility of the technical framework.
+Therefore, the analyses in this section are provided primarily as a proof of concept to establish the feasibility of extensibility of the DeepReflect framework in direct response to RQ1. The following discussion should be interpreted as speculative and illustrative of the framework’s extensibility rather than a conclusive investigative finding in its own right.
+
+\subsection{Analysis of RVS paradigm annotations}
+
+\subsubsection{Discussion of RVS annotations}
+
+LLMs (especially RLHF‑trained) are optimized to be helpful, harmless, and honest. This tends to inflate values like Helpful, Honest, Polite, Inner Harmony, and Wisdom relative to human baselines, because the model systematically prefers pro‑social, conciliatory phrasing and social norms based reasoning.
+
+\textbf{Audience and Incentives}
+
+The human authored comments - OP Preferred and Top Comment reflect selection pressures (what the OP or community rewards). These can emphasize moral judgment, boundary setting, or social norms (e.g., Self‑Respect, Independent, Responsible), producing patterns that diverge from LLMs’ balanced/neutral stance.
+
+LLMs lack personal stakes and reputational incentives, so they rarely display values like Social Recognition or status‑seeking cues that can appear in human discourse.
+
+Human comments are grounded in lived experience and specific emotional context; LLMs rely on generalizable heuristics. In domains like AITAH, humans may lean into norm enforcement (e.g., Justice/Egality proxies such as Equality or Self‑Respect), whereas LLMs often default to de‑escalation and perspective‑taking (raising Polite, Helpful, Inner Harmony).
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.5\linewidth]{Diagrams/aitah-rvs.png}
+  \caption{RVS paradigm annotations for r/aitah dataset. The figure shows the distribution of RVS traits across different response types as a proof of concept for framework extensibility.}
+  \label{fig:aitah_rvs}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.5\linewidth]{Diagrams/rvs-anxiety.png}
+  \caption{RVS paradigm annotations for r/anxiety dataset demonstrating the application of the RVS framework to anxiety-related posts.}
+  \label{fig:anxiety_rvs}
+\end{figure}
+
+

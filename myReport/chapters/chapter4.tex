@@ -9,7 +9,7 @@ For every retained post the pipeline extracts (i) the most upvoted comment and (
 
 Text was cleaned with minimal, semantics-preserving preprocessing: non-English posts removed, de-identified obvious personal identifiers (usernames and emails), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability with language model outputs.
 
-Each pair of post and its associated set of responses is treated as a single analytical unit (‘feature’). For the purposes of verdict analysis with this dataset, (discussed in Section~\ref{sec:posterchild2.1}), the dataset was stratified on verdicts (NTA, YTA, No\_Verdict, REST) to ensure balanced representation across the four classes.
+Each pair of post and its associated set of responses is treated as a single analytical unit (‘feature’). For the purposes of verdict analysis with this dataset, (discussed in Section~\ref{sec:posterchild2.1}), the dataset was stratified on verdicts (NTA, YTA, No Verdict, Rest) to ensure balanced representation across the four classes.
 
 The same approach for 'features' are used for the Anxiety dataset for consistency and to ensure comparability. Each feature is treated as a single analytical unit during manual checks, and statistical aggregation.
 % This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.

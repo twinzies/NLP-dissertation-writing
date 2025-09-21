@@ -47,6 +47,11 @@
 \newblock I asked {ChatGPT} to listen to me talk about myself -- and it actually helped, 2025.
 \newblock The Guardian, Aug 16.
 
+\bibitem{Fangchatbot}
+{\sc Fang, C.~M., Liu, A.~R., Danry, V., Lee, E., Chan, S. W.~T., Pataranutaporn, P., Maes, P., Phang, J., Lampe, M., Ahmad, L., and Agarwal, S.}
+\newblock How ai and human behaviors shape psychosocial effects of chatbot use: A longitudinal randomized controlled study.
+\newblock {\em arXiv\/} (mar 2025).
+
 \bibitem{fang-etal-psychoeffects}
 {\sc Fang, C.~M., Liu, A.~R., Valdemar, D., Lee, E., Chan, S. W.~T., Pataranutaporn, P., and Maes, P.}
 \newblock How ai and human behaviors shape psychosocial effects of chatbot use: A longitudinal randomized controlled study.
@@ -129,6 +134,18 @@
 \newblock {\em The Nature of Human Values}.
 \newblock The Free Press, New York, NY, 1973.
 
+\bibitem{humangpt}
+{\sc Scharth, M.}
+\newblock Chatgpt now better at faking human emotion and behaviour.
+\newblock University of Sydney / The Conversation, May 2024.
+\newblock Accessed: 2025-09-21.
+
+\bibitem{sycophancy-iclr}
+{\sc Sharma, M., Tong, M., Korbak, T., Duvenaud, D., Askell, A., Bowman, S.~R., Cheng, N., Durmus, E., Hatfield‐Dodds, Z., Johnston, S.~R., Kravec, S., Maxwell, T., McCandlish, S., Ndousse, K., Rausch, O., Schiefer, N., Yan, D., Zhang, M., and Perez, E.}
+\newblock Towards understanding sycophancy in language models.
+\newblock In {\em International Conference on Learning Representations (ICLR)\/} (2024).
+\newblock arXiv:2310.13548.
+
 \bibitem{nyt2024-characterai-lawsuit}
 {\sc Singer, N.}
 \newblock Teen's death leads to lawsuit against chatbot company {Character.ai}, 2024.
@@ -156,10 +173,21 @@
 \newblock arXiv preprint arXiv:2410.08698, 2024.
 \newblock Submitted October 11, 2024.
 
+\bibitem{llm-judge}
+{\sc Wei, H., He, S., Xia, T., Liu, F., Wong, A., Lin, J., and Han, M.}
+\newblock Systematic evaluation of llm‑as‑a‑judge in llm alignment tasks: Explainable metrics and diverse prompt templates.
+\newblock {\em arXiv preprint arXiv:2408.13006\/} (2024).
+
 \bibitem{cot}
 {\sc Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q., and Zhou, D.}
 \newblock Chain-of-thought prompting elicits reasoning in large language models.
 \newblock arXiv preprint arXiv:2201.11903, 2022.
+
+\bibitem{empath-llm}
+{\sc Welivita, A., and Pu, P.}
+\newblock Are large language models more empathetic than humans?
+\newblock {\em arXiv preprint arXiv:2406.05063\/} (2024).
+\newblock Accessed: 2025-09-21.
 
 \bibitem{zhang-ai_companions}
 {\sc Zhang, Y., Zhao, D., Hancock, J.~T., Kraut, R., and Yang, D.}

@@ -1,18 +1,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline architecture for DeepReflect.}}{14}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces CoT Generation with personal queries embedded in reasoning dialogs retrieved from expert human transcripts. In this case, the dialogs are from Carl Rogers' sessions with Gloria (patient) \cite {rogersgloria}. This dialog was selected because it reflects an implicit “NTA” judgment: Gloria expresses guilt about lying to her daughter, and Rogers facilitates exploration of these feelings by challenging her self-perception.}}{17}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline architecture for DeepReflect.}}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces CoT Generation with personal queries embedded in reasoning dialogs retrieved from expert human transcripts. In this case, the dialogs are from Carl Rogers' sessions with Gloria (patient) \cite {rogersgloria}. This dialog was selected because it reflects an implicit “NTA” judgment: Gloria expresses guilt about lying to her daughter, and Rogers facilitates exploration of these feelings by challenging her self-perception.}}{17}{figure.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Cross-tabulation of Genuineness and Indirect language for the r/aitah dataset. Notice the contrasts in the presence and absence of traits between LLM-generated and human-authored responses.}}{25}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Cross-tabulation of UPR and Emotional validation for r/aitah dataset. The figure illustrates the stark contrasts in traits of LLM-generated and human-authored responses.}}{26}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Cross-tabulations for the r/anxiety dataset. Subfigure (b) illustrates the contrasts in community preferences amongst human-authored responses.}}{27}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces \footnotesize {Cross-tabulation of UPR and Indirect language for responses to r/anxiety posts. The figure illustrates the consistent and divergent behavior of different language models.}}}{29}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces \footnotesize {Cross-tabulation of Genuineness and Indirect language for r/anxiety. The figure illustrates the consistent and divergent traits of different language models.}}}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cross-tabulation of Genuineness and Indirect language for the r/aitah dataset. Notice the contrasts in the presence and absence of traits between LLM-generated and human-authored responses.}}{25}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Cross-tabulation of UPR and Emotional validation for r/aitah dataset. The figure illustrates the stark contrasts in traits of LLM-generated and human-authored responses.}}{26}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Cross-tabulations for the r/anxiety dataset. Subfigure (b) illustrates the contrasts in community preferences amongst human-authored responses.}}{27}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \footnotesize {Cross-tabulation of UPR and Indirect language for responses to r/anxiety posts. The figure illustrates the consistent and divergent behavior of different language models.}}}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \footnotesize {Cross-tabulation of Genuineness and Indirect language for r/anxiety. The figure illustrates the consistent and divergent traits of different language models.}}}{29}{figure.caption.29}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces \textit {r/aitah}---Overall performance scores (Accuracy, Precision, Recall, and F1 Score) for OP-preferred responses and model outputs (GPT-4o, Claude, LLaMA, GPT-oss), comparing model baseline response with CoT dialog insertion. Values represent aggregate scores across the four classes, not per-class results.}}{30}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Deontic rate changes for r/aitah responses with CoT dialog insertion. The figure shows the difference in deontic expressions (per 100 words) between baseline and CoT responses across different language models.}}{31}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Deontic rate changes for r/anxiety responses with CoT dialog insertion. The figure illustrates how chain-of-thought prompting affects the frequency of deontic language (should/must/need/shall/ought) across different models.}}{32}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Deontic rate changes for r/aitah responses with CoT dialog insertion. The figure shows the difference in deontic expressions between baseline and CoT responses across different language models. Yellow lines mark the mean change for each response type.}}{31}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Deontic rate changes for r/anxiety responses with CoT dialog insertion. Yellow lines mark the mean change for each response type.}}{34}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces RVS paradigm annotations for r/aitah dataset. The figure shows the distribution of RVS traits across different response types as a proof of concept for framework extensibility.}}{35}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces RVS paradigm annotations for r/anxiety dataset demonstrating the application of the RVS framework to anxiety-related posts.}}{36}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

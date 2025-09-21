@@ -2,19 +2,22 @@
 
 \section{Limitations}\label{sec:limitations}
 
-In the course of establishing the reliability of the evaluation pipeline, the following limitations have come to light in order of decreasing precedence:
+In the course of the project, the following constraints have emerged in descending order of significance:
 
-Firstly, the annotation of features with the LLM‑as‑judge paradigm remains limited in reliability in cases where the definitions of annotations are semantically nuanced. The issue may not be feasible to fix by increasing context window size as the inaccurate annotation of human authored responses was especially evident in cases of sarcasm (show example). Thus in order to evaluate and annotate human-authored responses may require the consideration of the advancements in sarcasm detection (cite). 
+Firstly, the reliable annotation of features in specialized contexts with the LLM‑as‑judge paradigm remains a challenging and resource intensive task.
 
-In the same theme, the prompt design required multiple iterations and tests to capture the traits to an acceptable degree of reliability – a process which remains susceptible to differences between language models and non-transparent and changing system prompts of the judge model (GPT 4o). 
+To achieve reliability, the prompt design required multiple iterations and tests to capture the traits to an acceptable degree of accuracy – a process which remains highly sensitive to edits in prompt based definitions provided to the selected judge model (GPT 4o). 
 
-This was particularly limiting in establishing the reliable annotation of the Sycophantic trait - moral endorsement. The definition of moral endorsement was based on the prompt by cheng et al to maintain comparability. While the prompt appeared to work accurately in some cases, when used to annotate the full datasets, it yielded errors. The error analyses indicated that this is likely due to confusion in the semantic interpretation of the definition of the trait, with some batches being annotated such that it captured the opposite trend and some other batches where the trend captured was accurate. 
+Inaccurate annotation of responses was especially evident in the cases of sarcasm (which was detected in the reddit community datasets in human-authored responses upon manual validation) as well as critically, for annotating the responses that exhibited the Sycophantic trait "moral endorsement".
+
+The \textbf{annotation reliability} of the LLM-as-judge paradigm was limiting in establishing the reliable statistical tests for the pairwise associations of traits with Moral endorsement though the definition of the trait was based on the prompt template design in the ELEPHANT framework \cite{cheng-etal-sycophancy} to maintain comparability with findings. Though the prompt appeared to work accurately in some initial test cases, when used to annotate the full datasets, it yielded costly and erroneous annotations. This inconsistency echos the findings of Wei et al. \cite{llm-judge} who find significant impact of prompt templates on LLM judge performance.
+Upon inspection, the errors indicate that this was due to confusion in the semantic interpretation of the definition of the trait, with some sets of responses being annotated such that the prompt definition captured the exact opposite of the intended trait while some others where the trend captured was as intended. 
 
 
 \begin{tcolorbox}[
   colback=gray!10,
   colframe=gray!50,
-  title=Moral Endorsement Annotation Guidelines,
+  title=Moral Endorsement Annotation definition,
   width=0.9\textwidth,
   enhanced,
   sharp corners,
@@ -35,17 +38,15 @@ REMEMBER: Your goal is to decide only whether the response conveys that the aske
 \end{tcolorbox}
 
 
+The result is in itself useful, and may be treated as such-highlighting the limitations of the LLM‑as‑judge paradigm for the task of annotations of traits and emphasizing the necessity for the interannotator reliability step as the absence of it can propagate errors in analyses and meaningful conclusions. However, as a result of the issue, the results are also inconclusive in the pairwise associations with the Moral endorsement trait which may have associations with key PCT traits such as UPR.
 
-This issue has led the project to be inconclusive in the pairwise associations with this specific trait. Though it must be noted that the finding is useful in itself, and a key result that contributes to highlighting the limitations of the LLM‑as‑judge paradigm for such annotations. 
-The use of the paradigm without the step of interannotator reliability can propagate errors in analyses and stand in the way of drawing meaningful conclusions.
+Secondly, there may be biases inherent in the datasets formed of the Reddit Archives and within the subreddit communities owing to the majority user demographics and their preferences. Therefore, the human-authored responses used for comparison and to establish a proxy for the ground truth are necessarily subject to the biases inherited from the underlying dataset. OP-preferred comments were only available for about 70\% of the posts. Future study may involve the curation of specific datasets for research into the empathic and sycophantic perceptions of LLM and human-authored responses to personal queries to mitigate this limitation.
 
-Secondly, there may be biases inherent in the datasets formed of the Reddit Archives and within the subreddit communities owing to the majority user demographics and their preferences. Therefore, the human-authored responses used for comparison and to establish a proxy for the ground truth are necessarily subject to the biases inherited from  the dataset. OP-preferred comments were only available for about 70\% of the posts. Future study may involve the curation of such datasets for research to mitigate these issues.
-
-Lastly, Empathy and Sycophancy are contextually advantageous or disadvantageous in social interactions. While the study looked at Reddit communities which deal primarily with queries on personal matters broadly, Topic analysis of the posts could be especially insightful in identifying specific contexts in which the phenomenon of LLM empathy or sycophancy may be acceptable and even desirable. Rather than a direction of future study, topic analysis on the dataset may be considered a “low hanging fruit” with the current state of findings being limited only by time in this endeavor. The differences in strengths of associations in traits between the two Reddit communities indicate significant potential for topic analyses to further cement the main arguments presented in the following section. 
+Lastly, the phenomenon captured by LLM empathy and sycophancy can be advantageous or disadvantageous in social interactions. While the study looked at Reddit communities which deal primarily with queries on personal matters, a more nuanced topic analysis of the posts could be especially insightful in identifying specific contexts in which the phenomenon occurs to varying degrees of frequency. Topic analysis is a “low hanging fruit” with the current state of analyses being limited only by time in this endeavor. The difference in strengths of associations in traits between the two Reddit communities indicate significant potential for topic analyses to further cement the main arguments reiterated in the following section. 
 
 \section{Summary and Conclusion}
 
-This project has demonstrated with evidence that the same phenomenon that researchers and users associate with LLM social “sycophancy” leads to the technology being received and adopted with great ease, making it describable also as an instance of “empathy”.
+This project has demonstrated with evidence that the phenomenon that researchers and users associate with LLM social “sycophancy” leads to the technology being received and adopted with great ease, making it describable also as an instance of “empathy”.
 
 Further, the research demonstrates that the core issue of divergent connotations being used to describe the trait that points to the same response is not isolated to LLM-authored responses. In social contexts without clear normative answers, the same human authored responses when annotated systematically, may be perceived as sycophantic or empathic too.
 Perhaps there has not been a profound need to operationalize and measure the difference between sycophancy and empathy in a social context before. 
