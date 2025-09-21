@@ -3,31 +3,30 @@
 
 \section{Data preprocessing}
 % This section can describe text processing steps - how the human responses were selected and which posts were selected from the RedArcs dataset etc.
-A dataset was built from the RedditArchives for two public subreddits—AITAH, and Anxiety. For each subreddit, the top 1,000 most upvoted posts were selected, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. We also removed exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) to prevent inflated counts and biased comparisons.
+A dataset was built from the RedditArchives for two public subreddits—AITAH, and Anxiety. For each subreddit, the top 1,000 most upvoted posts were selected, excluding weekly megathreads, deleted/removed items, and AutoModerator entries. Exact and near-duplicate texts (specifically, crossposts, copypastes and bot repeats) are also removed to prevent inflated counts and biased comparisons. Of these 1000, N = 897 posts for r/aitah and N = 935 for r/anxiety were found to be usable for the analyses owing to constraints imposed by the API endpoints for the language models.
 
-For every retained post we extracted (i) the most upvoted comment and (ii) the comment that the OP engaged with most; all artifacts were saved to standardized CSVs for downstream analysis.
+For every retained post the pipeline extracts (i) the most upvoted comment and (ii) the comment that the OP engaged with the most; all generated and extracted artifacts were saved as CSVs for downstream analysis.
 
-Text was cleaned with minimal, semantics-preserving preprocessing: we removed non-English items, de-identified obvious personal identifiers (usernames, emails, links to personal sites), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability.
+Text was cleaned with minimal, semantics-preserving preprocessing: non-English posts removed, de-identified obvious personal identifiers (usernames and emails), standardized whitespace and Unicode characters, and lightly constrained length (posts ~50–500 words; comments ~5–300 words) for comparability with language model outputs.
 
-We treat each set of body of the responses and posts as a single analytical unit (feature) to ensure stratified sampling for the AITAH dataset. For the purposes of verdict analysis with this dataset, (discussed in Section~\ref{sec:posterchild2.1}), the dataset was stratified on verdicts (NTA, YTA, NO\_VERDICT, REST) to ensure balanced representation across the four classes.
+Each pair of post and its associated set of responses is treated as a single analytical unit (‘feature’). For the purposes of verdict analysis with this dataset, (discussed in Section~\ref{sec:posterchild2.1}), the dataset was stratified on verdicts (NTA, YTA, No\_Verdict, REST) to ensure balanced representation across the four classes.
 
-The same approach for 'features' are used for the Anxiety dataset for consistency and to ensure comparability. We also treat each feature as a single analytical unit during manual checks, and statistical aggregation.
+The same approach for 'features' are used for the Anxiety dataset for consistency and to ensure comparability. Each feature is treated as a single analytical unit during manual checks, and statistical aggregation.
 % This preserves thread integrity and prevents dependence-induced bias when comparing human and LLM responses drawn from the same conversation.
 
 \section{Procedures}
 % This section should discuss the creation of proxies for empathy and sycophancy.
-For each selected post, we prompt the target language model firstly, with the base prompt\footnote{\smallskip Prompts for this step are provided in the appendices \ref{sec:app_prompts}.} to establish a \textbf{baseline open-ended response} to the body of the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top upvoted human comment, and (iii) the most engaged human comment (available for approximately half of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
+For each selected post, the system prompts the target language model firstly, with the basic prompt template to generate a response\footnote{\smallskip Prompts for this step are provided in the appendices \ref{appendix:baseprompt}}. The response is used to establish a \textbf{baseline open-ended response} to the post. This response is appended to a table containing: (i) the model-generated response, (ii) the top community upvoted human comment, and (iii) the OP-preferred comment i.e. the comment the OP engaged with (available for approximately 70\% of the posts). The resulting dataframe consists of the original post body, paired with two types of responses to personal queries - human and AI responses.
 
 \medskip 
 \textbf{Feature Extraction}
 
 \smallskip 
 \begin{itemize}
-    \item In steps 3 and 4 of the Evaluation Framework (Figure~\ref{pipeline_steps}), features\footnote{Note that in this context, 'feature' refers to the part of the text used for annotation from the responses and the body of the post.} are annotated at the full response level within each body–response pair. For the statistical analysis, these annotations are then aggregated to construct contingency tables, which form the basis of chi-square tests of independence.
+    \item In steps 3 and 4 of the Evaluation Framework (Figure~\ref{pipeline_steps}), features\footnote{Note that in this context, 'feature' refers to the part of the text used for annotation from the post and responses.} are annotated at the full response level within each body–response pair. For the statistical analysis, these annotations are then aggregated to construct contingency tables, which form the basis of chi-square tests of independence.
     \item Note that each feature can be annotated with:
     \begin{itemize}
-        \item \textbf{Values exhibited} by the author.
-        \item \textbf{Values incentivized} by the author of the response. While incentivized values are reported for completeness, the analyses focus on exhibited values, as these provide direct evidence in the text and reduce ambiguity from overlapping interpretations.
+        \item \textbf{Traits exhibited} by the author.
     \end{itemize}
 \end{itemize}
 
@@ -37,14 +36,16 @@ To support these inquiries, the file saved by the evaluation pipeline in step 5 
 
 This annotated dataset forms the basis for the subsequent analyses necessary to also address RQ3, which studies the differences in the distributions of values between human-authored and language model–generated responses to personal queries.
 
-\subsection{Experiments}
+\section{Experiments}
 % TODO: review wording below for clarity and grammar.
-The experimental design spans two major dimensions: (i) qualitative analysis of the sentence-level features (ii) quantification of the verdicts in the features by source type (two forms of human responses and three language model responses). While i. is conducted for each of the two datasets (r/aita and r/anxiety), under the four psychosocial paradigms, ii. is valid only for the r/aita dataset, where the responses may contain explicit judgments or not - forming 3 distinct classes (NTA, YTA, No judgment).
+The experimental design spans two major dimensions: (i) statistical analysis of the annotated response-level features in the form of chi-square tests (ii) class-wise metrics for social verdict categories ('NTA', 'YTA', 'No verdict', 'Rest') across different source types, including one form of human-authored response (top upvoted comment) and four language model responses. 
 
-\subsubsection{Experiment 1}
+While i. is conducted for each of the two datasets (r/aitah and r/anxiety), under the different psychosocial paradigms, ii. is valid only for the r/aitah dataset, where the responses may or may not contain explicit verdicts - forming four distinct categories (NTA, YTA, No Verdict, Rest).
+
+\subsection{Experiment 1}
 In \textbf{Experiment 1}, the primary objective is to compare the selected paradigms and analyze the distributions of values across them, with the aim of ultimately determining how paradigm choice can lead to divergent interpretations of the same LLM response.
 
-While values incentivized are also provided in the results, the analyses are focused on \textbf{values exhibited} under each paradigm by the two sources of response.
+While values incentivized are also provided in the results, the analyses are focused on \textbf{values exhibited} under each paradigm by the two distinct types of authors of response.
 
 \smallskip \textbf{Statistical Methods}
 
@@ -52,14 +53,14 @@ The annotated dataset is used to construct contingency tables that shows how two
 
 % Additional experiments: We incorporate prompts that explicitly instruct the model to (i) generate a response most likely to be upvoted, and (ii) generate a response most likely to engage the author.
 
-\subsubsection{Experiment 2}
-\textbf{Experiment 2} is designed to analyze the differences in judgments for the r/aita dataset across two different sources of responses: i. human-authored, and ii. LLM-authored responses for the two psychosocial paradigms - Rogerian PCT and Goffman's ToF.
+\subsection{Experiment 2}
+\textbf{Experiment 2} is designed to analyze the differences in judgments for the r/aitahdataset across two different sources of responses: i. human-authored, and ii. LLM-authored responses for the two psychosocial paradigms - Rogerian PCT and Goffman's ToF.
 
 % Additionally, the accuracy, f1... for multi class classification is reported for 2 paradigms - Rogerian PCT and Goffman's ToF.
 
-\subsubsection{Statistical Methods}
+\subsection{Statistical Methods}
 
-Judgments are extracted from the annotated dataset under three class labels: (i) NTA, (ii) YTA, and (iii) No (explicit) judgment. These labels are used to construct a 3×3 confusion matrix, with the human-authored judgment as the ground truth and the LLM-authored judgment as the prediction. Per-Class performance metrics and pairwise error rates, including the False Negative Rate (FNR) and False Positive Rate (FPR), are reported for each class label in Section~\ref{sec:Results}.
+Judgments are extracted from the annotated dataset under four class labels: (i) NTA, (ii) YTA, (iii) No (explicit) verdict and (iv) Rest. These labels are used to construct a 3×3 confusion matrix, with the human-authored judgment as the ground truth and the LLM-authored judgment as the prediction. Per-Class performance metrics and pairwise error rates, including the False Negative Rate (FNR) and False Positive Rate (FPR), are reported for each class label in Section~\ref{sec:Results}.
 
 The measurements thus obtained are used to inform the analysis on how 'judgments' differ between human- and LLM-authored responses.
 
@@ -70,10 +71,10 @@ Experiments 1 and 2 are rerun, this time to investigate the efficacy of control 
 The implementation of generations with the chain-of-thought reasoning is detailed under the \textbf{Generation Pipeline} subsystem described in Section~\ref{sec:Pipeline}.
 
 \section{Construct Validity and Evaluation Metrics}
-To assess construct validity, one human annotator labeled 100 randomly sampled post–response pairs across all four paradigms for each response type. The PCT paradigm encompasses 15 values, Goffman’s ToF 5, RVS 36, and AVT 18.
+To assess construct validity, one human annotator labeled one hundred randomly sampled post–response pairs across all the paradigms for each response type. The PCT paradigm encompasses three traits to operationalize Empathy and Goffman’s ToF consists of five used to operationalize Sycophancy. RVS consists of thirty-six values, however for the purposes of this project, this paradigm is included as a proof of concept to demonstrate the extensibility of the technical framework in response to RQ1.
 
-Inter-rater reliability reached Cohen’s $\kappa$ above xx for all metrics, with an overall classification accuracy of yy. For the AITAH dataset, verdicts and accompanying statements in responses were used as proxies for Empathy and Sycophancy, each mapped onto five behaviors as defined by their respective theoretical traditions\footnote{This strategy is conceptually aligned with prior work on social sycophancy \cite{cheng-etal-sycophancy}}.
+Inter-rater reliability and accuracy for all ToF and PCT metrics with the human annotator and language model (GPT-4o) are reported in Section~\ref{sec:results}. For the AITAH dataset, verdicts and accompanying statements in responses were used as proxies for the ground truth social verdict.
 
-For the RVS and AVT paradigms, which yield categorical distributions rather than binary judgments ('Sycophancy' or 'Empathy' for ToF and PCT respectively), pairwise error rates such as False Negative Rate (FNR) and False Positive Rate (FPR) are not directly applicable.
-To identify significant associations between features annotated under more than one distinct paradigm we construct frequency tables and use chi-square analysis with further details provided in section~\ref{sec:Analysis}. 
+% For the RVS paradigm, which yield categorical distributions rather than binary judgments ('Sycophancy' or 'Empathy' for ToF and PCT respectively), pairwise error rates such as False Negative Rate (FNR) and False Positive Rate (FPR) are not directly applicable.
+% To identify significant associations between features annotated under more than one distinct paradigm we construct frequency tables and use chi-square analysis with additional detail provided in section~\ref{sec:results}. 
 % TODO: Add some math here for the chi-square analysis and p-value calculations or put it in the appendix and reference here.

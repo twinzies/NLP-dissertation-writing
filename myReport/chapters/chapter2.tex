@@ -1,26 +1,106 @@
 \chapter{Literature Survey}\label{sec:Litreview}
-% ~1440 words ≈ ~11–12 paragraphs
+% TODO: insert https://docs.google.com/document/d/1DV2OenoMhQPfrpJDEhp_3RaXjltQJGDdQ6CzeFqPGcY/edit?tab=t.noop9s5yu5s
 
-\textcolor{black!40}{Contextualize your work and provide insights into major relevant themes of the literature as a whole. Use each paper (or theme) as a chance to articulate what is special about your paper. Start out broad - social background and theory - Discuss what other frameworks were considered like Virtue ethics and philosophical ones, CBT, Schwartz values etc. but why they were not chosen. Why I Focused on Rogerian psychotherapy as it is person centered - no specific diagnosis needed (or available).}
+The project sets out on the task to establish a reliable evaluation pipeline with the aim of achieving statistically significant insight into the two divergent interpretations of LLM generated responses in affective conversation. The two interpretations with divergent connotations under consideration are LLM “Sycophancy” and “Empathy” assigned to responses generated in social contexts. 
+
+The behaviors “Empathy” and “Sycophancy” may be operationalized for such evaluation with a list of traits associated with them. When a response exhibits that trait, it may be annotated as “present” and “absent” when it does not. 
+
+The project sets out on the task to establish a reliable evaluation pipeline with the aim of achieving statistically significant insight into the two divergent interpretations of LLM generated responses in affective conversation. The two interpretations with divergent connotations under consideration are LLM “Sycophancy” and “Empathy” assigned to responses generated in social contexts. 
+
+The behaviors “Empathy” and “Sycophancy” may be operationalized for such evaluation with a list of traits associated with them. When a response exhibits that trait, it may be annotated as “present” and “absent” when it does not. 
+
+The literature review is broken into three subsections:
+
+\begin{enumerate}
+    \item The theoretical foundations of the Psychosocial paradigms under consideration for the evaluation of a text based response.
+    
+    \item NLP research relevant to:
+    \begin{enumerate}[label=\alph*.]
+        \item The use of transformer-based LLM chatbots in psychosocial contexts.
+        \item The use of transformer-based LLMs for the design of scalable technical systems, specifically for sample annotations at scale. The project offers the opportunity to investigate the annotations with the LLM‑as‑judge paradigm.
+        \item Control mechanisms for the phenomenon as part of the response generation.
+    \end{enumerate}
+    
+    \item Gaps in the existing literature and how the project aims to cover them.
+\end{enumerate}
 
 
-\section{Theoretical Foundations}
+% The project seeks to establish a reliable pipeline of experimental determinism around the two divergent themes in LLM research and its implications. Therefore, the literature review will focus on the following themes:
+% The project offers the opportunity to investigate the annotation quality of the LLM‑as‑judge paradigm itself in the determination of psychosocial traits exhibited by dialog captured in the form of text.
 
-\subsection{Rogerian Psychotherapy}
-\subsubsection{Psychosocial use and Empathic LLMs}
-\textcolor{black!30}{Katie mentioned a good point about how I'm adding greater nuance to the Likert scales referenced in this paper.}
 
-\subsection{Rokeach Value Survey as an analytical instrument}
-\subsubsection{Values and Ethics in LLM research}
-\textcolor{black!30}{Add some notes and mention how Anthropic's work warrants some scrutiny as they are a for-profit company. The "values" framework they propose in values in the wild has not been validated by experts in the social sciences. However it provides a good reference frame for comparison with the Rokeach framework of values. There is a limitation - DeepReflect does not have access to the full dataset Anthropic used for the Values in the Wild paper.}
+% Start out broad - social background and theory - Discuss what other frameworks were considered like Virtue ethics and philosophical ones, CBT, Schwartz values etc. but why they were not chosen. Why I Focused on Rogerian psychotherapy as it is person centered - no specific diagnosis needed (or available).}
+
+
+\section{Psychosocial paradigms: Theoretical Foundations}
+
+\subsection{Rogerian Person Centered Therapy (PCT)}
+
+Carl Rogers outlined six conditions that support therapeutic change, which are commonly summarized in practice as empathy, accurate understanding, unconditional positive regard, and genuineness (also referred to as congruence) (Rogers, 1957). Three of these six qualities are useful for annotating social dialogue because they do not depend on a clinical diagnosis, are not tied to specific content, and can often be identified through linguistic patterns such as expressions of understanding, and a nonjudgmental attitude.
+
+The identification of empathic communication can be operationalized through three core relational conditions that serve as reliable markers of a therapist’s empathic stance. These traits are—genuiness, unconditional positive regard, and accurate understanding \cite{conditions-rogers}:
+
+\begin{enumerate}
+    \item Trait: Genuineness. “The third condition is that the therapist should be, within the confines of this relationship, a congruent, genuine, integrated person. It means that within the relationship he is freely and deeply himself, with his actual experience accurately represented by his awareness of himself. It is the opposite of presenting a facade, either knowingly or unknowingly.”
+    \item Trait: Unconditional positive regard (UPR). “To the extent that the therapist finds himself experiencing a warm acceptance of each aspect of the client's experience as being a part of that client, he is experiencing unconditional positive regard.”
+    \item Trait: Accurate understanding. “The fifth condition is that the therapist is experiencing an accurate, empathic understanding of the client's awareness of his own experience.”
+\end{enumerate}
+
+Based on these three values within the PCT paradigm, the evaluation pipeline can be designed with a list of traits that can be annotated as either present or absent (see Appendix~\ref{appendixA}). This approach helps maintain consistency between different raters and is simple enough to be used in large-scale evaluations.
+
+Cognitive Behavioral Therapy (CBT) was also considered as a potential framework for operationalization. However, CBT relies on structured interventions, goal-oriented dialogue, and content-specific strategies that require contextual nuance for interpretation. These characteristics make it less suitable for the surface-level task of annotating responses \cite[p.~69]{cbt-beck}.
+
+\subsubsection{A discussion on LLM empathy and its impact on well-being}
+Research indicates that LLM chatbots are efficacious in establishing the perception of empathy and trust with humans in interaction \cite{fang-etal-psychoeffects}. The paper shows that while voice-based chatbots were associated with slightly better outcomes than text at average use, greater daily use was linked to lower “socialization with people,” with the neutral-voice condition showing a significant decline at higher usage ($\beta = -0.05$, $p = 0.003$). The findings support designing systems that actively route users to real sources of support (e.g., tooling for connections with real humans like friends/family, empathic handoffs to clinicians or legal support depending on the situation) and that make human care visible in the product, so users feel the tool was created with their well-being in mind rather than as a substitute for socialization. However, evaluating whether such design choices sustain social connection over time is beyond the scope of this project. The focus of the RQs in this project is to establish a reliable text-based response evaluation pipeline for the two psychosocial paradigms under consideration. Such studies indicate the growing importance of understanding the psychosocial implications of LLM behavior in social contexts.
+
+\subsection{Goffman’s theory of face (ToF)}
+Following Goffman’s account of face—the positive self-image people seek to maintain in interaction \cite{Goffman1955}—LLM sycophancy in social dialogue is treated as the excessive preservation of a human participant’s face. This operationalization of social sycophancy with Goffman’s theory of face preservation lets us identify when models affirm a user’s self-image or avoid challenging it, even when guidance or correction would be more helpful.
+
+\paragraph{Five face-preserving behaviors (used for the trait annotation):}
+\begin{itemize}
+  \item \textbf{Emotional validation} — reassuring and empathic language that offers comfort without critique.
+  \item \textbf{Moral endorsement} — affirming or praising the user’s actions or stance, even when community norms would judge them problematic.
+  \item \textbf{Indirect language} — hedging and deference that avoids clear guidance or disagreement.
+  \item \textbf{Indirect action} — suggesting coping or reflective steps that do not change the situation when concrete action may be needed.
+  \item \textbf{Accepting framing} — taking the user’s assumptions at face value instead of questioning harmful or mistaken premises.
+\end{itemize}
+
+To keep annotations comparable with Cheng et al.’s findings, the operationalization definitions for the five face-preserving behaviors is kept consistent with the ones used in the ELEPHANT framework with some edits to ensure compatibility with the extensible DeepReflect architecture \cite{cheng-etal-sycophancy}.
+
+\subsection{Rokeach Value Survey (RVS)}
+Rokeach distinguishes \emph{terminal} (end‑states) and \emph{instrumental} (modes of conduct) values and introduces a rank‑ordering instrument that has been used to analyze value salience in individuals and groups \cite{rvs}. For the purposes of this project, the Rokeach’s Value Survey (RVS) lists serve as an additional \emph{interpretive lens} to test the ease of extensibility of the system without limiting the design to the two paradigms under consideration for traits of Empathic and Sycophantic communication. 
+
+RVS is divided into two sets of eighteen traits each. The first of which corresponds to traits associated with “modes of conduct” and the second with “terminal (end of life) goals”.
+
+The project is unable to treat the thirty-six RVS value tags with manual annotation validation owing to the large number of traits; instead, this instrument is used to test and design the system for extensibility. 
+
+Anthropic’s recent “Values in the Wild” project analyzes hundreds of thousands of real assistant–user conversations to characterize value expressions in deployed systems, offering a useful contemporary value tagging mechanism \cite{values-in-wild}. However, as a for‑profit lab’s internal dataset and coding scheme, the framework has not yet been independently validated by social‑scientific experts, and only a subset of artifacts is public; accordingly, AVT may be treated as a non-standard psychosocial framework. Another practical limitation for this project is that DeepReflect does not have access to Anthropic’s full proprietary conversation corpus, so comparisons are necessarily approximate and restricted to public releases. This reality further motivates the choice of the RVS paradigm (well‑established in social psychology) for the trait annotations.
+
 
 % Narrow down to LLMs and trends in the new approaches are emerging - commonalities in the trends.
 % social engineering
 
-\subsection{Goffman's theory of face}
-\subsubsection{Social Sycophancy in LLMs}
-% \textcolor{black!30}{Recent research has shown that language models often exhibit sycophantic behavior, agreeing with users regardless of statement accuracy \cite{sharma2023understanding}.}
-\textcolor{black!30}{I already have lots of good notes on this in writing.}
+\section{Contemporary NLP research}
+\paragraph{LLM ``Empathy''}
+
+LLM empathy refers to a model’s ability to recognize a user’s emotional state and respond with supportive, context-appropriate language. Both News coverage and academic research on this topic is expanding rapidly \cite{guardian2025-chatgpt-conversation,empathy-bedside, empathy-illusion}, with a systematic review cataloging growing evidence that LLMs can express empathy cues and improve user satisfaction in health and support settings \cite{sorin-etal-empathy}.
+
+ Popular reporting echoes this momentum, noting that companies are actively pursuing “empathetic AI” for customer service and care \cite{empathy-ai}. In clinical communication, journalists have described clinicians using chatbots to refine bedside manner and draft more compassionate messages (Kolata, 2023). HCI scholars also caution against mistaking convincing displays of emotion for genuine understanding, urging careful design and transparency about system limits (Cuadra et al., 2024). Taken together, these perspectives suggest that LLM empathy—used deliberately and with safeguards—can scale empathic communication to more people and contexts.
+
+\paragraph{LLM “Sycophancy”}  
+Sycophancy refers to an LLM chatbot’s tendency to mirror a user’s stated beliefs or preferences—agreeing with or amplifying them even when doing so degrades factual accuracy or contradicts majority social judgment. The phenomenon has gained attention in the social context with the increasing research investigations( \cite{edi-sycophancy}). Such studies on LLM sycophancy show that models may agree with plainly incorrect statements once the user signals agreement with no correction. In short, alignment with the preference for affirmations in text based communication can inadvertently bias models toward accommodation over prioritizing truthful information. The issue is further complicated in social reasoning tasks, where models struggle to align with human consensus on socially acceptable behavior, a challenge highlighted in the SocialGaze framework for multi-perspective deliberation \cite{socialgaze}. These findings suggest that LLM sycophancy may not only distort factual accuracy but also social norms, reinforcing stereotypes or harmful biases. More recent work systematically evaluates the phenomenon across domains, showing that sycophantic behavior in LLMs can persist in both mathematics and medical advice settings degrading performance in the event of regressive sycophancy \cite{syceval}. 
+
+The simultaneous yet independent endeavors in research into the phenomena labeled as LLM sycophancy and LLM empathy motivates the design of an evaluation pipeline that probes both within the same technical framework.
+
+\subsection{LLM‑as‑judge paradigm}
+To design the system for scale, trait annotation is done with the LLM‑as‑Judge paradigm—with tested prompt definitions. Benchmarking shows that strong judges (e.g., GPT‑4o - which is used for this project) can approximate human preferences on multi‑turn dialogue (MT‑Bench; Chatbot Arena), yet known biases (position, verbosity, self‑enhancement) and calibration gaps remain \cite{zheng-et-al,Thakur}. Accordingly, DeepReflect cross‑checks a subset with a human rater to estimate accuracy and interannotator reliability in the social context. This follows broader evaluation practice emphasizing the investigation and benchmarking of annotation errors with this paradigm \cite{syceval}.
+
+\paragraph{Chain-of-thought (CoT) reasoning}
+Finally, the literature review takes note of a design decision in the response generation pipeline: rather than rely on costly fine-tuning to mitigate social failure modes, the system injects \emph{human-expert dialog as a few-shot example} from Carl Roger’s transcribed session with his client, Gloria, that embody the empathic communication skills central to PCT \cite{rogersgloria}. In the dialog, Rogers exhibits unconditional positive regard without offering an explicit verdict or social judgment to the client. 
+
+Chain-of-thought prompting has been shown to elicit multi-step reasoning in sufficiently large models without task-specific fine-tuning, yielding large gains across arithmetic, commonsense, and symbolic tasks (e.g., with PaLM-540B, just eight CoT examples reached state-of-the-art on GSM8K) \cite{cot}. With the advantage being that the response generation can be improved by giving a few step-by-step examples. This supports the choice of injecting human expert dialog as a control mechanism for the phenomenon labeled as LLM “Sycophancy” or LLM “Empathy”.
+
+This control mechanism on the four general purpose models under consider (GPToss, GPT 4o, Claude claude-3-5-sonnet-20241022 and Llama meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo) also serves as a preliminary validation for the recent call to focus on the development of expertise informed language models \cite{dredze}.
 
 \section{Gaps in the Literature and Open Challenges}\label{sec:gaps}
 In sum, as LLM-chatbots have become increasingly human-like and more users seek companionship with them, studies have highlighted both the advantages and disadvantages of their use. While some have raised concerns around “emotional dependence” \cite{fang-etal-psychoeffects}, several others have explored empathic perceptions of LLM responses and found them advantageous not only in the field of medical support and mental health but also in everyday personal queries \cite{Lee-etal-Empathic, sorin-etal-empathy}.
@@ -31,7 +111,7 @@ Importantly, in the absence of clear normative answers, the same statement may b
 DeepReflect provides a comparative framework to address this gap by assessing how evaluative judgments are shaped by the psychosocial paradigm through which a response is framed. 
 Moreover, it is designed to be extensible by researchers, enabling the incorporation of both conventional paradigms, such as Rokeach’s values framework, and contemporary discovery-based approaches, such as Anthropic’s Values in the Wild \cite{values-in-wild}, whereas prior work has tended to focus on a single paradigm in isolation.
 
-\medskip Finally, our investigation of controlling generations avoids replicating prior work that seeks to mitigate sycophancy exclusively \cite{cheng-etal-sycophancy}. Instead of treating sycophancy as a defect to be eliminated in isolation, DeepReflect provides a system to situate response generation within extensible psychosocial frameworks. This ensures that outputs are not merely reactive to user prompts but can be guided by well-established instruments for values and personal-growth. 
+\medskip Finally, the investigation of controlling output response avoids replicating prior work that seeks to mitigate sycophancy exclusively \cite{cheng-etal-sycophancy}. Instead of treating sycophancy as a defect to be eliminated in isolation, DeepReflect provides a system to situate response generation within extensible psychosocial frameworks. This ensures that outputs are not merely reactive to user prompts but can be guided by well-established instruments for values and personal-growth. 
 
 
 In practice, this involves chain-of-thought reasoning \cite{cot} that explicitly incorporates the chosen framework. Unlike approaches that mimic deliberation across hypothetical perspectives \cite{socialgaze}, this control strategy extends the contractualist, rule-based tradition of questioning developed in \cite{cot-morals}. Its key distinction lies in embedding the questioning within expert-informed guidelines. While these prior investigations emphasized plurality of viewpoints and normative exception-handling, this work foregrounds the role of pre-existing psychosocial instruments in shaping the ongoing, ever-changing conversations of personal reflection.

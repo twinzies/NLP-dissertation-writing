@@ -8,13 +8,14 @@
 
 \documentclass[11pt,oneside]{book}
 \usepackage[margin=1.2in]{geometry}
+\usepackage{subcaption} % Add this line in the preamble if not already included
 \usepackage{setspace}
 \usepackage[toc,page]{appendix}
 \usepackage[none]{hyphenat} % turn hyphenation off by default
 \usepackage[most]{tcolorbox}
 \usepackage{graphicx}
 \usepackage{xcolor} % To make the lipsum text grey.
-\usepackage{lipsum}
+\usepackage{pdfpages}
 % Standard package includes
 \usepackage{times}
 \usepackage{latexsym}
@@ -22,8 +23,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{array}
 \usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{inconsolata} % Optional: clean monospaced font
+\usepackage{listings}
 \usepackage{booktabs}
 \usepackage{microtype}
+\usepackage{threeparttable}
 \usepackage{inconsolata}
 \usepackage{graphicx} % Required for including images
 \usepackage{amsmath}
@@ -99,9 +104,9 @@ All sentences or passages quoted in this report from other people's work have be
 \input{chapters/chapter3.tex}
 \input{chapters/chapter4.tex}
 \input{chapters/chapter5.tex}
-\input{chapters/chapter6.tex}
+% \input{chapters/chapter6.tex}
 \input{chapters/chapter7.tex}
-\input{chapters/ethics.tex}
+% \input{chapters/ethics.tex}
 
 
 \bibliographystyle{acm} 

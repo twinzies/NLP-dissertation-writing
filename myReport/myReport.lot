@@ -1,17 +1,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Values associated with the Rogerian PCT and Goffman ToF paradigms, with the latter aligned to \cite {cheng-etal-sycophancy} to ensure comparability are given below. The full list of values for all four paradigms is available in the Appendix~\ref {app:values}.}}{9}{table.3.1}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Traits associated with the Rogerian PCT and Goffman ToF paradigms, with the latter aligned to \cite {cheng-etal-sycophancy} to ensure comparability are given below. The prompt definitions of traits for all three paradigms are given in Appendix~\ref {appendix:prompt-traits}.}}{13}{table.caption.11}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Language Models and Temperature Settings}}{14}{table.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces \textbf {Agreement scores for each trait.} Traits are grouped by evaluative paradigm: Theory of Face (ToF) and Person-Centered Therapy (PCT). Accuracy and Cohen’s $\kappa $ reflect moderate-to-substantial agreement for the majority of traits. Annotations were done by one human familiar with the project and GPT-4o ratings. Note that Moral endorsement (ToF) had poor inter-annotator agreement.}}{18}{table.5.1}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces \footnotesize {r/anxiety LLM response evaluation on Empathy (PCT) and Sycophancy (ToF) metrics}}}{19}{table.5.2}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces \footnotesize {r/anxiety human performance on select empathy (PCT) and sycophancy (ToF) metrics}}}{19}{table.5.3}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces \footnotesize {r/aitah LLM performance on select Empathy (PCT) and Sycophancy (ToF) traits}}}{22}{table.5.4}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces \footnotesize {r/aitah human performance on select Empathy (PCT) and Sycophancy (ToF) traits}}}{22}{table.5.5}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Claude performance on social judgments with and without CoT dialog insertion.}}{24}{table.5.6}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces \textbf {Agreement scores for each trait.} Traits are grouped by evaluative paradigm: ToF and PCT. Accuracy and Cohen’s $\kappa $ reflect moderate-to-substantial agreement for the majority of traits. Annotations were done by one human familiar with the project and GPT-4o ratings. Note that Moral endorsement (ToF) had poor inter-annotator agreement.}}{23}{table.caption.18}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces \footnotesize {r/anxiety LLM response evaluation on Empathy (PCT) and Sycophancy (ToF) metrics}}}{24}{table.caption.19}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces \footnotesize {r/anxiety human performance on select empathy (PCT) and sycophancy (ToF) metrics}}}{24}{table.caption.20}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces \footnotesize {r/aitah LLM performance on select Empathy (PCT) and Sycophancy (ToF) traits}}}{28}{table.caption.25}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces \footnotesize {r/aitah human performance on select Empathy (PCT) and Sycophancy (ToF) traits}}}{28}{table.caption.26}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Claude performance on social judgments with and without CoT dialog insertion.}}{29}{table.caption.30}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Distribution of change types and mean $\Delta $ for each subreddit ($N = 300$ each).}}{30}{table.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

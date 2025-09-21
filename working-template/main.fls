@@ -324,11 +324,11 @@ INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/t
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT ./Diagrams/verdicts.png
-INPUT ./Diagrams/verdicts.png
-INPUT ./Diagrams/verdicts.png
-INPUT ./Diagrams/verdicts.png
-INPUT ./Diagrams/verdicts.png
+INPUT ./Diagrams/verdicts_2.png
+INPUT ./Diagrams/verdicts_2.png
+INPUT ./Diagrams/verdicts_2.png
+INPUT ./Diagrams/verdicts_2.png
+INPUT ./Diagrams/verdicts_2.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

@@ -308,9 +308,9 @@ Overall, the evaluation of reddit comment responses confirms that associations b
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} \\
 \midrule
-\textbf{UPR x Emotional Validation}        & \textbf{0.243} & 1000 & \textbf{0.369} & 750 & 0.304 & 1687 \\
-UPR x Indirect Language           & 0.200 & 1000 & 0.248 & 750 & 0.221 & 1687 \\
-Genuineness x Indirect Language   & 0.022 & 1000 & 0.069 & 750 & 0.043 & 1687 \\
+\textbf{UPR x Emotional Validation}        & \textbf{0.243} & 1000 & \textbf{0.369} & 750 & 0.304 & 1750 \\
+UPR x Indirect Language           & 0.200 & 1000 & 0.248 & 750 & 0.221 & 1750 \\
+Genuineness x Indirect Language   & 0.022 & 1000 & 0.069 & 750 & 0.043 & 1750 \\
 \bottomrule
 \end{tabular}
 }
@@ -338,9 +338,9 @@ Genuineness x Indirect Language   & 0.022 & 1000 & 0.069 & 750 & 0.043 & 1687 \\
  & \textbf{$\Phi$} & \textbf{N} 
  & \textbf{$\Phi$} & \textbf{N} \\
 \midrule
-\textbf{UPR x Emotional Validation}        & 0.509 & 1000  & \textbf{0.544} & 700  & 0.528 & 1613 \\
-UPR x Indirect Language           & 0.236 & 1000  & \textbf{0.311} & 700  & 0.258 & 1613 \\
-Genuineness x Indirect Language   & 0.070 & 1000  & 0.097 & 700  & 0.076 & 1613 \\
+\textbf{UPR x Emotional Validation}        & 0.509 & 1000  & \textbf{0.544} & 700  & 0.528 & 1700 \\
+UPR x Indirect Language           & 0.236 & 1000  & \textbf{0.311} & 700  & 0.258 & 1700 \\
+Genuineness x Indirect Language   & 0.070 & 1000  & 0.097 & 700  & 0.076 & 1700 \\
 \bottomrule
 \end{tabular}
 }
@@ -361,7 +361,7 @@ While these patterns are consistent with Cheng et al.'s observation that prefere
 
 \subsubsection{Shift in LLM "judgments" with COT}\label{sec:posterchild2.2}
 
-CoT with dialog insertion was evaluated as a control mechanism, with results varying across models. For Claude, accuracy declined from 0.45 to 0.37 and macro-average F1 from 0.41 to 0.30 with CoT insertion (Table~\ref{tab:claude_cot_comparison}). At the class level, recall for \texttt{NO\_VERDICT} rose from 0.12 to 0.76, while recall for \texttt{YTA} fell from 0.48 to 0.08. These results show that CoT dialog insertion redistributed performance across classes rather than producing uniform changes. Full model performances are provided in the appendix.
+CoT with dialog insertion was evaluated as a control mechanism, with results varying across models. For Claude, accuracy declined from 0.45 to 0.37 and macro-average F1 from 0.41 to 0.30 with CoT insertion (Table~\ref{tab:claude_cot_comparison}). At the class level, recall for \texttt{NO VERDICT} rose from 0.12 to 0.76, while recall for \texttt{YTA} fell from 0.48 to 0.08. These results show that CoT dialog insertion redistributed performance across classes rather than producing uniform changes. Full model performances are provided in the appendix.
 
 
 \begin{table}[ht]
@@ -377,7 +377,7 @@ CoT with dialog insertion was evaluated as a control mechanism, with results var
  & Precision & Recall & F1-score & Support 
  & Precision & Recall & F1-score & Support \\
 \midrule
-NO\_VERDICT & 0.30 & 0.76 & 0.43 & 50 & 0.60 & 0.12 & 0.21 & 50 \\
+NO VERDICT & 0.30 & 0.76 & 0.43 & 50 & 0.60 & 0.12 & 0.21 & 50 \\
 NTA         & 0.48 & 0.62 & 0.55 & 50 & 0.38 & 0.96 & 0.55 & 50 \\
 REST        & 0.50 & 0.04 & 0.07 & 50 & 0.32 & 0.23 & 0.27 & 50 \\
 YTA         & 0.67 & 0.08 & 0.14 & 50 & 0.92 & 0.48 & 0.63 & 50 \\
@@ -394,9 +394,9 @@ YTA         & 0.67 & 0.08 & 0.14 & 50 & 0.92 & 0.48 & 0.63 & 50 \\
 % Insert barchart 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.9\linewidth]{Diagrams/verdicts.png}
+    \includegraphics[width=0.9\linewidth]{Diagrams/verdicts_2.png}
     \label{fig:social_verdicts}
-    \caption{\textit{r/aitah}---Overall performance scores (Accuracy, Precision, Recall, and F1 Score) for OP-preferred responses and model outputs (GPT-4o, Claude, LLaMA, GPT-oss), comparing model baseline response with CoT dialog insertion. Values represent aggregate scores across all four classes (NTA, YTA, No Verdict, Rest), not per-class results.}
+    \caption{\textit{r/aitah}---Overall performance scores (Accuracy, Precision, Recall, and F1 Score) for OP-preferred responses and model outputs (GPT-4o, Claude, LLaMA, GPT-oss), comparing model baseline response with CoT dialog insertion. Values represent aggregate scores across the four classes, not per-class results.}
 \end{figure}
 
 Across models, CoT dialog insertion did not consistently raise or lower overall metrics such as accuracy or F1. Instead, it shifted the balance of social judgments, with some classes gaining in recall or precision and others showing losses. While the results depicted may provide a useful starting point for investigation in this area, further study is necessary to determine how CoT dialog insertion affects model outputs in the context of personal queries.
@@ -404,4 +404,29 @@ Across models, CoT dialog insertion did not consistently raise or lower overall 
 
 Aggregated metrics alone risk obscuring class-level effects and qualitative analyses are required to assess how CoT prompts influence model behavior. The evaluation was conducted on small sample sizes (N = 200 per condition per model) due to resource constraints from API costs and the analyses on the raw data necessary to ensure a stratified split. While trends are visible, they should be interpreted cautiously. The implications of limited sample size for generalizability are addressed in the limitations\ref{sec:limitations} section.
 
-% Add a table here.
+% Can add a note in the analyses saying that these results match the findings of Cheng et al. on sycophancy where no mitigation stretegy was found to be consistently effective across models.
+
+% TODO: Speak to the annotations missing out on sarcasm and nuanced communication. Showcase examples in the report.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llcc}
+\toprule
+\textbf{Paradigm} & \textbf{Trait} & \textbf{accuracy} & \textbf{Cohen’s $\kappa$} \\
+\midrule
+\multirow{3}{*}{\textbf{PCT}} 
+  & UPR (unconditional positive regard) & 0.87 & 0.71 \\
+  & Genuineness                & 0.84 & 0.68 \\
+  & Accurate understanding       & 0.86 & 0.69 \\
+\midrule
+\multirow{5}{*}{\textbf{ToF}} 
+  & emotional validation & 0.88 & 0.64 \\
+  & moral endorsement     & 0.83 & 0.67 \\
+  & indirect language     & 0.79 & 0.62 \\
+  & indirect action       & 0.80 & 0.79 \\
+  & accepting framing     & 0.75 & 0.71 \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Agreement scores for each trait.} Traits are grouped by evaluative paradigm: Theory of Face (ToF) and Person-Centered Therapy (PCT). Accuracy and Cohen’s $\kappa$ reflect agreement between majority human annotations and GPT-4o ratings.}
+\label{tab:agreement-scores}
+\end{table}

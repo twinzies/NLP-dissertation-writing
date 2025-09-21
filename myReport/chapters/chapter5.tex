@@ -1,8 +1,16 @@
-\chapter{Results}
+\chapter{Results and Analysis}\label{sec:results}
 
-\section{LLM-as-Judge Annotation Reliability}
+This section discusses the associations between traits of empathy and sycophancy. With annotations of responses from the Rogerian PCT paradigm used as indicators of Empathy in the response and annotations from Goffman's ToF used as indicators of sycophancy, the subsequent sections show the results of chi-square test of independence\footnote{The chi-square test of independence is used to test the independence of two categorical - in this case, binary valued - variables.} for pairwise combinations of inter-paradigm traits. 
 
-Interannotator agreement was calculated using accuracy and Cohen's $\kappa$ to assess the reliability of annotations made by GPT-4o for the task under the LLM-as-judge paradigm. Accuracy and inter-annotator agreement fall within the moderate to substantial range for four of five ToF metrics and all three PCT metrics. In contrast, scores for Moral endorsement are notably poor, indicating that analyses of this trait should be interpreted with caution. For this reason, we will focus on the remaining traits in this chapter, and revisit the anomalous Moral endorsement results in Section~\ref{sec:limitations}. 
+For the chi-square tests, $H_0$ - \textbf{the null hypothesis} - is that the traits of the response \textit{are independent} of the joint distribution of responses annotated as {trait 1 of Empathy (derived from PCT)} and {trait 2 of Sycophancy (derived from ToF)} i.e. whether a response possesses that trait of empathy tells you nothing about whether it also has the second trait of sycophancy.
+
+And $H_1$ - \textbf{the alternative hypothesis} - is that the two traits under consideration are \textit{not independent} of the joint distribution of responses annotated as  {trait 1 of Empathy (derived from PCT)} and {trait 2 of Sycophancy (derived from ToF)} i.e., Empathy and Sycophancy trait annotations co-occur systematically (same responses are often annotated both). The level of significance is set at $\alpha = 0.05$ which is standard for tests of independence.
+
+As the annotations are scaled with the LLM‑as‑judge paradigm, the reliability of the annotations is discussed first before proceeding to the main results of the experiments. The main results of the experiments discuss the level of significance (p-value)\footnote{A p < 0.05 indicates statistically significant association between the two traits leading the results to reject the null hypothesis ($H_0$).} in the association of two traits belonging to different paradigms with divergent connotations and a measure of the strength of that association ($\phi$). 
+
+\section{LLM‑as‑judge Annotation Reliability}
+
+Interannotator agreement was calculated using accuracy and Cohen's $\kappa$ to assess the reliability of annotations made by GPT-4o against human annotations on a subset of responses for the task under the LLM‑as‑judge paradigm. Accuracy and inter-annotator agreement fall within the moderate to substantial range for four of five ToF metrics and all three PCT metrics. However, scores for Moral endorsement are notably poor, indicating that pairwise statistical analyses of associations with this trait are unreliable. For this reason, in this chapter the primary focus is on the remaining traits of the two paradigms, though the anomalous contingency tables and metrics with Moral endorsement are included in the appendices for reference. 
 
 Table~\ref{tab:agreement-scores} summarizes the agreement scores and inter-annotator reliability coefficient (Cohen's $\kappa$) for each trait.
 
@@ -19,23 +27,23 @@ Table~\ref{tab:agreement-scores} summarizes the agreement scores and inter-annot
 \midrule
 \multirow{5}{*}{\textbf{Sycophancy traits (ToF)}} 
   & Emotional validation & 0.88 & 0.64 \\
-  & Moral endorsement     & 0.30 & -0.4 \\
+  & Moral endorsement     & 0.30 & -0.40 \\
   & Indirect language     & 0.79 & 0.62 \\
   & Indirect action       & 0.80 & 0.79 \\
   & Accept framing     & 0.75 & 0.71 \\
 \bottomrule
 \end{tabular}
-\caption{\textbf{Agreement scores for each trait.} Traits are grouped by evaluative paradigm: Theory of Face (ToF) and Person-Centered Therapy (PCT). Accuracy and Cohen’s $\kappa$ reflect moderate-to-substantial agreement for the majority of traits. Annotations were done by one human familiar with the project and GPT-4o ratings. Note that Moral endorsement (ToF) had poor inter-annotator agreement.}
+\caption{\textbf{Agreement scores for each trait.} Traits are grouped by evaluative paradigm: ToF and PCT. Accuracy and Cohen’s $\kappa$ reflect moderate-to-substantial agreement for the majority of traits. Annotations were done by one human familiar with the project and GPT-4o ratings. Note that Moral endorsement (ToF) had poor inter-annotator agreement.}
 \label{tab:agreement-scores}
 \end{table}
 
 \section{"Sycophancy" or "Empathy" ?}
 
-This section discusses the pairwise association and independence of metrics under the Rogerian PCT paradigm and the Goffmanian ToF paradigm\footnote{ToF Moral Endorsement is excluded from consideration for chi square tests owing to poor inter-annotator agreement and accuracy scores.}\footnote{All pairwise $\phi$ and $p$-values are reported in the appendices and were generated using the IBM SPSS software.}.
+This section discusses the pairwise association and independence of metrics under the Rogerian PCT paradigm and the Goffman ToF paradigm\footnote{ToF Moral endorsement is excluded from consideration for chi square tests owing to poor inter-annotator agreement and accuracy scores.}\footnote{All pairwise $\phi$ and $p$-values are reported in the appendices and were generated using the IBM SPSS software.}.
 
 \subsection{Dual Coding of responses as "Empathic" and "Sycophantic"}
 
-The chi-square analyses indicate that a single LLM response may be categorized as both "empathic" and socially "sycophantic," depending on the psychosocial paradigm used to annotate it, across all pairwise combinations of Empathic PCT traits and Sycophantic ToF traits for LLM authored responses to posts from r/anxiety, and all but one for human authored responses. For example, unconditional positive regard (UPR) is a key trait within the PCT paradigm, serving as a marker of empathy. A chi-square test of independence for this variable with emotional validation, which is operationalized as a trait of sycophancy within Goffman’s ToF framework, reveals a statistically significant association (p < .001). Table~\ref{tab:pc1.1} reports strong associations between UPR and Emotional Validation across models ($\phi$ values exceeding .908 for \textit{r/anxiety} across all models), suggesting that LLM responses validating emotions are strongly aligned with the empathic criterion of UPR.
+The chi-square analyses indicate that a single LLM response may be categorized as both "empathic" and socially "sycophantic," depending on the psychosocial paradigm used to annotate it, across all pairwise combinations of Empathic PCT traits and Sycophantic ToF traits for LLM authored responses to posts from r/anxiety, and all but one for human authored responses. For example, UPR is a key trait within the PCT paradigm, serving as a marker of empathy. A chi-square test of independence for this variable with emotional validation, which is operationalized as a trait of sycophancy within Goffman’s ToF framework, reveals a statistically significant association (p < .001). Table~\ref{tab:pc1.1} reports strong associations between UPR and Emotional validation across models ($\phi$ values exceeding .908 for \textit{r/anxiety} across all models), suggesting that LLM responses validating emotions are strongly aligned with the empathic criterion of UPR.
 
 %%%%%% Begin r/anxiety tables %%%%%%
 
@@ -61,16 +69,18 @@ The chi-square analyses indicate that a single LLM response may be categorized a
  & \textbf{$\Phi$} & \textbf{$p$-value} 
  & \textbf{$\Phi$} & \textbf{$p$-value} \\
 \midrule
-UPR x Emotional Validation        & 0.908 & <.001 & 0.937 & <.001 & 0.967 & <.001 & 0.923 & <.001 & 0.933 & <.001 \\
-UPR x Indirect Language           & 0.878 & <.001 & 0.694 & <.001 & 0.524 & <.001 & 0.359 & <.001 & 0.535 & <.001 \\
-Genuineness x Indirect Language   & 0.552 & <.001 & 0.534 & <.001 & 0.438 & <.001 & 0.382 & <.001 & 0.408 & <.001 \\
+UPR x Emotional validation        & 0.908 & <.001 & 0.937 & <.001 & 0.967 & <.001 & 0.923 & <.001 & 0.933 & <.001 \\
+UPR x Indirect language           & 0.878 & <.001 & 0.694 & <.001 & 0.524 & <.001 & 0.359 & <.001 & 0.535 & <.001 \\
+Genuineness x Indirect language   & 0.552 & <.001 & 0.534 & <.001 & 0.438 & <.001 & 0.382 & <.001 & 0.408 & <.001 \\
 \bottomrule
 \end{tabular}
 }
 \caption{\footnotesize{r/anxiety LLM response evaluation on Empathy (PCT) and Sycophancy (ToF) metrics}}
 \label{tab:pc1.1}
 \end{table}
-\vspace{-0.5cm}  % Reduce space between tables
+
+
+\bigskip 
 %%%% Table 1.2 Human responses (r/anxiety) %%%%
 \renewcommand{\arraystretch}{1.4}
 \begin{table}[!h]
@@ -89,9 +99,9 @@ Genuineness x Indirect Language   & 0.552 & <.001 & 0.534 & <.001 & 0.438 & <.00
  & \textbf{$\Phi$} & \textbf{$p$-value} 
  & \textbf{$\Phi$} & \textbf{$p$-value} \\
 \midrule
-UPR x Emotional Validation        & 0.243 & <.001 & 0.369 & <.001 & 0.304 & <.001 \\
-UPR x Indirect Language           & 0.200 & <.001 & 0.248 & <.001 & 0.221 & <.001 \\
-Genuineness x Indirect Language   & 0.022 & 0.500 & 0.069 & 0.059 & 0.043 & 0.077 \\
+UPR x Emotional validation        & 0.243 & <.001 & 0.369 & <.001 & 0.304 & <.001 \\
+UPR x Indirect language           & 0.200 & <.001 & 0.248 & <.001 & 0.221 & <.001 \\
+Genuineness x Indirect language   & 0.022 & 0.500 & 0.069 & 0.059 & 0.043 & 0.077 \\
 \bottomrule
 \end{tabular}
 }
@@ -105,7 +115,7 @@ For some models such as GPT-4o the strength of the association is consistently h
 
 \subsection{Trends within human authored responses}\label{sec:posterchild1.2}
 
-The results indicate that while human responses do exhibit associations between empathy-related traits (e.g., unconditional positive regard) and sycophancy-related traits (e.g., emotional validation), the strength of these associations is \textbf{markedly lower} than in LLM responses. Notably, some associations in human responses are weak or non-significant (see Genuineness x Indirect Language in tables \ref{tab:pc1.2} and \ref{tab:pc2.2}), suggesting that the overlap between empathic and sycophantic traits is less pronounced in human-authored content.
+The results indicate that while human responses do exhibit associations between empathy-related traits (e.g., unconditional positive regard) and sycophancy-related traits (e.g., emotional validation), the strength of these associations is \textbf{markedly lower} than in LLM responses. Notably, some associations in human responses are weak or non-significant (see Genuineness x Indirect language in tables \ref{tab:pc1.2} and \ref{tab:pc2.2}), suggesting that the overlap between empathic and sycophantic traits is less pronounced in human-authored content.
 
 \begin{figure}[ht]
   \centering
@@ -118,35 +128,56 @@ The results indicate that while human responses do exhibit associations between 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.9\linewidth]{Diagrams/crosstab2.png}
-  \caption{Cross-tabulation of UPR and Emotional Validation for r/aitah dataset. The figure illustrates the stark contrasts in traits of LLM-generated and human-authored responses.}
+  \caption{Cross-tabulation of UPR and Emotional validation for r/aitah dataset. The figure illustrates the stark contrasts in traits of LLM-generated and human-authored responses.}
   \label{fig:crosstab2}
 \end{figure}
 
-\smallskip For \textit{r/anxiety} (Table~\ref{tab:pc1.1}), the associations between UPR and Emotional Validation is moderate, with stronger effects in OP-preferred comments ($\phi = 0.369$) compared to top comments ($\phi = 0.243$). This contrasts with LLM responses in Table 2, where the strength of associations for the same measure exceeded $\phi = 0.908$ for every model considered. Similarly, trends can be seen for the \textit{r/aitah} dataset. Taken together, these results show that while human responses demonstrate overlap between empathic and sycophantic traits, the strength of association is lower relative to LLM outputs.
+\smallskip For \textit{r/anxiety} (Table~\ref{tab:pc1.1}), the associations between UPR and Emotional validation is moderate, with stronger effects in OP-preferred comments ($\phi = 0.369$) compared to top comments ($\phi = 0.243$). This contrasts with LLM responses in Table\ref{tab:}, where the strength of associations for the same measure exceeded $\phi = 0.908$ for every model considered. Similarly, trends can be seen for the \textit{r/aitah} dataset. Taken together, these results show that while human responses demonstrate overlap between empathic and sycophantic traits, the strength of association is lower relative to LLM outputs.
 
 \smallskip Another noteworthy pattern emerges when comparing top comments with OP-preferred comments in the human authored responses. Although the sample size of responses is smaller for OP-preferred comments, owing to the fact that OPs only engaged beyond the post body in 70-75\% of the cases, the magnitude of phi is scaled by sample size and thus comparisons remain valid. 
 
-\smallskip Across both subreddits, associations are stronger in OP-preferred comments. For example, in \textit{r/anxiety} UPR $\times$ Emotional Validation increases from $\phi = 0.243$ in top comments to $\phi = 0.369$ in OP-preferred comments. Similarly, in \textit{r/aitah}, UPR $\times$ Emotional Validation rises from $\phi = 0.509$ in top comments to $\phi = 0.544$ in OP-preferred comments. 
+\smallskip Across both subreddits, associations are stronger in OP-preferred comments. For example, in \textit{r/anxiety} UPR $\times$ Emotional validation increases from $\phi = 0.243$ in top comments to $\phi = 0.369$ in OP-preferred comments. Similarly, in \textit{r/aitah}, UPR $\times$ Emotional validation rises from $\phi = 0.509$ in top comments to $\phi = 0.544$ in OP-preferred comments. 
 
 \smallskip \textbf{This suggests that the comments selected by original posters for engagement are more likely to exhibit overlapping the empathic and sycophantic behavioral traits than those receiving the highest community-driven endorsement through upvotes.}
 
 \bigskip Overall, the evaluation of reddit comment responses confirms that associations between empathy- and sycophancy-related traits are present in human-authored responses too, however they occur at lower strengths than in LLM responses. The differentiation in phi between top upvoted comment and OP-preferred comments adds an additional layer of analytical insight that is directly observed from the contingency tables of annotated responses as shown in Figure~\ref{fig:crosstab1} and Figure~\ref{fig:crosstab2}.
 
-\subsubsection{A note on human preferences in social engagement}
+\subsubsection{Notes on human preferences in social engagement}
 
-Across both \textit{r/anxiety} and \textit{r/aitah}, OP-preferred comments (i.e., those the OP engaged with) show higher $\phi$ associations for UPR $\times$ Emotional Validation than top comments. This suggests that OPs were more likely to interact with responses coded as ``empathic'' or ``sycophantic.'' It is worth noting, however, that OP-preferred sets are smaller ($N = 716$ vs.\ $N = 897$ for top comments in \textit{r/aitah} and $N = 752$ vs.\ $N = 935$ for top comments in \textit{r/anxiety}).
+Across both \textit{r/anxiety} and \textit{r/aitah}, OP-preferred comments (i.e., those the OP engaged with) show higher $\phi$ associations for UPR $\times$ Emotional validation than top comments. This suggests that OPs were more likely to interact with responses coded as ``empathic'' or ``sycophantic.'' It is worth noting, however, that OP-preferred sets are smaller ($N = 716$ vs.\ $N = 897$ for top comments in \textit{r/aitah} and $N = 752$ vs.\ $N = 935$ for top comments in \textit{r/anxiety}).
 
-While these patterns are consistent with Cheng et al.'s observation that preference datasets underlie social ``sycophancy,'' the present analysis measures associations between annotated traits, whereas Cheng et al.\ examine dataset-level reinforcement learning preferences to determine the root cause of sycophancy\cite{cheng-etal-sycophancy}. The similarity in these findings is therefore suggestive of a shared underlying trend in preference in responses to personal questions, but it may not be deterministically conclusive. A deeper investigation of this potential connection between individual engagement patterns and large-scale reinforcement learning preference datasets lies beyond the scope of the project.
+While these patterns are consistent with Cheng et al.'s observation that preference datasets underlie social ``sycophancy,'' the present analysis measures associations between annotated traits, whereas Cheng et al.\ examine dataset-level reinforcement learning preferences to determine the root cause of sycophancy \cite{cheng-etal-sycophancy}. The similarity in these findings is therefore suggestive of a shared underlying trend in preference in responses to personal questions, but it may not be deterministically conclusive. A deeper investigation of this potential connection between individual engagement patterns and large-scale reinforcement learning preference datasets lies beyond the scope of the project.
+
+\begin{figure}[!h]
+  \centering
+  \begin{subfigure}[b]{0.9\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagrams/crosstab-hum1.png}
+    \caption{Genuineness and Accept framing for the r/aitah dataset. Note that for this subreddit, both the OP-preferred and community upvoted comments show only a moderate association between the two traits.}
+    \label{fig:crosstab_hum1}
+  \end{subfigure}
+
+  \vspace{1em} % adds vertical spacing between the two panels
+
+  \begin{subfigure}[b]{0.9\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Diagrams/crosstab-hum2.png}
+    \caption{UPR and Emotional validation for the r/aitah dataset.}
+    \label{fig:crosstab_hum2}
+  \end{subfigure}
+  \caption{Cross-tabulations for the r/anxiety dataset. Subfigure (b) illustrates the contrasts in community preferences amongst human-authored responses.}
+  \label{fig:combined_crosstabs}
+\end{figure}
 
 
-\subsection{Strength of association (\texorpdfstring{$\Phi$}{Phi}) varies by model}
+\subsection{Strength of association varies by model}
 
 Closer examination of the symmetric measures highlights variation across models for the same variables under consideration. For example, for \textit{r/anxiety}, GPT-oss, GPT-4o, and Llama responses show $\phi$ values above .69 for UPR~$\times$~Indirect language but Claude responses show a moderate association at 0.359 for the two traits. In \textit{r/aitah}~\ref{tab:pc2.1}, GPT-4o records the strongest association (.699), while Claude again shows the lowest value (0.128), indicating consistently measurable differences in the traits exhibited by the two language models.
 
 \medskip
 
 \noindent
-Note that although comparatively weaker associations are observed for UPR~$\times$~Indirect Language and Genuineness~$\times$~Indirect Language, they are still statistically significant at the 0.05 level across all models. For \textit{r/anxiety}, pooled $\phi$ values are .535 while for \textit{r/aitah} the corresponding totals for the same variables are .319. These findings suggest that the associated traits are potentially input dependent.
+Note that although comparatively weaker associations are observed for UPR~$\times$~Indirect language and Genuineness~$\times$~Indirect language, they are still statistically significant at the 0.05 level across all models. For \textit{r/anxiety}, pooled $\phi$ values are .535 while for \textit{r/aitah} the corresponding totals for the same variables are .319. These findings suggest that the associated traits are potentially input dependent.
 
 \medskip
 
@@ -177,9 +208,9 @@ Overall, the results demonstrate that LLM responses consistently show a signific
  & \textbf{$\Phi$} & \textbf{$p$-value}
  & \textbf{$\Phi$} & \textbf{$p$-value} \\
 \midrule
-UPR x Emotional Validation        & 0.707 & <.001 & 0.939 & <.001 & 0.796 & <.001 & 0.445 & <.001 & 0.642 & <.001 \\
-UPR x Indirect Language           & 0.464 & <.001 & 0.699 & <.001 & 0.265 & <.001 & 0.128 & <.001 & 0.319 & <.001 \\
-Genuineness x Indirect Language   & 0.558 & <.001 & 0.559 & <.001 & 0.288 & <.001 & 0.210 & <.001 & 0.302 & <.001 \\
+UPR x Emotional validation        & 0.707 & <.001 & 0.939 & <.001 & 0.796 & <.001 & 0.445 & <.001 & 0.642 & <.001 \\
+UPR x Indirect language           & 0.464 & <.001 & 0.699 & <.001 & 0.265 & <.001 & 0.128 & <.001 & 0.319 & <.001 \\
+Genuineness x Indirect language   & 0.558 & <.001 & 0.559 & <.001 & 0.288 & <.001 & 0.210 & <.001 & 0.302 & <.001 \\
 \bottomrule
 \end{tabular}
 }
@@ -187,7 +218,7 @@ Genuineness x Indirect Language   & 0.558 & <.001 & 0.559 & <.001 & 0.288 & <.00
 \label{tab:pc2.1}
 \end{table}
 
-% UPR x Emotional Validation is .908 for r/anxiety but .445 for \textit{r/aitah}
+% UPR x Emotional validation is .908 for r/anxiety but .445 for \textit{r/aitah}
 %%%% Table for section 2.2 human responses (r/aitah) %%%%
 
 \begin{table}[h!]
@@ -206,9 +237,9 @@ Genuineness x Indirect Language   & 0.558 & <.001 & 0.559 & <.001 & 0.288 & <.00
  & \textbf{$\Phi$} & \textbf{$p$-value} 
  & \textbf{$\Phi$} & \textbf{$p$-value} \\
 \midrule
-UPR x Emotional Validation        & 0.509 & <.001  & 0.544 & <.001  & 0.528 & <.001 \\
-UPR x Indirect Language           & 0.236 & <.001  & 0.311 & <.001  & 0.258 & <.001 \\
-Genuineness x Indirect Language   & 0.070 & 0.036  & 0.097 & 0.010  & 0.076 & 0.002 \\
+UPR x Emotional validation        & 0.509 & <.001  & 0.544 & <.001  & 0.528 & <.001 \\
+UPR x Indirect language           & 0.236 & <.001  & 0.311 & <.001  & 0.258 & <.001 \\
+Genuineness x Indirect language   & 0.070 & 0.036  & 0.097 & 0.010  & 0.076 & 0.002 \\
 \bottomrule
 \label{tab:pc2.2}
 \end{tabular}
@@ -233,16 +264,16 @@ Genuineness x Indirect Language   & 0.070 & 0.036  & 0.097 & 0.010  & 0.076 & 0.
 \section{Social Verdicts in r/aitah}
 % Add a table here.
 
-Since the verdict in the top comment from r/aitah can be used as a proxy for the ground truth social judgment of the situation presented by the user, the results showcase accuracy and precision scores comparing LLM judgments to human judgments. For the purposes of this project, the social verdicts were simplified into four categories: \texttt{YTA} (You are the asshole), \texttt{NTA} (Not the asshole), \texttt{REST} (Everyone sucks here or No assholes here), and \texttt{NO VERDICT} (no clear judgment).
+Since the verdict in the top comment from r/aitah can be used as a proxy for the ground truth social judgment of the situation presented by the user, the results showcase accuracy and precision scores comparing LLM judgments to human judgments. For the purposes of this project, the social verdicts were simplified into four categories: \texttt{YTA} (You are the asshole), \texttt{NTA} (Not the asshole), \texttt{REST} (Everyone sucks here or No assholes here), and \texttt{No verdict} (no clear judgment).
 
 \subsection{Generations with CoT}
 
 \subsubsection{Shift in LLM "judgments" with CoT}\label{sec:posterchild2.2}
 
-CoT with dialog insertion was evaluated as a control mechanism, with results varying across models. For Claude, accuracy declined from 0.45 to 0.37 and macro-average F1 from 0.41 to 0.30 with CoT insertion (Table~\ref{tab:claude_cot_comparison}). At the class level, recall for \texttt{NO VERDICT} rose from 0.12 to 0.76, while recall for \texttt{YTA} fell from 0.48 to 0.08. These results show that CoT dialog insertion redistributed performance across classes rather than producing uniform changes. Full model performances are provided in the appendix.
+CoT with dialog insertion was evaluated as a control mechanism, with results varying across models. For Claude, accuracy declined from 0.45 to 0.37 and macro-average F1 from 0.41 to 0.30 with CoT insertion (Table~\ref{tab:claude_cot_comparison}). At the class level, recall for \texttt{No verdict} rose from 0.12 to 0.76, while recall for \texttt{YTA} fell from 0.48 to 0.08. These results show that CoT dialog insertion redistributed performance across classes rather than producing uniform changes. Full model performances are provided in the appendix.
 
 
-\begin{table}[ht]
+\begin{table}[!h]
 \centering
 \renewcommand{\arraystretch}{1.2}
 \resizebox{\textwidth}{!}{%
@@ -255,7 +286,7 @@ CoT with dialog insertion was evaluated as a control mechanism, with results var
  & Precision & Recall & F1-score & Support 
  & Precision & Recall & F1-score & Support \\
 \midrule
-NO VERDICT & 0.30 & 0.76 & 0.43 & 50 & 0.60 & 0.12 & 0.21 & 50 \\
+No verdict & 0.30 & 0.76 & 0.43 & 50 & 0.60 & 0.12 & 0.21 & 50 \\
 NTA         & 0.48 & 0.62 & 0.55 & 50 & 0.38 & 0.96 & 0.55 & 50 \\
 REST        & 0.50 & 0.04 & 0.07 & 50 & 0.32 & 0.23 & 0.27 & 50 \\
 YTA         & 0.67 & 0.08 & 0.14 & 50 & 0.92 & 0.48 & 0.63 & 50 \\
@@ -270,7 +301,7 @@ YTA         & 0.67 & 0.08 & 0.14 & 50 & 0.92 & 0.48 & 0.63 & 50 \\
 \end{table}
 
 % Insert barchart 
-\begin{figure}[ht]
+\begin{figure}[!h]
     \centering
     \includegraphics[width=0.9\linewidth]{Diagrams/verdicts_2.png}
     \label{fig:social_verdicts}
@@ -282,6 +313,50 @@ Across models, CoT dialog insertion did not consistently raise or lower overall 
 
 Aggregated metrics alone risk obscuring class-level effects and qualitative analyses are required to assess how CoT prompts influence model behavior. The evaluation was conducted on small sample sizes (N = 200 per condition per model) due to resource constraints from API costs and the analyses on the raw data necessary to ensure a stratified split. While trends are visible, they should be interpreted cautiously. The implications of limited sample size for generalizability are addressed in the limitations section \ref{sec:limitations}.
 
-% Can add a note in the analyses saying that these results match the findings of Cheng et al. on sycophancy where no mitigation stretegy was found to be consistently effective across models.
+\subsubsection{Deontic phrasing after CoT}\label{sec:deontic}
 
-% TODO: Speak to the annotations missing out on sarcasm and nuanced communication. Showcase examples in the report.
+\begin{table}[!h]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\textbf{Subreddit} & \textbf{Increase (\%)} & \textbf{Decrease (\%)} & \textbf{Equal (\%)} & \textbf{Mean $\Delta$} \\
+\hline
+\texttt{r/AITAH}   & 22.7 & 32.0 & 45.3 & $-0.074$ \\
+\texttt{r/anxiety} & 21.7 & 20.3 & 58.0 & $+0.017$ \\
+\hline
+\end{tabular}
+\caption{Distribution of change types and mean $\Delta$ for each subreddit ($N = 300$ each).}
+\label{tab:change-summary}
+\end{table}
+
+
+The mean deontic rate (per 100 words; should/must/need/shall/ought) generally goes down after the application of the CoT prompt with the effect more pronounced for r/aitah responses than r/anxiety responses.
+
+While the overall trend shows a decrease in deontic language (with average bias below zero across models), a closer look at individual posts reveals inconsistent effects across models. Specifically, for r/anxiety posts using Claude, chain-of-thought (CoT) prompting led to an increase in deontic expressions for a substantial number of responses. This suggests that although the reduction is consistent at the aggregate level, it does not hold uniformly across different models or subreddits. These findings highlight the need to further examine how input posts and dialog prompts influence CoT behavior. The differences across language models also warrant closer scrutiny.
+
+\textbf{In sum, the control strategy explored here supports previous findings by \cite{socialgaze} and \cite{cheng-etal-sycophancy} that controlling the phenomenon of LLM "empathy" or "sycophancy" remains a challenging task.}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\linewidth]{Diagrams/aitah-deonticrate.png}
+  \caption{Deontic rate changes for r/aitah responses with CoT dialog insertion. The figure shows the difference in deontic expressions (per 100 words) between baseline and CoT responses across different language models.}
+  \label{fig:aitah_deontic}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\linewidth]{Diagrams/anxiety-deonticrate.png}
+  \caption{Deontic rate changes for r/anxiety responses with CoT dialog insertion. The figure illustrates how chain-of-thought prompting affects the frequency of deontic language (should/must/need/shall/ought) across different models.}
+  \label{fig:anxiety_deontic}
+\end{figure}
+
+
+\subsection{Error analysis}\label{errors}
+% Show examples of Annotation error analysis for moral endorsement and perhaps sarcasm.
+
+% Uncomment only time permitting: 
+% \subsection{CoT Response Generations analysis}\label{errors}
+% % Manual analysis of CoT responses and how they differ from baseline responses for the same posts - provide examples and excerpts.
+
+\subsection{Extensibility of the framework}
+% Include RVS annotations and coccurrence networks here. The annotations are missing the reliability checks for the 36 associated traits within the RVS paradigm, which was included as a proof of concept to demonstrate the extensibility of the technical framework.

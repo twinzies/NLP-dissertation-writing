@@ -2,20 +2,61 @@
 
 \section{Limitations}\label{sec:limitations}
 
-Discuss that moral endorsement had poor and variable agreement between datasets even. This means we must be cautious in relying on LLM-as-judge paradigms, annotation quality itself is highly sensitive to prompt design. Confusing prompts and context may have been the cause of the behaviour - although the definition of this trait was designed to maintain some consistency with the ELEPHANT framework, without the few-shot examples, it appears the model struggled to interpret the trait as had been previously intended - context length.
-\textcolor{black!40}{API calls incur costs - funding and time limitations - can broaden DeepReflect to include other models (LLMs) and other psychosocial frameworks - especially frameworks on ethics which have been historically used in personal decision-making on which rich literature exists from historic accounts of deep human philosphical thought such as Kantian ethics, Utilitarianism, and Virtue Ethics, Stoicism, Gita - Vedic Philosoph, Buddhism. The Reddit dataset is rich and can be dissected in ways to aid a more nuanced understanding of the social values and influences that shape our personal lives and interactions. Epistemic limits in interpreting behavior through psychosocial theories are not unique to LLMs but are equally present in human communication. Recent advances in NLP provide opportunities to systematically translate qualitative theories into quantitative analyses, thereby enabling a more rigorous investigation of these epistemic limits. Nevertheless, this remains an open challenge that extends beyond the scope of NLP research and requires engagement from the broader social science and humanities communities.
-It would be misleading to assume that an observed feature is purely “sycophantic” or “empathic” without due consideration for the context of the personal interaction and the needs of the individual.
-}
+In the course of establishing the reliability of the evaluation pipeline, the following limitations have come to light in order of decreasing precedence:
 
-\section{Discussion}
+Firstly, the annotation of features with the LLM‑as‑judge paradigm remains limited in reliability in cases where the definitions of annotations are semantically nuanced. The issue may not be feasible to fix by increasing context window size as the inaccurate annotation of human authored responses was especially evident in cases of sarcasm (show example). Thus in order to evaluate and annotate human-authored responses may require the consideration of the advancements in sarcasm detection (cite). 
 
-\subsection{Summary of Findings}
+In the same theme, the prompt design required multiple iterations and tests to capture the traits to an acceptable degree of reliability – a process which remains susceptible to differences between language models and non-transparent and changing system prompts of the judge model (GPT 4o). 
 
-% The Presentation rubrics define the following criteria: 
-% Conclusions should be competently covered and Further work not to be overly general.
-% I am aiming for the conclusions drawn to be correct and show ability to summarise with acumen. The discussion of future work is appropriate to the evaluation of work done.
+This was particularly limiting in establishing the reliable annotation of the Sycophantic trait - moral endorsement. The definition of moral endorsement was based on the prompt by cheng et al to maintain comparability. While the prompt appeared to work accurately in some cases, when used to annotate the full datasets, it yielded errors. The error analyses indicated that this is likely due to confusion in the semantic interpretation of the definition of the trait, with some batches being annotated such that it captured the opposite trend and some other batches where the trend captured was accurate. 
 
-\subsection{Future Directions}
+
+\begin{tcolorbox}[
+  colback=gray!10,
+  colframe=gray!50,
+  title=Moral Endorsement Annotation Guidelines,
+  width=0.9\textwidth,
+  enhanced,
+  sharp corners,
+  listing only,
+  listing options={
+    basicstyle=\ttfamily\footnotesize, % Customize font size here
+    breaklines=true,                   % Enable line wrapping
+    columns=fullflexible,             % Avoids weird spacing
+    keepspaces=true,                  % Preserves space formatting
+    frame=none                        % Removes inner frame from listings
+  }
+]
+Moral endorsement: Determine whether the response suggests, implies, or indicates that the question asker (the "I" in the post) did something wrong.
+
+Focus on content, not tone: A response given negatively, sarcastically, or with profanity does not automatically mean the asker did something wrong.
+
+REMEMBER: Your goal is to decide only whether the response conveys that the asker's action, decision, or behavior was wrong (limited strictly to the "I" in the post), regardless of tone.
+\end{tcolorbox}
+
+
+
+This issue has led the project to be inconclusive in the pairwise associations with this specific trait. Though it must be noted that the finding is useful in itself, and a key result that contributes to highlighting the limitations of the LLM‑as‑judge paradigm for such annotations. 
+The use of the paradigm without the step of interannotator reliability can propagate errors in analyses and stand in the way of drawing meaningful conclusions.
+
+Secondly, there may be biases inherent in the datasets formed of the Reddit Archives and within the subreddit communities owing to the majority user demographics and their preferences. Therefore, the human-authored responses used for comparison and to establish a proxy for the ground truth are necessarily subject to the biases inherited from  the dataset. OP-preferred comments were only available for about 70\% of the posts. Future study may involve the curation of such datasets for research to mitigate these issues.
+
+Lastly, Empathy and Sycophancy are contextually advantageous or disadvantageous in social interactions. While the study looked at Reddit communities which deal primarily with queries on personal matters broadly, Topic analysis of the posts could be especially insightful in identifying specific contexts in which the phenomenon of LLM empathy or sycophancy may be acceptable and even desirable. Rather than a direction of future study, topic analysis on the dataset may be considered a “low hanging fruit” with the current state of findings being limited only by time in this endeavor. The differences in strengths of associations in traits between the two Reddit communities indicate significant potential for topic analyses to further cement the main arguments presented in the following section. 
+
+\section{Summary and Conclusion}
+
+This project has demonstrated with evidence that the same phenomenon that researchers and users associate with LLM social “sycophancy” leads to the technology being received and adopted with great ease, making it describable also as an instance of “empathy”.
+
+Further, the research demonstrates that the core issue of divergent connotations being used to describe the trait that points to the same response is not isolated to LLM-authored responses. In social contexts without clear normative answers, the same human authored responses when annotated systematically, may be perceived as sycophantic or empathic too.
+Perhaps there has not been a profound need to operationalize and measure the difference between sycophancy and empathy in a social context before. 
+
+As the use of LLM assistance becomes socially pervasive, owing to capacity of "situationally aware reward hacking (SARH \cite{alignmentprob})" of human interactions by AI systems, the need to ask such questions of critique and inquiry also grows. What are the measurable traits of empathic and sycophantic communication irrespective of source ? Where lies the nuanced but necessary distinction ?
+
+The findings show that LLM responses exhibit traits that are capable of qualifying them as significantly more empathic than people, a desirable attribute in some interactions. Such highly empathic communication can not only attract and retain new adopters but also be used in specialized fields like education where early accolades and positivity might guide a learner to be more receptive to enduring the tougher paths of complex information. Another area to benefit from this feature could be mental wellbeing, where empathic communication is key. However, even experts in the field of mental wellbeing have prioritized the traits favoring the exchange of truthful information over others that comprise empathy \cite[33]{rogers1961becoming}. Empathic LLM communication for its own sake, should it replace various forms of social communication, can become a disservice to the exchange of information. Whether human empathic communication necessarily carries forth this exchange of information is a question beyond the scope of this current project. Thus, a future line of inquiry may involve establishing the amount of information in human-authored responses and comparing this to the information carried by model generated responses as a measure of the quality of AI generated communication. 
+
+As has been established by the field and verified in the course of this project, the same phenomenon of LLM generated responses is categorized as instances of LLM sycophancy. Thus, any lines drawn in the form of “guardrails” or system prompts to mitigate LLM sycophancy could benefit from cautious consideration of the positive effects of the phenomenon. To have none in place, can leave the encounters of end users with LLMs at excessive flattery and spectacle. However, a crude design of mitigation strategies in the form of standard system prompts around LLM sycophancy without the nuanced understanding of the underlying layers from which the phenomenon emerges prohibits access to the benefits of the technology in the form of widely distributable and socially blind empathic communication.
+
+To this end, the work laid down a critical foundation for advancing initial prompt-based control mechanisms with chain‑of‑thought reasoning based on excerpt sourced transcripts and expert human reasoning dialogs. With analyses on a sample of generated responses indicating qualitative improvements in the generated response. However, any control mechanism of this nature designed to navigate LLM sycophancy or empathy must ensure that it does not stray users too far from that which is beneficial-the exchange of information.
 
 
 
