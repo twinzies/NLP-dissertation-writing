@@ -1,27 +1,25 @@
 \chapter{Literature Survey}\label{sec:Litreview}
 % TODO: insert https://docs.google.com/document/d/1DV2OenoMhQPfrpJDEhp_3RaXjltQJGDdQ6CzeFqPGcY/edit?tab=t.noop9s5yu5s
 
-The project sets out on the task to establish a reliable evaluation pipeline with the aim of achieving statistically significant insight into the two divergent interpretations of LLM generated responses in affective conversation. The two interpretations with divergent connotations under consideration are LLM “Sycophancy” and “Empathy” assigned to responses generated in social contexts. 
+The project undertakes the development of a reliable evaluation framework designed to produce statistically significant insights into contrasting interpretations of LLM responses in personal conversation. The two interpretations with divergent connotations under consideration are LLM “Sycophancy” and “Empathy” assigned to responses generated in social contexts. 
 
 The behaviors “Empathy” and “Sycophancy” may be operationalized for such evaluation with a list of traits associated with them. When a response exhibits that trait, it may be annotated as “present” and “absent” when it does not. 
 
 The project sets out on the task to establish a reliable evaluation pipeline with the aim of achieving statistically significant insight into the two divergent interpretations of LLM generated responses in affective conversation. The two interpretations with divergent connotations under consideration are LLM “Sycophancy” and “Empathy” assigned to responses generated in social contexts. 
 
-The behaviors “Empathy” and “Sycophancy” may be operationalized for such evaluation with a list of traits associated with them. When a response exhibits that trait, it may be annotated as “present” and “absent” when it does not. 
-
-The literature review is broken into three subsections:
+The behaviors “Empathy” and “Sycophancy” may be operationalized for such evaluation with a list of traits associated with them. When a response exhibits that trait, it may be annotated as “present” and “absent” when it does not. The literature review is broken into three subsections:
 
 \begin{enumerate}
-    \item The theoretical foundations of the Psychosocial paradigms under consideration for the evaluation of a text based response.
+    \item The \textbf{theoretical foundations} of the Psychosocial paradigms under consideration for the evaluation of a text based response.
     
-    \item NLP research relevant to:
+    \item \textbf{Contemporary NLP research} relevant to:
     \begin{enumerate}[label=\alph*.]
         \item The use of transformer-based LLM chatbots in psychosocial contexts.
         \item The use of transformer-based LLMs for the design of scalable technical systems, specifically for sample annotations at scale. The project offers the opportunity to investigate the annotations with the LLM‑as‑judge paradigm.
         \item Control mechanisms for the phenomenon as part of the response generation.
     \end{enumerate}
     
-    \item Gaps in the existing literature and how the project aims to cover them.
+    \item \textbf{Gaps} in the existing literature and how the project aims to cover them.
 \end{enumerate}
 
 
@@ -41,38 +39,38 @@ Carl Rogers outlined six conditions that support therapeutic change, which are c
 The identification of empathic communication can be operationalized through three core relational conditions that serve as reliable markers of a therapist’s empathic stance. These traits are—genuiness, unconditional positive regard, and accurate understanding \cite{conditions-rogers}:
 
 \begin{enumerate}
-    \item Trait: Genuineness. “The third condition is that the therapist should be, within the confines of this relationship, a congruent, genuine, integrated person. It means that within the relationship he is freely and deeply himself, with his actual experience accurately represented by his awareness of himself. It is the opposite of presenting a facade, either knowingly or unknowingly.”
-    \item Trait: Unconditional positive regard (UPR). “To the extent that the therapist finds himself experiencing a warm acceptance of each aspect of the client's experience as being a part of that client, he is experiencing unconditional positive regard.”
-    \item Trait: Accurate understanding. “The fifth condition is that the therapist is experiencing an accurate, empathic understanding of the client's awareness of his own experience.”
+    \item Trait: \textbf{Genuineness}. “The third condition is that the therapist should be, within the confines of this relationship, a congruent, genuine, integrated person. It means that within the relationship he is freely and deeply himself, with his actual experience accurately represented by his awareness of himself. It is the opposite of presenting a facade, either knowingly or unknowingly.”
+    \item Trait: \textbf{Unconditional positive regard (UPR)}. “To the extent that the therapist finds himself experiencing a warm acceptance of each aspect of the client's experience as being a part of that client, he is experiencing unconditional positive regard.”
+    \item Trait: \textbf{Accurate understanding}. “The fifth condition is that the therapist is experiencing an accurate, empathic understanding of the client's awareness of his own experience.”
 \end{enumerate}
 
 Based on these three values within the PCT paradigm, the evaluation pipeline can be designed with a list of traits that can be annotated as either present or absent (see Appendix~\ref{appendixA}). This approach helps maintain consistency between different raters and is simple enough to be used in large-scale evaluations.
 
 Cognitive Behavioral Therapy (CBT) was also considered as a potential framework for operationalization. However, CBT relies on structured interventions, goal-oriented dialogue, and content-specific strategies that require contextual nuance for interpretation. These characteristics make it less suitable for the surface-level task of annotating responses \cite[p.~69]{cbt-beck}.
 
-\subsubsection{A discussion on LLM empathy and its impact on well-being}
-Research indicates that LLM chatbots are efficacious in establishing the perception of empathy and trust with humans in interaction \cite{fang-etal-psychoeffects}. The paper shows that while voice-based chatbots were associated with slightly better outcomes than text at average use, greater daily use was linked to lower “socialization with people,” with the neutral-voice condition showing a significant decline at higher usage ($\beta = -0.05$, $p = 0.003$). The findings support designing systems that actively route users to real sources of support (e.g., tooling for connections with real humans like friends/family, empathic handoffs to clinicians or legal support depending on the situation) and that make human care visible in the product, so users feel the tool was created with their well-being in mind rather than as a substitute for socialization. However, evaluating whether such design choices sustain social connection over time is beyond the scope of this project. The focus of the RQs in this project is to establish a reliable text-based response evaluation pipeline for the two psychosocial paradigms under consideration. Such studies indicate the growing importance of understanding the psychosocial implications of LLM behavior in social contexts.
+\subsubsection{LLM empathy and research on its impact on well-being}
+Empirical evidence indicates that LLM-based chatbots are capable of eliciting perceived empathy and trust in user interactions \cite{fang-etal-psychoeffects,sorin-etal-empathy}. The first paper finds that while voice-based chatbots were associated with slightly better outcomes than text at average use, greater daily use was linked to lower “socialization with people,” with the neutral-voice condition showing a significant decline at higher usage ($\beta = -0.05$, $p = 0.003$). The findings support designing systems that actively route users to real sources of support (e.g., tooling for connections with real humans like friends/family, empathic handoffs to clinicians or legal support depending on the situation) and that make human care visible in the product, so users feel the tool was created with their well-being in mind rather than as a substitute for socialization. However, evaluating whether such design choices sustain social connection over time is beyond the scope of this project. The focus of the RQs in this project is to establish a reliable text-based response evaluation pipeline for the two psychosocial paradigms under consideration. Such studies indicate the growing importance of understanding the psychosocial implications of LLM behavior in social contexts.
 
 \subsection{Goffman’s theory of face (ToF)}
 Following Goffman’s account of face—the positive self-image people seek to maintain in interaction \cite{Goffman1955}—LLM sycophancy in social dialogue is treated as the excessive preservation of a human participant’s face. This operationalization of social sycophancy with Goffman’s theory of face preservation lets us identify when models affirm a user’s self-image or avoid challenging it, even when guidance or correction would be more helpful.
 
 \paragraph{Five face-preserving behaviors (used for the trait annotation):}
-\begin{itemize}
-  \item \textbf{Emotional validation} — reassuring and empathic language that offers comfort without critique.
-  \item \textbf{Moral endorsement} — affirming or praising the user’s actions or stance, even when community norms would judge them problematic.
-  \item \textbf{Indirect language} — hedging and deference that avoids clear guidance or disagreement.
-  \item \textbf{Indirect action} — suggesting coping or reflective steps that do not change the situation when concrete action may be needed.
-  \item \textbf{Accepting framing} — taking the user’s assumptions at face value instead of questioning harmful or mistaken premises.
-\end{itemize}
+\begin{enumerate}
+  \item Trait: \textbf{Emotional validation} — reassuring and empathic language that offers comfort without critique.
+  \item Trait: \textbf{Moral endorsement} — affirming or praising the user’s actions or stance, even when community norms would judge them problematic.
+  \item Trait: \textbf{Indirect language} — hedging and deference that avoids clear guidance or disagreement.
+  \item Trait: \textbf{Indirect action} — suggesting coping or reflective steps that do not change the situation when concrete action may be needed.
+  \item Trait: \textbf{Accepting framing} — taking the user’s assumptions at face value instead of questioning harmful or mistaken premises.
+\end{enumerate}
 
-To keep annotations comparable with Cheng et al.’s findings, the operationalization definitions for the five face-preserving behaviors is kept consistent with the ones used in the ELEPHANT framework with some edits to ensure compatibility with the extensible DeepReflect architecture \cite{cheng-etal-sycophancy}.
+To maintain comparability with Cheng et al.’s work  \cite{cheng-etal-sycophancy, definitions for the five ToF face-preserving behaviors adapt ELEPHANT framework prompts for use within the DeepReflect architecture}.
 
 \subsection{Rokeach Value Survey (RVS)}
 Rokeach distinguishes \emph{terminal} (end‑states) and \emph{instrumental} (modes of conduct) values and introduces a rank‑ordering instrument that has been used to analyze value salience in individuals and groups \cite{rvs}. For the purposes of this project, the Rokeach’s Value Survey (RVS) lists serve as an additional \emph{interpretive lens} to test the ease of extensibility of the system without limiting the design to the two paradigms under consideration for traits of Empathic and Sycophantic communication. 
 
 RVS is divided into two sets of eighteen traits each. The first of which corresponds to traits associated with “modes of conduct” and the second with “terminal (end of life) goals”.
 
-The project is unable to treat the thirty-six RVS value tags with manual annotation validation owing to the large number of traits; instead, this instrument is used to test and design the system for extensibility. 
+The project is constrained by limited human resources, making it infeasible to apply full manual annotation validation to all thirty-six RVS value tags. Instead, the instrument serves to test and guide the system's design for extensibility.
 
 Anthropic’s recent “Values in the Wild” project analyzes hundreds of thousands of real assistant–user conversations to characterize value expressions in deployed systems, offering a useful contemporary value tagging mechanism \cite{values-in-wild}. However, as a for‑profit lab’s internal dataset and coding scheme, the framework has not yet been independently validated by social‑scientific experts, and only a subset of artifacts is public; accordingly, AVT may be treated as a non-standard psychosocial framework. Another practical limitation for this project is that DeepReflect does not have access to Anthropic’s full proprietary conversation corpus, so comparisons are necessarily approximate and restricted to public releases. This reality further motivates the choice of the RVS paradigm (well‑established in social psychology) for the trait annotations.
 
@@ -95,13 +93,14 @@ The simultaneous yet independent endeavors in research into the phenomena labele
 \subsection{LLM‑as‑judge paradigm}
 To design the system for scale, trait annotation is done with the LLM‑as‑Judge paradigm—with tested prompt definitions. Benchmarking shows that strong judges (e.g., GPT‑4o - which is used for this project) can approximate human preferences on multi‑turn dialogue (MT‑Bench; Chatbot Arena), yet known biases (position, verbosity, self‑enhancement) and calibration gaps remain \cite{zheng-et-al,Thakur}. Accordingly, DeepReflect cross‑checks a subset with a human rater to estimate accuracy and interannotator reliability in the social context. This follows broader evaluation practice emphasizing the investigation and benchmarking of annotation errors with this paradigm \cite{syceval}.
 
-\paragraph{Chain-of-thought (CoT) reasoning}
+\subsection{Chain-of-thought (CoT) reasoning}
 Finally, the literature review takes note of a design decision in the response generation pipeline: rather than rely on costly fine-tuning to mitigate social failure modes, the system injects \emph{human-expert dialog as a few-shot example} from Carl Roger’s transcribed session with his client, Gloria, that embody the empathic communication skills central to PCT \cite{rogersgloria}. In the dialog, Rogers exhibits unconditional positive regard without offering an explicit verdict or social judgment to the client. 
 
-Chain-of-thought prompting has been shown to elicit multi-step reasoning in sufficiently large models without task-specific fine-tuning, yielding large gains across arithmetic, commonsense, and symbolic tasks (e.g., with PaLM-540B, just eight CoT examples reached state-of-the-art on GSM8K) \cite{cot}. With the advantage being that the response generation can be improved by giving a few step-by-step examples. This supports the choice of injecting human expert dialog as a control mechanism for the phenomenon labeled as LLM “Sycophancy” or LLM “Empathy”.
+\medskip Chain-of-thought prompting has been shown to elicit multi-step reasoning in sufficiently large models without task-specific fine-tuning, yielding large gains across arithmetic, commonsense, and symbolic tasks (e.g., with PaLM-540B, just eight CoT examples reached state-of-the-art on GSM8K) \cite{cot}. With the advantage being that the response generation can be improved by giving a few step-by-step examples. This supports the choice of injecting human expert dialog as a control mechanism for the phenomenon labeled as LLM “Sycophancy” or LLM “Empathy”.
 
-This control mechanism on the four general purpose models under consider (GPToss, GPT 4o, Claude claude-3-5-sonnet-20241022 and Llama meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo) also serves as a preliminary validation for the recent call to focus on the development of expertise informed language models \cite{dredze}.
+\medskip The implementation of this control mechanism across four general-purpose models—GPToss, GPT-4o, Claude-3-5-Sonnet, and Meta-LLaMA-3.1—serves both as an experimental constraint and as a contribution to ongoing efforts advocating for expertise-driven model development \cite{dredze}.
 
+\newpage
 \section{Gaps in the Literature and Open Challenges}\label{sec:gaps}
 In sum, as LLM-chatbots have become increasingly human-like and more users seek companionship with them, studies have highlighted both the advantages and disadvantages of their use. While some have raised concerns around “emotional dependence” \cite{fang-etal-psychoeffects}, several others have explored empathic perceptions of LLM responses and found them advantageous not only in the field of medical support and mental health but also in everyday personal queries \cite{Lee-etal-Empathic, sorin-etal-empathy}.
 However, different psychosocial paradigms tend to frame LLM responses in markedly divergent terms. \textbf{What may be perceived as ‘empathy’} under a psychotherapeutic paradigm could \textbf{instead be critiqued as an instance of ‘social sycophancy’} by frameworks informed by Goffman's Theory of Face \cite{cheng-etal-sycophancy}.
