@@ -1,10 +1,15 @@
 \addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{1}{chapter.1}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Literature Survey}{6}{chapter.2}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{DeepReflect: System Design}{12}{chapter.3}%
 \contentsline {table}{\numberline {3.1}{\ignorespaces Traits associated with the Rogerian PCT and Goffman ToF paradigms, with the latter aligned to \cite {cheng-etal-sycophancy} to ensure comparability are given below. The prompt definitions of traits for all three paradigms are given in Appendix~\ref {appendix:prompt-traits}.}}{13}{table.caption.12}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Language Models and Temperature Settings}}{14}{table.caption.13}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Methods}{18}{chapter.4}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Results and Analysis}{22}{chapter.5}%
 \contentsline {table}{\numberline {5.1}{\ignorespaces \textbf {Agreement scores for each trait.} Traits are grouped by evaluative paradigm: ToF and PCT. Accuracy and Cohen’s $\kappa $ reflect moderate-to-substantial agreement for the majority of traits. Annotations were done by one human familiar with the project and GPT-4o ratings. Note that Moral endorsement (ToF) had poor inter-annotator agreement.}}{23}{table.caption.19}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces \footnotesize {r/anxiety LLM response evaluation on Empathy (PCT) and Sycophancy (ToF) metrics}}}{24}{table.caption.20}%
 \contentsline {table}{\numberline {5.3}{\ignorespaces \footnotesize {r/anxiety human performance on select empathy (PCT) and sycophancy (ToF) metrics}}}{24}{table.caption.21}%
@@ -15,5 +20,8 @@
 \contentsline {table}{\numberline {5.8}{\ignorespaces I. Examples where deontic rate decreased after CoT dialog insertion.}}{32}{table.caption.33}%
 \contentsline {table}{\numberline {5.9}{\ignorespaces II. Examples where deontic rate increased after CoT dialog insertion (baseline vs CoT). The samples shown in the right most column indicate that additional nuance may be required to fully capture any meaningful change in the reasoning process in text and distinguish it from superficial changes in wording.}}{33}{table.caption.34}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Conclusion}{37}{chapter.6}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Appendix A}{46}{appendix.1.A}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Chi-square test reports}{48}{appendix.1.B}%

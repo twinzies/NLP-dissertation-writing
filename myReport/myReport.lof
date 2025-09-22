@@ -1,10 +1,15 @@
 \addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{1}{chapter.1}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Literature Survey}{6}{chapter.2}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{DeepReflect: System Design}{12}{chapter.3}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline architecture for DeepReflect.}}{14}{figure.caption.15}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces CoT Generation with personal queries embedded in reasoning dialogs retrieved from expert human transcripts. In this case, the dialogs are from Carl Rogers' sessions with Gloria (patient) \cite {rogersgloria}. This dialog was selected because it reflects an implicit “NTA” judgment: Gloria expresses guilt about lying to her daughter, and Rogers facilitates exploration of these feelings by challenging her self-perception.}}{17}{figure.caption.18}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Methods}{18}{chapter.4}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Results and Analysis}{22}{chapter.5}%
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Cross-tabulation of Genuineness and Indirect language for the r/aitah dataset. Notice the contrasts in the presence and absence of traits between LLM-generated and human-authored responses.}}{25}{figure.caption.22}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Cross-tabulation of UPR and Emotional validation for r/aitah dataset. The figure illustrates the stark contrasts in traits of LLM-generated and human-authored responses.}}{26}{figure.caption.23}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Cross-tabulations for the r/anxiety dataset. Subfigure (b) illustrates the contrasts in community preferences amongst human-authored responses.}}{27}{figure.caption.25}%
@@ -16,5 +21,8 @@
 \contentsline {figure}{\numberline {5.9}{\ignorespaces RVS paradigm annotations for r/aitah dataset. The figure shows the distribution of RVS traits across different response types as a proof of concept for framework extensibility.}}{35}{figure.caption.38}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces RVS paradigm annotations for r/anxiety dataset demonstrating the application of the RVS framework to anxiety-related posts.}}{36}{figure.caption.39}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Conclusion}{37}{chapter.6}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Appendix A}{46}{appendix.1.A}%
 \addvspace {10\p@ }
+\contentsline {xchapter}{Chi-square test reports}{48}{appendix.1.B}%
